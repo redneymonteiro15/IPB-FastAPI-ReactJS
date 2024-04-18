@@ -1,0 +1,31 @@
+
+.navbar {
+    background-color: #93278F; 
+    color: #fff; 
+    padding-left: 5%;
+    padding-right: 10%;
+}
+
+.navbar-collapse{
+    justify-content: right;
+}
+
+.navbar-brand img{
+    width: 300px;
+}
+
+.navbar a{
+    color: #fff;
+    font-size: 13pt;
+}
+
+.navbar a:hover{
+    text-decoration: underline;
+    color: #fff;
+}
+
+@media screen and (max-width: 500px) {
+    .navbar-brand img{
+        width: 200px;
+    }
+}
