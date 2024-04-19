@@ -1,0 +1,32 @@
+
+
+.section{
+    width: 80%;
+}
+
+.section .aside-search{
+    width: 80%;
+    display: flex;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.section .aside-search input,
+.section .aside-search select{
+    border: 1px solid #808080;
+    width: 300px;
+    margin: 10px;
+    border-radius: 10px;
+    color: #808080;
+}
+.section .aside-search select{
+    padding: 10px;
+}
+.section .aside-search button{
+    width: 100px;
+    background-color: #93278F;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+}

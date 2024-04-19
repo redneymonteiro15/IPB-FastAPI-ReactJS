@@ -3,4 +3,53 @@
 .section{
     margin-top: 50px;
     margin-bottom: 50px;
+    width: 80%;
+    margin: auto;
+}
+.section .col-search{
+    margin: 20px 0 20px 0;
+}
+.section .col-search h4{
+    text-align: left;
+    color: #808080;
+    font-size: 25px;
+}
+.section .col-search .col-md-4{
+    display: flex;
+    height: 40px;
+}
+.section .col-search .col-md-4 input{
+    margin-right: 5px;
+}
+.section .col-search .col-md-4 button{
+    background-color: #93278F;
+    border: none;
+    border-radius: 10px;
+    width: 40px;
+}
+.section .col-search .col-md-4 .icon-search {
+    font-size: 25px;
+    color: #fff;
+}
+.section .col-info{
+    width: 100%;
+}
+
+.section .col-info .col-md-8{
+    width: 66%;
+    background-color: #93278F;
+    color: #fff;
+    text-align: justify;
+    border-radius: 10px;
+    padding: 30px;
+}
+.section .col-info .col-md-4 button{
+    background-color: #808080;
+    width: 370px;
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    color: #fff;
 }

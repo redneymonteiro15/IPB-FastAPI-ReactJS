@@ -3,10 +3,11 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap'
 import './styles.css'
+import * as Icon from 'react-bootstrap-icons'
 
 import logo from '../assets/logo.png'
 
-function NavBar() {
+function Header() {
     return (
         <div>
             <nav className="navbar navbar-expand-lg">
@@ -21,11 +22,19 @@ function NavBar() {
                                 <a className="nav-link" aria-current="page" href="home">Home</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Link</a>
+                                <a className="nav-link" href="book">Book</a>
                             </li>
-
                             <li className="nav-item">
-                                <a className="nav-link" aria-disabled="true">Disabled</a>
+                                <a className="nav-link" href="bookshelf">Bookshlef</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="borrowed">Borrowed</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="contact">Contact</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="profile"><Icon.Person className="icon-profile" /></a>
                             </li>
                         </ul>
                     </div>
@@ -35,4 +44,4 @@ function NavBar() {
     );
 }
 
-export default NavBar;
+export default Header;
