@@ -46,7 +46,7 @@ def find_user_by_email_password_db(email, password):
         return False
 
     print(existing_user)
-    if existing_user['password'] is password:
+    if str(existing_user['password']) == password:
         return True
 
     return False

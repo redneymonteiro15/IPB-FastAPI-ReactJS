@@ -1,20 +1,47 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './styles.css';
+import favicon_logo from '../../assets/favicon.png'
 import { Link } from 'react-router-dom';
+import { getUserData, saveUserData, signInAPI } from '../../action/API/setup';
 
 function SignIn() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleSignIn = () => {
-
-    if (username === 'usuário_correto' && password === 'senha_correta') {
-
-    } else {
-      setError('Invalid username or password');
+  useEffect(() => {
+    const res = getUserData()
+    if(res !== null){
+      window.location.href='/home'
+      return
     }
-  };
+    configPage()
+  }, [])
+
+  const configPage = () => {
+    const favicon = document.querySelector('link[rel="icon"]');
+    favicon.href = favicon_logo;
+
+    document.title = 'Sign in - IPB Library Digital';
+  }
+
+
+  const handleSignIn = () => {
+    signInAPI(username, password).then((res) => {
+      setError("Res:" + res)
+      if(res === true){
+        setError('Valid signin')
+        saveUserData(username)
+        window.location.href='/home'
+      } else {
+        setError('Invalid username or password')
+      }
+    }).catch((res) => {
+      setError("Res" +res)
+    })
+
+};
+
 
   return (
     <div className="container">

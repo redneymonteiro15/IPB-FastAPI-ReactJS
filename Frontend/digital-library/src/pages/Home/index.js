@@ -11,7 +11,7 @@ function Home() {
 
   return (
     <div>
-      <Header />
+      <Header pageName={'Home'} />
       
       <section className='section'>
         <div class="row text-center col-search">
@@ -33,12 +33,12 @@ function Home() {
             </p>
           </div>
           <div class="col-4 col-md-4">
-            <button>Open Access Policy of Scientific Publications</button>
-            <button>Preservation Policy</button>
-            <button>Digital Library Regulation</button>
-            <button>Request for Non-Publication online - Masther Thesis</button>
-            <button>Copyright - Sherpa Romeo</button>
-            <button>Documentation Services and Libraries of IPB</button>
+            <a>Open Access Policy of Scientific Publications</a>
+            <a>Preservation Policy</a>
+            <a>Digital Library Regulation</a>
+            <a>Request for Non-Publication online - Masther Thesis</a>
+            <a>Copyright - Sherpa Romeo</a>
+            <a>Documentation Services and Libraries of IPB</a>
           </div>
         </div>
       </section>
