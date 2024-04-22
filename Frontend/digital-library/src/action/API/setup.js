@@ -29,3 +29,8 @@ export const getUserData = () => {
     return res;
 }
 
+/* export const gettAllBooks = () => {
+    return new Promise((resolve, reject) => {
+        fetch.
+    })
+} */

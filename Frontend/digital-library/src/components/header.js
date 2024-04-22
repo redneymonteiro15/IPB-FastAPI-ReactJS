@@ -46,22 +46,21 @@ function Header(props) {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav">
-                        <li className="nav-item">
-    <a className={pageName === 'Home' ? 'nav-link link-active' : 'nav-link'} href="home">Home</a>
-</li>
-<li className="nav-item">
-    <a className={pageName === 'Book' ? 'nav-link link-active' : 'nav-link'} href="book">Book</a>
-</li>
-<li className="nav-item">
-    <a className={pageName === 'Bookshelf' ? 'nav-link link-active' : 'nav-link'} href="bookshelf">Bookshelf</a>
-</li>
-<li className="nav-item">
-    <a className={pageName === 'Borrowed' ? 'nav-link link-active' : 'nav-link'} href="borrowed">Borrowed</a>
-</li>
-<li className="nav-item">
-    <a className={pageName === 'Contact' ? 'nav-link link-active' : 'nav-link'} href="contact">Contact</a>
-</li>
-
+                            <li className="nav-item">
+                                <a className={pageName === 'Home' ? 'nav-link link-active' : 'nav-link'} href="home">Home</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className={pageName === 'Book' ? 'nav-link link-active' : 'nav-link'} href="book">Book</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className={pageName === 'Bookshelf' ? 'nav-link link-active' : 'nav-link'} href="bookshelf">Bookshelf</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className={pageName === 'Borrowed' ? 'nav-link link-active' : 'nav-link'} href="borrowed">Borrowed</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className={pageName === 'Contact' ? 'nav-link link-active' : 'nav-link'} href="contact">Contact</a>
+                            </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="profile"><Icon.Person className="icon-profile" />{userData}</a>
                             </li>

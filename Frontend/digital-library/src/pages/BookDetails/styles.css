@@ -1,0 +1,67 @@
+
+.card-name{
+    color: #808080;
+    font-size: 35px;
+}
+.card-author{
+    font-size: 50px;
+    margin: 0;
+}
+.card-category{
+    margin: 0px;
+    padding: 0;
+    font-size: 26px;
+}
+.card-borrowed{
+    display: flex;
+}
+.card-borrowed input{
+    height: 50px;
+}
+.card-borrowed button{
+    border: none;
+    height: 50px;
+    background-color: #93278F;
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px;
+    margin-top: 30px;
+}
+.card-ToAdd button{
+    width: 100px;
+    text-align: center;
+    border-radius: 10px;
+    border: 4px solid #93278F;
+    background-color: #fff;
+    color: #93278F;
+    margin-top: 15px;
+}
+
+.card-ToAdd button,
+.card-borrowed button,
+.card-borrowed input{
+    width: 150px;
+    height: 40px;
+    margin-right: 10px;
+}
+.card-borrowed label,
+.card-bookinformation span{
+    color: #808080;
+}
+.card-description h5,
+.card-bookinformation h5{
+    color: #808080;
+    font-size: 15pt;
+}
+.card-description p{
+    color: #808080;
+    text-align: justify;
+}
+.card-bookinformation p span{
+    min-width: 150px;
+    font-weight: 500;
+    margin-left: 20px;
+}
+.card-bookinformation p{
+    color: #808080;
+}

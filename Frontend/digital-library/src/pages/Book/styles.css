@@ -38,23 +38,21 @@
     z-index: 10px;
     border: 1px solid rgb(0,0,0,0.05);
 }
-.row .col-md-4{
-    background-image: url('../../assets/favicon.png');
-}
+
 .row .col-md-8{
     padding: 20px;
 }
 .row .col-md-8 .card-category{
-    font-size: 16px;
+    font-size: 14px;
     color: #808080;
     margin: 0 5px 0;
 }
 .row .col-md-8 .card-title{
     color: #808080;
-    font-size: 30px;
+    font-size: 25px;
 }
 .row .col-md-8 .card-author{
-    font-size: 22px;
+    font-size: 18px;
     color: #93278F;
 }
 .row .col-md-8 .card-button{
@@ -62,7 +60,7 @@
     background-color: #93278F;
     border: none;
     border-radius: 10px;
-    font-size: 22px;
+    font-size: 18px;
     color: #fff;
     padding: 5px;
 }
