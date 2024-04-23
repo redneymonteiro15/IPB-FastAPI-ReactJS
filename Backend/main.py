@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from models.user import User
 from models.book import Book
 from models.category import Category
+from models.Bookshelf import Bookshelf, BookInBookshelf
 from database.setup import *
 
 app = FastAPI()
@@ -64,3 +65,27 @@ def get_all_categories():
 @app.get('/getBookById')
 def get_book_by_id(id: str):
     return get_book_by_id_db(id)
+
+@app.get('/getBookByName')
+def get_book_by_name(name: str):
+    return get_book_by_name_db(name)
+
+@app.post('/inserBookshelf')
+def insert_bookshelf(name: str, id_user: str):
+    return insert_bookshelf_db(name, id_user)
+
+@app.get('/getAllBookshelf')
+def get_all_bookshelf(id_user: str):
+    return get_all_bookshelf_db(id_user)
+
+@app.get('/getBookshelfById')
+def get_bookshelf_by_id(id: str):
+    return get_bookshelf_by_id_db(id)
+
+@app.put('/updatBookshelfName')
+def update_Bookshelf_name(id_bookshelf: str, name: str):
+    return update_Bookshelf_name_db(id_bookshelf, name)
+
+@app.post('/insertBookInBookshelf')
+def insert_book_in_bookshelf(b: BookInBookshelf):
+    return insert_book_in_bookshelf_db(b)

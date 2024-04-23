@@ -1,0 +1,21 @@
+
+.row-search{
+    display: flex;
+    width: 70%;
+    margin: auto;
+}
+.row-search input{
+    height: 50px;
+    border: 1px solid #808080;
+    color: #808080;
+    margin-right: 10px;
+}
+.row-search button{
+    background-color: #93278F;
+    border: none;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    font-size: 25px;
+}

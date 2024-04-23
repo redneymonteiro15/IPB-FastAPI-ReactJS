@@ -1,12 +1,22 @@
 import React, { useState } from 'react';
-
-import { Link } from 'react-router-dom';
-import './styles.css'
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import * as Icon from 'react-bootstrap-icons';
+import './styles.css'
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
+  const navigate = useNavigate();
+
+  const [search, setSerach] = useState('')
+
+  const searchBook = () => {
+    navigate(`/book-details?id=${encodeURIComponent(search)}`);
+  }
+
+  const handleSearchBook = (event) => {
+    setSerach(event.target.value)
+  }
 
 
   return (
@@ -19,8 +29,8 @@ function Home() {
             <h4>IPB Digital Library</h4> 
           </div>
           <div class="col-6 col-md-4">
-            <input type='search' placeholder='Search book' />
-            <button>
+            <input type='search' placeholder='Search book' value={search} onChange={handleSearchBook} />
+            <button onClick={() => searchBook()}>
               <Icon.Search className='icon-search' />
             </button>
           </div>

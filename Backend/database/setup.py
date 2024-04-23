@@ -1,9 +1,11 @@
 from models.user import User
 from models.book import Book
 from models.category import Category
+from models.Bookshelf import Bookshelf, BookInBookshelf
 from pymongo import MongoClient, DESCENDING
 from bson import ObjectId
 import re
+from datetime import datetime
 
 
 client = MongoClient('mongodb://localhost:27017')
@@ -11,6 +13,8 @@ db = client['ipb_db']
 user_collection = db['user']
 book_collection = db['book']
 category_collection = db['category']
+bookshelf_collection = db['bookshelf']
+book_in_bookshelf_collection = db['book_in_bookshelf']
 
 
 def exist_user(email: str):
@@ -175,8 +179,13 @@ def get_book_by_category_name_db(category: str, name: str):
 
 
 def existBook(id):
-    existingBook = book_collection.find_one({'_id': ObjectId(id)})
-    return existingBook
+    if ObjectId.is_valid(id):
+        print('valid object')
+        existingBook = book_collection.find_one({'_id': ObjectId(id)})
+        return existingBook
+    else:
+        print('Invalid id')
+        return None
 
 def get_book_by_id_db(id: int):
     existingBook = existBook(id)
@@ -185,6 +194,7 @@ def get_book_by_id_db(id: int):
         print(existingBook)
         return None
 
+    print(existingBook)
     b = Book(
         id=str(existingBook.get('_id')),
         name=existingBook.get('name'),
@@ -198,3 +208,133 @@ def get_book_by_id_db(id: int):
     )
 
     return b
+
+
+def get_book_by_name_db(name):
+    name_regex = re.compile(f'.*{re.escape(name)}.*', re.IGNORECASE)
+
+    books = []
+    cursor = book_collection.find({
+        'name': {'$regex': name_regex}
+    })
+
+    for d in cursor:
+        b = Book(
+            id=str(d.get('_id')),
+            name=d.get('name'),
+            description=d.get('description'),
+            pages=d.get('pages'),
+            published=d.get('published'),
+            publisher=d.get('publisher'),
+            isbn=d.get('isbn'),
+            author=d.get('author'),
+            category=d.get('category')
+        )
+        books.append(b)
+
+    return books
+
+
+def exist_bookshelf(name: str):
+    existing_bookshelf = bookshelf_collection.find_one({'name': name})
+    return existing_bookshelf is not None
+
+def exist_bookshelf_by_id(id: str):
+    existing_bookshelf = bookshelf_collection.find_one({'_id': ObjectId(id)})
+    return existing_bookshelf is not None
+
+def insert_bookshelf_db(name: str, id_user: str):
+    if exist_bookshelf(name):
+        print('Exist')
+        return None
+
+    inserted_bookshelf = bookshelf_collection.insert_one({
+        'name': name,
+        'date_create': datetime.now(),
+        'id_user': id_user
+    }).inserted_id
+
+    return valid_id(inserted_bookshelf)
+
+
+def get_all_bookshelf_db(id_user: str):
+    bookshelf = []
+    cursor = bookshelf_collection.find({'id_user': id_user})
+    #b: Bookshelf
+    for d in cursor:
+        b = Bookshelf(
+            id=str(d.get('_id')),
+            name=d.get('name'),
+            date_create=str(d.get('date_create'))
+        )
+
+        bookshelf.append(b)
+
+    print(bookshelf)
+    return bookshelf
+
+def get_bookshelf_by_id_db(id: str):
+
+    if valid_id(id) is False:
+        return None
+
+    existing_bookshelf = bookshelf_collection.find_one({'_id': ObjectId(id)})
+
+    if existing_bookshelf is None:
+        return None
+
+    print(f'existing: {existing_bookshelf}')
+
+
+    b = Bookshelf(
+        id=str(existing_bookshelf.get('_id')),
+        name=existing_bookshelf.get('name'),
+        date_create=str(existing_bookshelf.get('date_create')),
+        list_book=None
+    )
+
+    return b
+
+
+
+
+def valid_id(id):
+    if ObjectId.is_valid(id):
+        return True
+    else:
+        return False
+
+
+def update_Bookshelf_name_db(id_bookshelf, name):
+
+    if valid_id(id_bookshelf) is False:
+        return False
+
+    existing_bookshelf = exist_bookshelf_by_id(id_bookshelf)
+    if existing_bookshelf is None:
+        return False
+
+    update_bookshelf = bookshelf_collection.update_one({'_id': ObjectId(id_bookshelf)}, {
+        '$set': {'name': name}
+    })
+
+    return True
+
+
+def insert_book_in_bookshelf_db(b: BookInBookshelf):
+
+   if exist_bookshelf_by_id(b.id_bookshelf) is False or existBook(b.id_book) is None:
+       print('no eixst')
+       return False
+
+   inserted_book_in_bookshelf = book_in_bookshelf_collection.insert_one({
+       'id_book': b.id_book,
+       'id_bookshelf': b.id_bookshelf,
+       'data': datetime.now()
+   }).inserted_id
+
+   if valid_id(inserted_book_in_bookshelf):
+       return True
+
+   return False
+

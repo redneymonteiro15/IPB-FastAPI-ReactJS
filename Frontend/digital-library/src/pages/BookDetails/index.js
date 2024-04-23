@@ -4,6 +4,7 @@ import Footer from "../../components/footer";
 import { useLocation } from 'react-router-dom';
 import imgbook from '../../assets/book.jpg'
 import './styles.css'
+import { Modal, Button } from 'react-bootstrap';
 import * as Icon from 'react-bootstrap-icons'
 
 
@@ -13,17 +14,49 @@ function BookDetails() {
     const [id, setId] = useState()
     const [book, setBook] = useState(null)
 
+    const[showModal, setShowModal] = useState(false)
+    const [bookshelf_name, setBookshelfName] = useState('')
+    const [bookshelfs, setBookshelf] =useState([])
+
     useEffect(() => {
         const searchParams = new URLSearchParams(search);
         const data = searchParams.get('id');
         setId(data)
 
-        fetch('http://127.0.0.1:8000/getBookById?id=66262d318606915195d6bdba')
+        if(data == null){
+            window.location.href='/book'
+        }
+
+        fetch('http://127.0.0.1:8000/getBookById?id='+data)
             .then(response => response.json())
             .then(data => setBook(data))
             .catch(error => console.error('Error fetching books:', error));
+        
+        fetch('http://127.0.0.1:8000/getAllBookshelf?id_user=66251e4eede07cfa79f98bf9')
+            .then(response => response.json())
+            .then(data => setBookshelf(data))
+            .catch(error => console.error('Error fetching books:', error));
+        
 
     }, [search]) 
+
+
+    const addBookToBookshelf = () => {
+        setShowModal(true)
+    }
+
+    const handleCloseModal = () => {
+        setShowModal(false)
+    }
+
+    const handleBookshelfChange = (event) => {
+        setBookshelfName(event.target.value)
+    }
+    const handleAddModal = () => {
+        
+
+        setShowModal(true)
+    }
 
     return(
         <div>
@@ -59,7 +92,7 @@ function BookDetails() {
                                             </div>
                                         </div>
                                         <div className="card-ToAdd">
-                                            <button>
+                                            <button onClick={() => addBookToBookshelf()}>
                                                 To Add <Icon.CaretDown className="icon-down" />
                                             </button>
                                         </div>
@@ -84,6 +117,31 @@ function BookDetails() {
                     </div>
                 )}
             </section>
+            <Modal className="modal" show={showModal} onHide={handleCloseModal}>
+                    <Modal.Header closeButton>
+                        <Modal.Title className="modalTitle">Add {book?.name} in bookshelft</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <div className="modalBody">
+                            <label>Bookshelf</label>
+                            <select  onChange={handleBookshelfChange}>
+                                {bookshelfs.map(b => (
+                                    <option key={b.id} value={b.name}>{b.name}</option>
+                                ))}
+                            </select>
+                        </div>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <div className="modalFooter">
+                            <Button className="buttonCancel" onClick={handleCloseModal}>
+                                Cancel
+                            </Button>
+                            <Button className="buttonAdd" onClick={handleAddModal}>
+                                Add
+                            </Button>
+                        </div>
+                    </Modal.Footer>
+                </Modal>
 
             <Footer />
         </div>

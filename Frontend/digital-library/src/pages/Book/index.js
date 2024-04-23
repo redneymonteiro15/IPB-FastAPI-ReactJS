@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './styles.css'
+import * as Icon from 'react-bootstrap-icons'
 
 
 function Book() {
+  const navigate = useNavigate();
 
   const [books, setBooks] = useState([])
   const [categories, setCategories] = useState([])
 
   const [bookName, setBookName] = useState('')
   const [category, setCategory] = useState('All')
+
+  const [nameSearch, setNameSerach] = useState('')
+  const { search } = useLocation();
+
 
   const handleBookNameChange = (event) => {
     setBookName(event.target.value);
@@ -22,10 +28,22 @@ function Book() {
   };
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/getAllBooks')
+    const searchParams = new URLSearchParams(search);
+    const data = searchParams.get('search');
+    setNameSerach(data)
+    
+    if(data !== null){
+      fetch('http://127.0.0.1:8000/getBookByName?name='+data)
+        .then(response => response.json())
+        .then(data => setBooks(data))
+        .catch(error => console.error('Error fetching books:', error));
+    } else {
+      fetch('http://127.0.0.1:8000/getAllBooks')
       .then(response => response.json())
       .then(data => setBooks(data))
       .catch(error => console.error('Error fetching books:', error));
+    }
+    
 
     fetch('http://127.0.0.1:8000/getAllCcategories')
       .then(response => response.json())
@@ -48,7 +66,7 @@ function Book() {
   };
 
   
-  const navigate = useNavigate();
+  
   const goBookDetails = (id) => {
     navigate(`/book-details?id=${encodeURIComponent(id)}`);
   }
@@ -74,23 +92,28 @@ function Book() {
               </aside>
               <aside className="list-books">
                 <div class="mb-3">
-                  {books.map(book => (    
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src='../../assets/favicon.png' class="img-fluid rounded-start" alt="..."/>
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <p className="card-category">{book.category}</p>
-                          <h5 class="card-title">{book.name}</h5>
-                          <p class="card-author">{book.author}</p>
-                          <button class="card-button" onClick={() => goBookDetails(book.id)}>
-                              See details
-                          </button>
+                  {books.length == 0 
+                  ? <div className="cardNoFound">
+                      <Icon.InfoCircle className="infoIcon" />	
+                      <p>No book found!</p>
+                    </div>
+                  : books.map(book => (    
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src='../../assets/favicon.png' class="img-fluid rounded-start" alt="..."/>
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <p className="card-category">{book.category}</p>
+                            <h5 class="card-title">{book.name}</h5>
+                            <p class="card-author">{book.author}</p>
+                            <button class="card-button" onClick={() => goBookDetails(book.id)}>
+                                See details
+                            </button>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
                 </div>
               </aside>
           </section>

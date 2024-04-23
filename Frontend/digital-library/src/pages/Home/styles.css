@@ -73,3 +73,7 @@
         margin: 10px 0;
     }
 }
+.row{
+    box-shadow: none;
+    border: none;
+}
