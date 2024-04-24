@@ -23,7 +23,7 @@ function Home() {
     <div>
       <Header pageName={'Home'} />
       
-      <section className='section'>
+      <section className='home'>
         <div class="row text-center col-search">
           <div class="col-sm-6 col-md-8">
             <h4>IPB Digital Library</h4> 

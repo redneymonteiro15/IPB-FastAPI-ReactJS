@@ -1,4 +1,7 @@
 
+.book-details{
+    margin-top: 50px;
+}
 .card-name{
     color: #808080;
     font-size: 35px;
@@ -28,7 +31,6 @@
     margin-top: 30px;
 }
 .card-ToAdd button{
-    width: 100px;
     text-align: center;
     border-radius: 10px;
     border: 4px solid #93278F;
@@ -40,7 +42,6 @@
 .card-ToAdd button,
 .card-borrowed button,
 .card-borrowed input{
-    width: 150px;
     height: 40px;
     margin-right: 10px;
 }
@@ -64,4 +65,24 @@
 }
 .card-bookinformation p{
     color: #808080;
+}
+@media screen and (max-width: 570px) {
+    .card-borrowed{
+        display: block;
+    }
+    .card-borrowed div{
+        width: 100%;
+        margin-top: 5px;
+    }
+    .card-borrowed div button,
+    .card-borrowed div input{
+        width: 100%;
+    }
+    .card-borrowed div button{
+        margin-top: 5px;
+    }
+    .card-ToAdd button{
+        width: 100%;
+        margin-top: 20px;
+    }
 }

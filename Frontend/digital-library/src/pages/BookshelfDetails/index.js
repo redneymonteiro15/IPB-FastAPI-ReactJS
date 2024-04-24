@@ -4,11 +4,16 @@ import Footer from "../../components/footer";
 import * as Icon from 'react-bootstrap-icons'
 import { Modal, Button } from 'react-bootstrap';
 import './styles.css'
+import { useLocation } from 'react-router-dom'
 
 function BookshelfDetails() {
+    const { search } = useLocation();
+
     const [books, setBooks] = useState([])
     const [bookshelf, setBookshelf] = useState(null)
-    const [search, setSearch] = useState('')
+    const [searchBookName, setSearchBookName] = useState('')
+
+    const [id, setId] = useState()
     
     const[showModal, setShowModal] = useState(false)
     const [nameBookshelf, setNameBookshelf] = useState('')
@@ -16,14 +21,28 @@ function BookshelfDetails() {
     const [res, setRes] = useState(null)
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/getBookshelfById?id=6627d83ba5c3a96dd2877024')
+        const searchParams = new URLSearchParams(search);
+        const data = searchParams.get('id');
+        setId(data)
+
+        if(data == null){
+            window.location.href='/book'
+        }
+
+        fetch('http://127.0.0.1:8000/getBookshelfById?id='+data)
             .then(response => response.json())
             .then(data => setBookshelf(data))
             .catch(error => console.error('Error fetching books:', error));
-    }, [])
+        
+        fetch('http://127.0.0.1:8000/getBookInBookshelf?id_bookshlef='+data)
+            .then(response => response.json())
+            .then(data => setBooks(data))
+            .catch(error => console.error('Error fetching books:', error));
+        
+    }, [search])
 
     const handleSearchBook = (event) => {
-        setSearch(event.target.value)
+        setSearchBookName(event.target.value)
     }
 
     const searchBook = () => {
@@ -37,6 +56,7 @@ function BookshelfDetails() {
     const handleNameBookshelfModal = (event) => {
         setNameBookshelf(event.target.value)
     }
+    
     const handleEditModal = () => {
         if(nameBookshelf.length !== 0){
             fetch('http://127.0.0.1:8000/updatBookshelfName?id_bookshelf=6627d83ba5c3a96dd2877024&name='+nameBookshelf,{
@@ -110,7 +130,7 @@ function BookshelfDetails() {
                 </div>
                 {books.length !== 0 && (
                     <div className="row-search">
-                        <input type='search' placeholder='Search book' value={search} onChange={handleSearchBook} />
+                        <input type='search' placeholder='Search book' value={searchBookName} onChange={handleSearchBook} />
                         <button onClick={() => searchBook()}>
                         <Icon.Search className='icon-search' />
                         </button>
@@ -133,7 +153,6 @@ function BookshelfDetails() {
                                         </div>
                                     </div>
                                 )
-                                
                             })   
                     }
                 </div>
@@ -166,4 +185,4 @@ function BookshelfDetails() {
     )
 }
 
-export default BookshelfDetails
+export default BookshelfDetails;

@@ -3,9 +3,10 @@ import Header from "../../components/header";
 import Footer from "../../components/footer";
 import { useLocation } from 'react-router-dom';
 import imgbook from '../../assets/book.jpg'
+import './styles.css'
 import { Modal, Button } from 'react-bootstrap';
 import * as Icon from 'react-bootstrap-icons'
-import './styles.css'
+
 
 function BookDetails() {
     
@@ -24,6 +25,7 @@ function BookDetails() {
 
     const [loading, setLoading] = useState(true);
 
+    const [selectBookshelf, setSelectBookshelf] = useState(false)
 
     useEffect(() => {
         const searchParams = new URLSearchParams(search);
@@ -91,73 +93,44 @@ function BookDetails() {
         console.log("id:"+bookshelfID)
         console.log("Name:" + bookshelfNameSelect)
         console.log("Name:"+bookshelfName)
+        
+        fetch('http://127.0.0.1:8000/insertBookInBookshelf?id_book='+id+'&id_bookshelf='+bookshelfIdSelect, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Failed to insert book in bookshelf');
+          }
+          return response.json();
+        })
+        .then(data => {
+          //setRes(true)
+          
+        })
+        .catch(error => {
+          console.error('Error inserting bookshelf:', error);
+          //setRes('Error inserting bookshelf::', error)
+        });
+        //setNameBookshelf('')
+        //setShow(false)
 
-        if(myBookshelf === null) {
-            console.log('add')
-            fetch('http://127.0.0.1:8000/insertBookInBookshelf?id_book='+id+'&id_bookshelf='+bookshelfIdSelect, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-            }).then(response => {
-            if (!response.ok) {
-                throw new Error('Failed to insert book in bookshelf');
-            }
-            return response.json();
-            }).then(data => {
-            //setRes(true)
-                fetch('http://127.0.0.1:8000/getBookInBookshelfByIdBook?id_book='+book.id+'&id_user=66251e4eede07cfa79f98bf9')
-                .then(response => response.json())
-                .then(data => {
-                    setMyBookshelf(data)
-                    console.log(data)
-                    console.log(myBookshelf)
-                    console.log(bookshelfName)
-                })
-                .catch(error => console.error('Error fetching books:', error));
-            }).catch(error => {
-            console.error('Error inserting bookshelf:', error);
-            //setRes('Error inserting bookshelf::', error)
-            });
-            //setNameBookshelf('')
-            //setShow(false)
-
-        } else {
-            console.log('update')
-            console.log("ID: " + book.id)
-            console.log("Last ID: " + myBookshelf.id)
-            console.log("New ID: " + bookshelfIdSelect)
-            fetch('http://127.0.0.1:8000/updateBookInBookshelf?last_id_bookshelf='+myBookshelf.id+'&new_id_bookshelf='+bookshelfIdSelect+'&id_book='+book.id, {
-              method: 'PUT',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-            })
-            .then(response => {
-              if (!response.ok) {
-                throw new Error('Failed to insert book in bookshelf');
-              }
-              return response.json();
-            })
-            .then(data => {
-              //setRes(true)
-                fetch('http://127.0.0.1:8000/getBookInBookshelfByIdBook?id_book='+book.id+'&id_user=66251e4eede07cfa79f98bf9')
-                .then(response => response.json())
-                .then(data => {
-                    setMyBookshelf(data)
-                    console.log(data)
-                    console.log(myBookshelf)
-                    console.log(bookshelfName)
-                })
-                .catch(error => console.error('Error fetching books:', error));
-            })
-            .catch(error => {
-              console.error('Error inserting bookshelf:', error);
-              //setRes('Error inserting bookshelf::', error)
-            });
-        }
         setShowModal(false)
-        /*  */
+    }
+
+    const handleUpdateModal = () => {
+        console.log("ID: " + book.id)
+        console.log("Last ID: " + myBookshelf.id)
+        console.log("New ID: " + bookshelfIdSelect)
+
+        if (bookshelfIdSelect !== '') {
+            
+            setShowModal(false)
+        }
+
+
     }
 
 
@@ -165,7 +138,7 @@ function BookDetails() {
         <div>
             <Header pageName={'Book Details'} />
 
-            <section className="book-details">
+            <section>
                 {book !== null && (
                     <div class="mb-3">
                         <div class="row g-0">
@@ -195,13 +168,21 @@ function BookDetails() {
                                             </div>
                                         </div>
                                         <div className="card-ToAdd">
-                                            {myBookshelf === null
-                                                ?   <button onClick={() => addBookToBookshelf()}>
-                                                        Add in <Icon.CaretDown className="icon-down" />
-                                                    </button>
-                                                :   <button onClick={() => addBookToBookshelf()}>
-                                                        {myBookshelf?.name} <Icon.CaretDown className="icon-down" />
-                                                    </button>
+                                            {bookshelfName.length == 0
+                                                ? myBookshelf == null
+                                                    ?   <button onClick={() => addBookToBookshelf()}>
+                                                            Add in <Icon.CaretDown className="icon-down" />
+                                                        </button>
+                                                    :   <button onClick={() => addBookToBookshelf()}>
+                                                            {myBookshelf.name} <Icon.CaretDown className="icon-down" />
+                                                        </button>
+                                                : bookshelfName.length != 0
+                                                    ?   <button onClick={() => addBookToBookshelf()}>
+                                                            {bookshelfName} <Icon.CaretDown className="icon-down" />
+                                                        </button>
+                                                    :   <button onClick={() => addBookToBookshelf()}>
+                                                            {myBookshelf.name} <Icon.CaretDown className="icon-down" />
+                                                        </button>
                                             }
                                         </div>
                                     </div>
@@ -234,9 +215,11 @@ function BookDetails() {
                             <label>Bookshelf</label>
                             
                             <select onChange={(event) => handleBookshelfChange(event.target.value)}>
-                                <option disabled selected={myBookshelf === null}>Select bookshelf</option>
+                                {bookshelfID === '' && (
+                                    <option disabled>Select bookshelf</option>
+                                )}
                                 {bookshelf.map(b => (
-                                    <option key={b.id} value={b.id+';'+b.name} selected={myBookshelf?.name === b.name} >
+                                    <option key={b.id} value={b.id+';'+b.name} selected={bookshelfName === b.name}>
                                         {b.name}
                                     </option>
                                 ))}
@@ -248,9 +231,20 @@ function BookDetails() {
                             <Button className="buttonCancel" onClick={handleCloseModal}>
                                 Cancel
                             </Button>
-                            <Button className="buttonAdd" onClick={() => handleAddModal()}>
-                                Add
-                            </Button>
+                            {bookshelfName.length == 0
+                                ? myBookshelf == null
+                                    ?   <Button className="buttonAdd" onClick={() => handleAddModal()}>
+                                            Add
+                                        </Button>
+                                    :   <Button className="buttonAdd" onClick={() => handleUpdateModal()}>
+                                            update
+                                        </Button>
+                                :   <Button className="buttonAdd" onClick={() => handleUpdateModal()}>
+                                        update
+                                    </Button>
+                            }
+                          
+                            
                         </div>
                     </Modal.Footer>
                 </Modal>

@@ -1,40 +1,41 @@
 
 
-.section{
+.home{
     margin-top: 50px;
     width: 80%;
     margin: auto;
 }
-.section .col-search{
+.home .col-search{
     margin: 20px 0 20px 0;
+    width: 100%;
 }
-.section .col-search h4{
+.home .col-search h4{
     text-align: left;
     color: #808080;
     font-size: 25px;
 }
-.section .col-search .col-md-4{
+.home .col-search .col-md-4{
     display: flex;
     height: 40px;
 }
-.section .col-search .col-md-4 input{
+.home .col-search .col-md-4 input{
     margin-right: 5px;
 }
-.section .col-search .col-md-4 button{
+.home .col-search .col-md-4 button{
     background-color: #93278F;
     border: none;
     border-radius: 10px;
     width: 40px;
 }
-.section .col-search .col-md-4 .icon-search {
+.home .col-search .col-md-4 .icon-search {
     font-size: 25px;
     color: #fff;
 }
-.section .col-info{
+.home .col-info{
     width: 100%;
 }
 
-.section .col-info .col-md-8{
+.home .col-info .col-md-8{
     width: 66%;
     background-color: #93278F;
     color: #fff;
@@ -42,10 +43,10 @@
     border-radius: 10px;
     padding: 30px;
 }
-.section .col-info .col-md-4{
+.home .col-info .col-md-4{
     padding: 0;
 }
-.section .col-info .col-md-4 a{
+.home .col-info .col-md-4 a{
     display: block;
     background-color: #808080;
     width: 100%;
@@ -58,19 +59,23 @@
     color: #fff;
 }
 @media screen and (max-width: 780px) {
-    .section .col-info{
+    .home .col-info{
         display: block;
     }
-    .section .col-info .col-md-8,
-    .section .col-info .col-md-4{
+    .home .col-info .col-md-8,
+    .home .col-info .col-md-4{
         width: 100%;
     }
-    .section .col-info .col-md-4{
+    .home .col-info .col-md-4{
         margin-top: 20px;
     }
-    .section .col-info .col-md-4 a{
+    .home .col-info .col-md-4 a{
         font-size: 16px;
         margin: 10px 0;
+    }
+    .home .col-search div{
+        width: 100%;
+
     }
 }
 .row{

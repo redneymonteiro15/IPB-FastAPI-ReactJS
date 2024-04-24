@@ -87,5 +87,19 @@ def update_Bookshelf_name(id_bookshelf: str, name: str):
     return update_Bookshelf_name_db(id_bookshelf, name)
 
 @app.post('/insertBookInBookshelf')
-def insert_book_in_bookshelf(b: BookInBookshelf):
-    return insert_book_in_bookshelf_db(b)
+def insert_book_in_bookshelf(id_book: str, id_bookshelf: str):
+    return insert_book_in_bookshelf_db(id_book, id_bookshelf)
+
+@app.get('/getBookInBookshelf')
+def get_book_in_bookshelf(id_bookshlef: str):
+    return get_book_in_bookshelf_db(id_bookshlef)
+
+@app.put('/updateBookInBookshelf')
+def update_book_in_bookshelf(last_id_bookshelf: str, new_id_bookshelf: str, id_book: str):
+    return update_book_in_bookshelf_db(last_id_bookshelf, new_id_bookshelf, id_book)
+
+@app.get('/getBookInBookshelfByIdBook')
+def get_book_in_bookshelf_by_id_book(id_book: str, id_user: str):
+    return get_book_in_bookshelf_by_id_book_db(id_book, id_user)
+
+
