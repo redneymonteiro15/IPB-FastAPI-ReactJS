@@ -1,0 +1,54 @@
+@import '../../action/constant/colors.css';
+
+
+
+.borrowed {
+    width: 80%;
+    margin: 50px auto 50px auto;
+}
+
+.borrowed h2 {
+    color: var(--primary);
+    text-align: center;
+}
+.row-later{
+    border: 3px solid var(--error);
+}
+.card-top{
+    background-color: var(--white);
+    width: 260px;
+    margin: 25px auto;
+    border-radius: 10px;
+    box-shadow: 5px 3px 10px var(--secondary);
+}
+.card-top button{
+    border: none;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+    width: 120px;
+    transition: 0.5s;
+}
+.card-top .currentButton{
+    background-color: var(--primary);
+    color: var(--white);
+}
+.card-top .lastButton{
+    background-color: var(--white);
+    color: var(--secondary);
+}
+
+.card-borrowed{
+    display: flex;
+    width: 100%;
+    margin-right: 20px;
+    margin-top: 10px;
+    justify-content: space-between;
+    color: var(--secondary);
+}
+.card-borrowed h5{
+    font-size: 18px;
+}
+.card-borrowed p{
+    font-size: 16px;
+}

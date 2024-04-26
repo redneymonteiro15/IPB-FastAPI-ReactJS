@@ -25,6 +25,19 @@ function BookDetails() {
     const [loading, setLoading] = useState(true);
 
 
+    const [myBorrowed, setMyBorrowed] = useState(null)
+    const [res, setRes] = useState(null)
+
+    const [borrowedDate, setBorrowedDate] = useState('')
+    const [returnedDate, setReturnedDate] = useState('')
+
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1); // Dia seguinte
+
+    const twoDaysAfter = new Date(today);
+    twoDaysAfter.setDate(twoDaysAfter.getDate() + 2); // Dois dias depois
+
     useEffect(() => {
         const searchParams = new URLSearchParams(search);
         const data = searchParams.get('id');
@@ -37,15 +50,18 @@ function BookDetails() {
         Promise.all([
             fetch('http://127.0.0.1:8000/getBookById?id=' + data).then(response => response.json()),
             fetch('http://127.0.0.1:8000/getAllBookshelf?id_user=66251e4eede07cfa79f98bf9').then(response => response.json()),
-            fetch('http://127.0.0.1:8000/getBookInBookshelfByIdBook?id_book=' + data + '&id_user=66251e4eede07cfa79f98bf9').then(response => response.json())
+            fetch('http://127.0.0.1:8000/getBookInBookshelfByIdBook?id_book=' + data + '&id_user=66251e4eede07cfa79f98bf9').then(response => response.json()),
+            fetch('http://127.0.0.1:8000/getBookIsBorrowed?id_book='+data+'&id_user=662133aae5205f5a9836e402').then(response => response.json())
         ])
-        .then(([bookData, bookshelfData, myBookshelfData]) => {
+        .then(([bookData, bookshelfData, myBookshelfData, myBorrowedData]) => {
             setBook(bookData);
             setBookshelf(bookshelfData);
             setMyBookshelf(myBookshelfData);
+            setMyBorrowed(myBorrowedData)
             console.log(bookData)
             console.log(bookshelfData)
             console.log(myBookshelfData)
+            console.log(myBorrowed)
             console.log(book)
             console.log(bookshelf)
             console.log(myBookshelf)
@@ -57,7 +73,16 @@ function BookDetails() {
         .catch(error => console.error('Error fetching data:', error));
     }, []);
 
+    useEffect(() => {
+        let timer;
+        if (res !== null) {
+            timer = setTimeout(() => {
+                setRes(null);
+            }, 5000);  //wait 5s
+        }
 
+        return () => clearTimeout(timer);
+    }, [res]);
 
 
     const addBookToBookshelf = () => {
@@ -160,6 +185,59 @@ function BookDetails() {
         /*  */
     }
 
+    const borrowed = () => {
+        
+        console.log("Borrow date: " + borrowedDate)
+        console.log("Return date: " + returnedDate)
+        if(borrowedDate.length == 0 || returnedDate.length == 0 ){
+            setRes(false)
+            return
+        }
+
+        const borrowedTimestamp = new Date(borrowedDate).getTime(); 
+        const returnedTimestamp = new Date(returnedDate).getTime(); 
+
+        if (returnedTimestamp <= borrowedTimestamp) {
+            setRes(false);
+            console.log('invalid')
+        } else {
+            setRes(true);
+            console.log('valid')
+            //
+            fetch('http://127.0.0.1:8000/insertBorrowed?id_book='+book.id+'&id_user=662133aae5205f5a9836e402&borrow_date='+borrowedDate+'&returned_date='+returnedDate, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            }).then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to insert book in bookshelf');
+                }
+                return response.json();
+            }).then(data => {
+                console.log(data)
+                setRes(data)
+            }).catch(error => {
+                console.error('Error inserting bookshelf:', error);
+            });
+        }
+
+    }
+
+    const handleBorrowedDate = (event) => {
+        setBorrowedDate(event.target.value);
+        
+        if (returnedDate && event.target.value > returnedDate) {
+            const tomorrow = new Date(event.target.value);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            setReturnedDate(tomorrow.toISOString().split('T')[0]);
+        }
+    };
+
+    const handleReturnedDate = (event) => {
+        setReturnedDate(event.target.value);
+    };
+
 
     return (
         <div>
@@ -179,21 +257,43 @@ function BookDetails() {
                                     <p className="card-category">{book.category}</p>
                                     <hr />
                                     <div>
-                                        <div className="card-borrowed">
-                                            <div>
-                                                <label>Borrow date</label>
-                                                <input type="date" />
-                                            </div>
-                                            <div>
-                                                <label>Returned date</label>
-                                                <input type="date" />
-                                            </div>
-                                            <div>
-                                                <button>
-                                                    Borrowed
-                                                </button>
-                                            </div>
-                                        </div>
+                                        {res !== null && (
+                                            res === true 
+                                            ?   <div className="card-successfull">
+                                                    <p><Icon.CheckCircle /> successfully</p>
+                                                </div>
+                                            :   <div className="card-error">
+                                                    <p><Icon.XCircle /> Danger</p>
+                                                </div>
+                                        ) }
+
+                                        {myBorrowed == null
+                                            ?   <div className="card-borrowed">
+                                                    <div>
+                                                        <label>Borrowed date</label>
+                                                        <input type="date" value={borrowedDate} onChange={handleBorrowedDate} min={tomorrow.toISOString().split('T')[0]} />
+                                                    </div>
+                                                    <div>
+                                                        <label>Returned date</label>
+                                                        <input 
+                                                            type="date" 
+                                                            value={returnedDate} 
+                                                            onChange={handleReturnedDate} 
+                                                            min={borrowedDate ? new Date(new Date(borrowedDate).getTime() + 24 * 60 * 60 * 1000).toISOString().split('T')[0] : ''} 
+                                                        />
+                                                    </div>
+
+                                                    <div>
+                                                        <button onClick={() => borrowed()}>
+                                                            Borrowed
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            :   <div className="card-myBorrowed">
+                                                    <p>The {myBorrowed.name} book was borrowed {myBorrowed.borrowed_date} and should be delivered {myBookshelf.returned_date}</p>
+                                                </div>
+                                        }
+                                        
                                         <div className="card-ToAdd">
                                             {myBookshelf === null
                                                 ?   <button onClick={() => addBookToBookshelf()}>

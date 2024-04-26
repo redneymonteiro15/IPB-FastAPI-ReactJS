@@ -2,6 +2,7 @@ from models.user import User
 from models.book import Book
 from models.category import Category
 from models.Bookshelf import Bookshelf, BookInBookshelf
+from models.borrowed import Borrowed
 from pymongo import MongoClient, DESCENDING
 from bson import ObjectId
 import re
@@ -15,6 +16,7 @@ book_collection = db['book']
 category_collection = db['category']
 bookshelf_collection = db['bookshelf']
 book_in_bookshelf_collection = db['book_in_bookshelf']
+borrowed_collection = db['borrowed']
 
 
 def exist_user(email: str):
@@ -408,4 +410,77 @@ def get_book_in_bookshelf_by_id_book_db(id_book, id_user):
             )
 
     return None
+
+
+def insert_borrowed_db(id_book, id_user, borrow_date, returned_date):
+    if valid_id(id_book) is False or valid_id(id_user) is False:
+        return False
+
+    if existBook(id_book) is None:
+        return False
+
+    result = borrowed_collection.insert_one({
+        'id_book': id_book,
+        'id_user': id_user,
+        'borrowed_date': borrow_date,
+        'returned_date': returned_date,
+        'status': 'true'
+    }).inserted_id
+
+    return valid_id(result)
+
+def get_book_is_borrowed_db(id_book, id_user):
+    if not valid_id(id_book) or not valid_id(id_user):
+        return None
+
+    if existBook(id_book) is None:
+        return None
+
+    last_borrowed = borrowed_collection.find({
+        'id_book': id_book,
+        'id_user': id_user,
+        'status': 'true'
+    }).sort([('borrowed_date', -1)]).limit(1)
+
+    # Converte o cursor em uma lista e verifica o comprimento
+    last_borrowed_list = list(last_borrowed)
+    if len(last_borrowed_list) > 0:
+        print(last_borrowed_list[0])
+        b = Borrowed(
+            id=str(last_borrowed_list[0].get('_id')),
+            id_book=last_borrowed_list[0].get('id_book'),
+            id_user=last_borrowed_list[0].get('id_user'),
+            borrowed_date=last_borrowed_list[0].get('borrowed_date'),
+            returned_date=last_borrowed_list[0].get('returned_date')
+        )
+        return b
+    else:
+        return None
+
+def get_borrowed_by_status_db(status, id_user):
+
+    if valid_id(id_user) is False:
+        return None
+
+
+    borrow = []
+    cursor = borrowed_collection.find({
+        'id_user': id_user,
+        'status': status
+    })
+    for d in cursor:
+        print(d)
+        b = Borrowed(
+            id=str(d.get('_id')),
+            id_user=d.get('id_user'),
+            id_book=d.get('id_book'),
+            borrowed_date=d.get('borrowed_date'),
+            returned_date=d.get('returned_date'),
+            status=d.get('status')
+        )
+        borrow.append(b)
+
+
+    return borrow
+
 

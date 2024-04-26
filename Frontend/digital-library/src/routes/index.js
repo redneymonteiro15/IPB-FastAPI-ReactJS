@@ -8,6 +8,8 @@ import Book  from '../pages/Book';
 import BookDetails from '../pages/BookDetails';
 import Bookshelf from '../pages/Bookshelf';
 import BookshelfDetails from '../pages/BookshelfDetails';
+import Borrowed from '../pages/borrowed';
+
 
 function AppRoutes() {
   return (
@@ -21,6 +23,7 @@ function AppRoutes() {
           <Route path='/book-details' element= {<BookDetails />}/>
           <Route path='/bookshelf' element={<Bookshelf /> } />
           <Route path='/bookshelf-details' element={<BookshelfDetails />} />
+          <Route path='/borrowed' element={<Borrowed />} />
         </Routes>
       </BrowserRouter>
     </div>

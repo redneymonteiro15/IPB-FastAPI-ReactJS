@@ -50,7 +50,7 @@ def get_book_by_category(category: str):
     return get_book_by_category_db(category)
 
 @app.get('/getBookByCategoryAndName')
-def get_book_by_category_name(category: str, name: str):
+def get_book_by_category_name(category: str, name: str = None):
     return get_book_by_category_name_db(category, name)
 
 
@@ -103,3 +103,14 @@ def get_book_in_bookshelf_by_id_book(id_book: str, id_user: str):
     return get_book_in_bookshelf_by_id_book_db(id_book, id_user)
 
 
+@app.post('/insertBorrowed')
+def insert_borrowed(id_book: str, id_user: str, borrow_date: str, returned_date: str):
+    return insert_borrowed_db(id_book, id_user, borrow_date, returned_date)
+
+@app.get('/getBookIsBorrowed')
+def get_book_is_borrowed(id_book: str, id_user):
+    return get_book_is_borrowed_db(id_book, id_user)
+
+@app.get('/getBorrowedByStatus')
+def get_borrowed_by_status(status: str, id_user: str):
+    return get_borrowed_by_status_db(status, id_user)

@@ -18,7 +18,7 @@ function BookshelfDetails() {
     const[showModal, setShowModal] = useState(false)
     const [nameBookshelf, setNameBookshelf] = useState('')
 
-    const [res, setRes] = useState(null)
+    const [res, setRes] = useState(true)
 
     useEffect(() => {
         const searchParams = new URLSearchParams(search);
