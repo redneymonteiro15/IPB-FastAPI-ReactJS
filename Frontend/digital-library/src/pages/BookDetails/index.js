@@ -6,8 +6,14 @@ import imgbook from '../../assets/book.jpg'
 import { Modal, Button } from 'react-bootstrap';
 import * as Icon from 'react-bootstrap-icons'
 import './styles.css'
+import { getBookById } from "../../action/API/book";
+import { getAllBookshelfByIdUser } from "../../action/API/bookshelf";
+import { getBookInBookshelf, getBookInBookshelfByIdBook, insertBookInBookshelf, updateBookInBookshelf } from "../../action/API/bookInBookshelf";
+import { getBookIsBorrowed, insertBorrowed } from "../../action/API/borrowed";
 
 function BookDetails() {
+    
+    const [idUser, setIdUser] = useState('66251e4eede07cfa79f98bf9');
     
     const { search } = useLocation();
     const [id, setId] = useState()
@@ -22,8 +28,6 @@ function BookDetails() {
     const [bookshelfIdSelect, setBookshelfIdSelect] = useState('')
     const [bookshelfNameSelect, setBookshelfNameSelect] = useState('')
 
-    const [loading, setLoading] = useState(true);
-
 
     const [myBorrowed, setMyBorrowed] = useState(null)
     const [res, setRes] = useState(null)
@@ -33,10 +37,10 @@ function BookDetails() {
 
     const today = new Date();
     const tomorrow = new Date(today);
-    tomorrow.setDate(tomorrow.getDate() + 1); // Dia seguinte
+    tomorrow.setDate(tomorrow.getDate() + 1); 
 
     const twoDaysAfter = new Date(today);
-    twoDaysAfter.setDate(twoDaysAfter.getDate() + 2); // Dois dias depois
+    twoDaysAfter.setDate(twoDaysAfter.getDate() + 2); 
 
     useEffect(() => {
         const searchParams = new URLSearchParams(search);
@@ -47,30 +51,25 @@ function BookDetails() {
             window.location.href = '/book';
         }
 
-        Promise.all([
-            fetch('http://127.0.0.1:8000/getBookById?id=' + data).then(response => response.json()),
-            fetch('http://127.0.0.1:8000/getAllBookshelf?id_user=66251e4eede07cfa79f98bf9').then(response => response.json()),
-            fetch('http://127.0.0.1:8000/getBookInBookshelfByIdBook?id_book=' + data + '&id_user=66251e4eede07cfa79f98bf9').then(response => response.json()),
-            fetch('http://127.0.0.1:8000/getBookIsBorrowed?id_book='+data+'&id_user=662133aae5205f5a9836e402').then(response => response.json())
-        ])
-        .then(([bookData, bookshelfData, myBookshelfData, myBorrowedData]) => {
-            setBook(bookData);
-            setBookshelf(bookshelfData);
-            setMyBookshelf(myBookshelfData);
-            setMyBorrowed(myBorrowedData)
-            console.log(bookData)
-            console.log(bookshelfData)
-            console.log(myBookshelfData)
-            console.log(myBorrowed)
-            console.log(book)
-            console.log(bookshelf)
-            console.log(myBookshelf)
-            if (myBookshelf !== null){
-                setBookshelfNameSelect(myBookshelf.name)
-            }
-            setLoading(false);
-        })
-        .catch(error => console.error('Error fetching data:', error));
+        
+        getBookById(data)
+            .then((data) => setBook(data))
+        
+        getAllBookshelfByIdUser(idUser)
+            .then((data) => setBookshelf(data))
+        
+        getBookInBookshelf(data, idUser)
+            .then((data) =>  {
+                setMyBookshelf(data)
+                if (myBookshelf !== null){
+                    setBookshelfNameSelect(myBookshelf.name)
+                }
+            })
+
+        getBookIsBorrowed(idUser, data)
+            .then((data) => setMyBorrowed(data))
+        
+
     }, []);
 
     useEffect(() => {
@@ -96,8 +95,6 @@ function BookDetails() {
     const handleBookshelfChange = (selected) => {
         const [selectedId, selectedName] = selected.split(';');
     
-        /* setBookshelfID(selectedId);
-        setBookshelfName(selectedName); */
         setBookshelfIdSelect(selectedId+'');
         setBookshelfNameSelect(selectedName);
         
@@ -119,70 +116,30 @@ function BookDetails() {
 
         if(myBookshelf === null) {
             console.log('add')
-            fetch('http://127.0.0.1:8000/insertBookInBookshelf?id_book='+id+'&id_bookshelf='+bookshelfIdSelect, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-            }).then(response => {
-            if (!response.ok) {
-                throw new Error('Failed to insert book in bookshelf');
-            }
-            return response.json();
-            }).then(data => {
-            //setRes(true)
-                fetch('http://127.0.0.1:8000/getBookInBookshelfByIdBook?id_book='+book.id+'&id_user=66251e4eede07cfa79f98bf9')
-                .then(response => response.json())
-                .then(data => {
-                    setMyBookshelf(data)
-                    console.log(data)
-                    console.log(myBookshelf)
-                    console.log(bookshelfName)
+            insertBookInBookshelf(id, bookshelfIdSelect)
+                .then((data) => {
+                    getBookInBookshelf(book.id, idUser)
+                        .then((data) => setMyBookshelf(data))
                 })
-                .catch(error => console.error('Error fetching books:', error));
-            }).catch(error => {
-            console.error('Error inserting bookshelf:', error);
-            //setRes('Error inserting bookshelf::', error)
-            });
-            //setNameBookshelf('')
-            //setShow(false)
-
+                
         } else {
             console.log('update')
             console.log("ID: " + book.id)
             console.log("Last ID: " + myBookshelf.id)
             console.log("New ID: " + bookshelfIdSelect)
-            fetch('http://127.0.0.1:8000/updateBookInBookshelf?last_id_bookshelf='+myBookshelf.id+'&new_id_bookshelf='+bookshelfIdSelect+'&id_book='+book.id, {
-              method: 'PUT',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-            })
-            .then(response => {
-              if (!response.ok) {
-                throw new Error('Failed to insert book in bookshelf');
-              }
-              return response.json();
-            })
-            .then(data => {
-              //setRes(true)
-                fetch('http://127.0.0.1:8000/getBookInBookshelfByIdBook?id_book='+book.id+'&id_user=66251e4eede07cfa79f98bf9')
-                .then(response => response.json())
+
+            updateBookInBookshelf(myBookshelf.id, bookshelfIdSelect, book.id)
                 .then(data => {
-                    setMyBookshelf(data)
-                    console.log(data)
-                    console.log(myBookshelf)
-                    console.log(bookshelfName)
+                //setRes(true)
+                getBookInBookshelfByIdBook(book.id, idUser)
+                    .then(data => setMyBookshelf(data))
                 })
-                .catch(error => console.error('Error fetching books:', error));
-            })
-            .catch(error => {
-              console.error('Error inserting bookshelf:', error);
-              //setRes('Error inserting bookshelf::', error)
-            });
+                .catch(error => {
+                console.error('Error inserting bookshelf:', error);
+                });
         }
         setShowModal(false)
-        /*  */
+        
     }
 
     const borrowed = () => {
@@ -204,22 +161,17 @@ function BookDetails() {
             setRes(true);
             console.log('valid')
             //
-            fetch('http://127.0.0.1:8000/insertBorrowed?id_book='+book.id+'&id_user=662133aae5205f5a9836e402&borrow_date='+borrowedDate+'&returned_date='+returnedDate, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-            }).then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to insert book in bookshelf');
-                }
-                return response.json();
-            }).then(data => {
-                console.log(data)
-                setRes(data)
-            }).catch(error => {
-                console.error('Error inserting bookshelf:', error);
-            });
+            insertBorrowed(book.id, idUser, borrowedDate, returnedDate)
+                .then(data => {
+                    console.log(data)
+                    setRes(data)
+                    if(data == true){
+                        getBookIsBorrowed(idUser, book.id)
+                            .then((data) => setMyBorrowed(data)) 
+                    }
+                }).catch(error => {
+                    console.error('Error inserting bookshelf:', error);
+                });
         }
 
     }
@@ -290,7 +242,7 @@ function BookDetails() {
                                                     </div>
                                                 </div>
                                             :   <div className="card-myBorrowed">
-                                                    <p>The {myBorrowed.name} book was borrowed {myBorrowed.borrowed_date} and should be delivered {myBookshelf.returned_date}</p>
+                                                    <p>The {myBorrowed.name} book was borrowed {myBorrowed?.borrowed_date} and should be delivered {myBorrowed?.returned_date}</p>
                                                 </div>
                                         }
                                         

@@ -5,6 +5,8 @@ import * as Icon from 'react-bootstrap-icons'
 import { Modal, Button } from 'react-bootstrap';
 import './styles.css'
 import { useLocation } from 'react-router-dom'
+import { getBookshelfById, updateBookshelf } from "../../action/API/bookshelf";
+import { getBookInBookshelfByIdBookshelf } from "../../action/API/bookInBookshelf";
 
 function BookshelfDetails() {
     const { search } = useLocation();
@@ -29,14 +31,16 @@ function BookshelfDetails() {
             window.location.href='/book'
         }
 
-        fetch('http://127.0.0.1:8000/getBookshelfById?id='+data)
-            .then(response => response.json())
-            .then(data => setBookshelf(data))
-            .catch(error => console.error('Error fetching books:', error));
-        
-        fetch('http://127.0.0.1:8000/getBookInBookshelf?id_bookshlef='+data)
-            .then(response => response.json())
-            .then(data => setBooks(data))
+        getBookshelfById(data)
+            .then((data) => setBookshelf(data))
+            .catch((error) => console.error('Error fetching books:', error)) 
+
+
+        console.log("id: " + data)
+        getBookInBookshelfByIdBookshelf(data)
+            .then(data => {
+                setBooks(data)
+            })
             .catch(error => console.error('Error fetching books:', error));
         
     }, [search])
@@ -59,34 +63,22 @@ function BookshelfDetails() {
     
     const handleEditModal = () => {
         if(nameBookshelf.length !== 0){
-            fetch('http://127.0.0.1:8000/updatBookshelfName?id_bookshelf=6627d83ba5c3a96dd2877024&name='+nameBookshelf,{
-                method: 'PUT',
-                headers: { 
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(response => {
-                if (!response.ok) {
-                  throw new Error('Failed to update bookshelf');
-                }
-                return response.json();
-              })
-              .then(data => {
-                console.log('Bookshelf update successfully:', data);
-                setRes(true)
-      
-                fetch('http://127.0.0.1:8000/getBookshelfById?id=6627d83ba5c3a96dd2877024')
-                    .then(response => response.json())
-                    .then(data => setBookshelf(data))
-                    .catch(error => console.error('Error fetching books:', error));
+            //
+            updateBookshelf(id, nameBookshelf)
+                .then(data => {
+                    console.log('Bookshelf update successfully:', data);
+                    setRes(true)
+                    
+                    getBookshelfById(id)
+                        .then(data => setBookshelf(data))
+                        .catch(error => console.error('Error fetching books:', error));
                 
-              })
-              .catch(error => {
-                console.error('Error updating bookshelf:', error);
-                setRes('Error updating bookshelf::', error)
-              });
-              setNameBookshelf('')
-              setShowModal(false)
+                }).catch(error => {
+                    console.error('Error updating bookshelf:', error);
+                    setRes('Error updating bookshelf::', error)
+                });
+            setNameBookshelf('')
+            setShowModal(false)
         }
     }
 

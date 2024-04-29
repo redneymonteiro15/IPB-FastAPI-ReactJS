@@ -6,6 +6,7 @@ import { Modal, Button } from 'react-bootstrap';
 
 import './styles.css'
 import { useNavigate } from "react-router-dom";
+import { addBookshelf, getAllBookshelfByIdUser } from "../../action/API/bookshelf";
 
 function Bookshelf(){
     const navigate = useNavigate();
@@ -14,8 +15,7 @@ function Bookshelf(){
     const [nameBookshelf, setNameBookshelf] = useState('')
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/getAllBookshelf?id_user=66251e4eede07cfa79f98bf9')
-            .then(response => response.json())
+        getAllBookshelfByIdUser('66251e4eede07cfa79f98bf9')
             .then(data => setBookshelf(data))
             .catch(error => console.error('Error fetching books:', error));
     }, [])
@@ -28,7 +28,7 @@ function Bookshelf(){
         setNameBookshelf(event.target.value)
     }
 
-    const addBookshelf = () => {
+    const addBookshelf_ = () => {
         setShow(true)
     }
 
@@ -40,33 +40,17 @@ function Bookshelf(){
 
     const [res, setRes] = useState(null)
     
-    const handleAdd = () => { //
-        fetch('http://127.0.0.1:8000/inserBookshelf?name='+nameBookshelf+'&id_user=66251e4eede07cfa79f98bf9', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-        })
+    const handleAdd = () => {
+        addBookshelf(nameBookshelf, '66251e4eede07cfa79f98bf9')
         .then(response => {
-          if (!response.ok) {
-            throw new Error('Failed to insert bookshelf');
-          }
-          return response.json();
+            console.log('Bookshelf inserted successfully:', response);
+            setRes(true)
+            getAllBookshelfByIdUser('66251e4eede07cfa79f98bf9')
+                .then(data => setBookshelf(data))
+                .catch(error => console.error('Error fetching books:', error));
         })
-        .then(data => {
-          console.log('Bookshelf inserted successfully:', data);
-          setRes(true)
+        .catch((error) => setRes(error) )
 
-          fetch('http://127.0.0.1:8000/getAllBookshelf?id_user=66251e4eede07cfa79f98bf9')
-            .then(response => response.json())
-            .then(data => setBookshelf(data))
-            .catch(error => console.error('Error fetching books:', error));
-          
-        })
-        .catch(error => {
-          console.error('Error inserting bookshelf:', error);
-          setRes('Error inserting bookshelf::', error)
-        });
         setNameBookshelf('')
         setShow(false)
     }
@@ -90,7 +74,7 @@ function Bookshelf(){
     
             <section>
             <div class="row row-top">
-                <div><span>Bookshelf</span><Icon.PlusCircleFill className="iconAdd" onClick={() => addBookshelf()} /></div>
+                <div><span>Bookshelf</span><Icon.PlusCircleFill className="iconAdd" onClick={() => addBookshelf_()} /></div>
             </div>
             <div className="card-result">
                 {res !== null && (

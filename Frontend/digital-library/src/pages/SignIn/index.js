@@ -28,7 +28,7 @@ function SignIn() {
 
   const handleSignIn = () => {
     signInAPI(username, password).then((res) => {
-      setError("Res:" + res)
+      setError("Res: " + res)
       if(res === true){
         setError('Valid signin')
         saveUserData(username)

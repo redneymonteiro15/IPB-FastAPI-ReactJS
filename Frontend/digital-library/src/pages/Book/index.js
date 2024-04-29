@@ -4,6 +4,7 @@ import Footer from "../../components/footer";
 import { useLocation, useNavigate } from 'react-router-dom';
 import './styles.css'
 import * as Icon from 'react-bootstrap-icons'
+import { getAllBooks, getAllCategories, getBookByCategory, getBookByCategoryAndName, getBookByName } from "../../action/API/book";
 
 
 function Book() {
@@ -15,7 +16,6 @@ function Book() {
   const [bookName, setBookName] = useState('')
   const [category, setCategory] = useState('All')
 
-  const [nameSearch, setNameSerach] = useState('')
   const { search } = useLocation();
 
 
@@ -30,43 +30,37 @@ function Book() {
   useEffect(() => {
     const searchParams = new URLSearchParams(search);
     const data = searchParams.get('search');
-    setNameSerach(data)
+    setBookName(data)
     
     if(data !== null){
-      fetch('http://127.0.0.1:8000/getBookByName?name='+data)
-        .then(response => response.json())
+      getBookByName(data)
         .then(data => setBooks(data))
         .catch(error => console.error('Error fetching books:', error));
     } else {
-      fetch('http://127.0.0.1:8000/getAllBooks')
-      .then(response => response.json())
-      .then(data => setBooks(data))
-      .catch(error => console.error('Error fetching books:', error));
+      setBookName('')
+      getAllBooks()
+        .then(data => setBooks(data))
+        .catch(error => console.error('Error fetching books:', error));
     }
     
-
-    fetch('http://127.0.0.1:8000/getAllCcategories')
-      .then(response => response.json())
+    getAllCategories()
       .then(data => setCategories(data))
       .catch(error => console.error('Error fetching categories:', error));
   }, [])
 
   const searchBook = () => {
-     if (bookName.trim()) {
-      fetch('http://127.0.0.1:8000/getBookByCategoryAndName?category='+category+'&name='+bookName)
-        .then(response => response.json())
+    if (bookName.trim()) {
+      getBookByCategoryAndName(category, bookName)
         .then(data => setBooks(data))
         .catch(error => console.error('Error fetching books:', error));
     } else {
-      fetch('http://127.0.0.1:8000/getBookByCategory?category='+category)
-        .then(response => response.json())
+      getBookByCategory(category)
         .then(data => setBooks(data))
         .catch(error => console.error('Error fetching books:', error));
     }    
   };
 
-  
-  
+
   const goBookDetails = (id) => {
     navigate(`/book-details?id=${encodeURIComponent(id)}`);
   }
