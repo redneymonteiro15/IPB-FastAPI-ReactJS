@@ -9,14 +9,24 @@
 .card{
     margin: 20px;
     text-align: center;
-    cursor: pointer;
+    
 }
 .card h5{
     font-size: 14pt;
     color: #808080;
-    
+    cursor: pointer;
+}
+.card h5:hover{
+    text-decoration: underline;
 }
 
+.card .iconDelete{
+    color: var(--error);
+    font-size: 20px;
+    width: 100%;
+    align-items: end;
+    cursor: pointer;
+}
 .row-top{
     margin-top: 50px;
     margin-bottom: 20px;

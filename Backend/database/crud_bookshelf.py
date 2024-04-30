@@ -89,3 +89,20 @@ def update_Bookshelf_name_db(id_bookshelf, name):
     })
 
     return True
+
+def delete_bookshelf_db(id_bookshelf):
+
+    if valid_id(id_bookshelf) is False:
+        return False
+
+    existing_bookshelf = exist_bookshelf_by_id(id_bookshelf)
+    if existing_bookshelf is None:
+        return False
+
+    delete_count = bookshelf_collection.delete_one({'_id': ObjectId(id_bookshelf)}).deleted_count
+    print(delete_count)
+
+    if delete_count == 0:
+        return False
+
+    return True

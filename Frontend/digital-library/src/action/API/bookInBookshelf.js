@@ -41,6 +41,20 @@ export const updateBookInBookshelf = (lastId, newId, idBook) => {
     })
 }
 
+export  const deleteBookInBookshelf = (idBook, idBookshelf) => {   
+    return new Promise((resolve, reject) => {
+        fetch(`${URL_API}book-in-bookshelf/?id_book=${idBook}&id_bookshelf=${idBookshelf}`, { 
+            method: 'DELETE', 
+            headers: { 
+                'Content-Type': 'application/json' 
+            }, 
+        })
+        .then(response => { return response.json(); })
+        .then(data => resolve(data))
+        .catch(error => reject('Error inserting bookshelf', error));
+    })
+}
+
 export const getBookInBookshelfByIdBook = (idBook, idUser) => {
     return new Promise((resolve, reject) => {
         fetch(`${URL_API}book-in-bookshelf/?id_book=${idBook}&id_user=${idUser}`)

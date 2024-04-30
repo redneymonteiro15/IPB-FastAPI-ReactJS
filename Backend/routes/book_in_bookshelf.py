@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from database.crud_book_in_bookshelf import insert_book_in_bookshelf_db, get_book_in_bookshelf_db, update_book_in_bookshelf_db
+from database.crud_book_in_bookshelf import insert_book_in_bookshelf_db, get_book_in_bookshelf_db, update_book_in_bookshelf_db, delete_book_in_bookshelf_db
 
 
 book_in_bookshelf = APIRouter()
@@ -18,3 +18,8 @@ def update_book_in_bookshelf(last_id_bookshelf: str, new_id_bookshelf: str, id_b
     return update_book_in_bookshelf_db(last_id_bookshelf, new_id_bookshelf, id_book)
 
 
+@book_in_bookshelf.delete('/')
+def delete_book_in_bookshelf(id_book, id_bookshelf):
+    print('delete')
+    #return False
+    return delete_book_in_bookshelf_db(id_book, id_bookshelf)

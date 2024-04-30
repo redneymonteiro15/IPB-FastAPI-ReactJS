@@ -6,13 +6,15 @@ import { Modal, Button } from 'react-bootstrap';
 
 import './styles.css'
 import { useNavigate } from "react-router-dom";
-import { addBookshelf, getAllBookshelfByIdUser } from "../../action/API/bookshelf";
+import { addBookshelf, deleteBookshelf, getAllBookshelfByIdUser } from "../../action/API/bookshelf";
 
 function Bookshelf(){
     const navigate = useNavigate();
 
     const [bookshelf, setBookshelf] = useState([]);
     const [nameBookshelf, setNameBookshelf] = useState('')
+
+    const [idBookshelf, setIdBookshelf] = useState('')
 
     useEffect(() => {
         getAllBookshelfByIdUser('66251e4eede07cfa79f98bf9')
@@ -33,10 +35,15 @@ function Bookshelf(){
     }
 
     const [show, setShow] = useState(false);
+    const [showModalDelte , setShowModalDelte] = useState(false);
 
     const handleClose = () => {
         setShow(false)
     };
+
+    const handleModalDeleteClose = () => {
+        setShowModalDelte(false)
+    }
 
     const [res, setRes] = useState(null)
     
@@ -51,8 +58,19 @@ function Bookshelf(){
         })
         .catch((error) => setRes(error) )
 
-        setNameBookshelf('')
-        setShow(false)
+        setShowModalDelte(false)
+        
+    }
+
+    const handleDelete = () => {
+        deleteBookshelf(idBookshelf)
+        .then((data)=> {
+            setRes(data)
+            getAllBookshelfByIdUser('66251e4eede07cfa79f98bf9')
+                .then(data => setBookshelf(data))
+                .catch(error => console.error('Error fetching books:', error));
+        })
+        handleModalDeleteClose()
     }
 
     useEffect(() => {
@@ -66,6 +84,10 @@ function Bookshelf(){
         return () => clearTimeout(timer);
     }, [res]);
 
+    const deleteBookshelf_ = (idBookshelf) => {
+        setShowModalDelte(true)
+        setIdBookshelf(idBookshelf)
+    }
       
 
     return(
@@ -97,8 +119,9 @@ function Bookshelf(){
                             return(
                                 <div class="col-sm-4">
                                     <div class="card">
-                                        <div class="card-body" onClick={() => goBookshelfDetails(b.id)}>
-                                            <h5 class="card-title">{b.name} <Icon.CaretRightFill /></h5>
+                                        <div class="card-body">
+                                            <h5 class="card-title" onClick={() => goBookshelfDetails(b.id)}>{b.name} <Icon.CaretRightFill /></h5>
+                                            <Icon.Trash3Fill className="iconDelete" onClick={() => deleteBookshelf_(b.id)}/>
                                         </div>
                                     </div>
                                 </div>
@@ -128,7 +151,28 @@ function Bookshelf(){
                             Close
                         </Button>
                         <Button className="buttonAdd" onClick={handleAdd}>
-                            Save Changes
+                            Add
+                        </Button>
+                    </div>
+                </Modal.Footer>
+            </Modal>
+
+            <Modal className="modal" show={showModalDelte} onHide={handleModalDeleteClose}>
+                <Modal.Header closeButton>
+                <Modal.Title className="modalTitle">Add bookshelft</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <div className="modalBody">
+                        <label className="text-center">Are you sure you want to delete bookshelf?</label>
+                    </div>
+                </Modal.Body>
+                <Modal.Footer>
+                    <div className="modalFooter">
+                        <Button className="buttonCancel" onClick={handleModalDeleteClose}>
+                            Close
+                        </Button>
+                        <Button className="buttonAdd" onClick={handleDelete}>
+                            Delete
                         </Button>
                     </div>
                 </Modal.Footer>

@@ -4,11 +4,13 @@ import Footer from "../../components/footer";
 import * as Icon from 'react-bootstrap-icons'
 import { Modal, Button } from 'react-bootstrap';
 import './styles.css'
-import { useLocation } from 'react-router-dom'
-import { getBookshelfById, updateBookshelf } from "../../action/API/bookshelf";
-import { getBookInBookshelfByIdBookshelf } from "../../action/API/bookInBookshelf";
+import { useLocation, useNavigate } from 'react-router-dom'
+import { deleteBookshelf, getAllBookshelfByIdUser, getBookshelfById, updateBookshelf } from "../../action/API/bookshelf";
+import { deleteBookInBookshelf, getBookInBookshelfByIdBookshelf } from "../../action/API/bookInBookshelf";
 
 function BookshelfDetails() {
+    const navigate = useNavigate();
+
     const { search } = useLocation();
 
     const [books, setBooks] = useState([])
@@ -20,7 +22,7 @@ function BookshelfDetails() {
     const[showModal, setShowModal] = useState(false)
     const [nameBookshelf, setNameBookshelf] = useState('')
 
-    const [res, setRes] = useState(true)
+    const [res, setRes] = useState(null)
 
     useEffect(() => {
         const searchParams = new URLSearchParams(search);
@@ -98,6 +100,33 @@ function BookshelfDetails() {
         setNameBookshelf(bookshelf?.name)
     }
 
+    const goBookshelfDetails = (id) => {
+        navigate(`/bookshelf-details?id=${encodeURIComponent(id)}`);
+    }
+
+    const [idBook, setIdBook] = useState('')
+    const [showModalDelte , setShowModalDelte] = useState(false);
+
+    const handleModalDeleteClose = () => {
+        setShowModalDelte(false)
+    }
+    const handleDelete = () => {
+        deleteBookInBookshelf(idBook, bookshelf.id)
+        .then((data)=> {
+            setRes(data)
+            getBookInBookshelfByIdBookshelf(bookshelf.id)
+            .then(data => {
+                setBooks(data)
+            })
+            .catch(error => console.error('Error fetching books:', error));
+        })
+        handleModalDeleteClose()
+    }
+    const deleteBookInBookshelf_ = (idBook) => {
+        setShowModalDelte(true)
+        setIdBook(idBook)
+    }
+ 
     return(
         <div>
             <Header pageName={'Bookshelf details'}/>
@@ -139,9 +168,10 @@ function BookshelfDetails() {
                                 return(
                                     <div class="col-sm-4">
                                         <div class="card">
-                                            <div class="card-body">
-                                                <h5 class="card-title">{b.name} <Icon.CaretRightFill /></h5>
-                                            </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title" onClick={() => goBookshelfDetails(b.id)}>{b.name} <Icon.CaretRightFill /></h5>
+                                            <Icon.Trash3Fill className="iconDelete" onClick={() => deleteBookInBookshelf_(b.id)}/>
+                                        </div>
                                         </div>
                                     </div>
                                 )
@@ -170,6 +200,27 @@ function BookshelfDetails() {
                         </div>
                     </Modal.Footer>
                 </Modal>
+
+                <Modal className="modal" show={showModalDelte} onHide={handleModalDeleteClose}>
+                <Modal.Header closeButton>
+                <Modal.Title className="modalTitle">Add bookshelft</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <div className="modalBody">
+                        <label className="text-center">Are you sure you want to delete a book in bookshelf?</label>
+                    </div>
+                </Modal.Body>
+                <Modal.Footer>
+                    <div className="modalFooter">
+                        <Button className="buttonCancel" onClick={handleModalDeleteClose}>
+                            Close
+                        </Button>
+                        <Button className="buttonAdd" onClick={handleDelete}>
+                            Delete
+                        </Button>
+                    </div>
+                </Modal.Footer>
+            </Modal>
             </section>
 
             <Footer />

@@ -101,3 +101,24 @@ def update_book_in_bookshelf_db(last_id_bookshelf, new_id_bookshelf, id_book):
 
 
     return True
+
+def delete_book_in_bookshelf_db(id_book, id_bookshelf):
+    if valid_id(id_book) is False or valid_id(id_bookshelf) is False:
+        print('exist')
+        return False
+
+    if exist_bookshelf_by_id(id_bookshelf) is False:
+        print('no exist bookshelf')
+        return False
+
+    if exist_book(id_book) is None:
+        print('no exist book')
+        return False
+
+    delete_count = book_in_bookshelf_collection.delete_one({'id_book': id_book, 'id_bookshelf': id_bookshelf}).deleted_count
+
+    print(delete_count)
+    if delete_count == 0:
+        return False
+
+    return True

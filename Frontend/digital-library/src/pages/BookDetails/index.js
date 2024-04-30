@@ -118,6 +118,7 @@ function BookDetails() {
             console.log('add')
             insertBookInBookshelf(id, bookshelfIdSelect)
                 .then((data) => {
+                    setRes(data)
                     getBookInBookshelf(book.id, idUser)
                         .then((data) => setMyBookshelf(data))
                 })

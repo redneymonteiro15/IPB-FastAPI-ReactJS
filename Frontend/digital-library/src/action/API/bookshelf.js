@@ -3,7 +3,12 @@ const URL_API = 'http://127.0.0.1:8000/'
 
 export const addBookshelf = (name, idUser) => {
     return new Promise((resolve, reject) => {
-        fetch(`${URL_API}bookshelf/?name=${name}&id_user=${idUser}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, })
+        fetch(`${URL_API}bookshelf/?name=${name}&id_user=${idUser}`, { 
+            method: 'POST', 
+            headers: { 
+                'Content-Type': 'application/json' 
+            }, 
+        })
             .then(response => { return response.json(); })
             .then(data => resolve(data))
             .catch(error => reject('Error inserting bookshelf', error));
@@ -41,5 +46,19 @@ export const updateBookshelf = (idBookshelf, name) => {
             .then(response => response.json())
             .then(data => resolve(data))
             .catch(error => reject('Error inserting bookshelf', error));
+    })
+}
+
+export  const deleteBookshelf = (idBookshelf) => {   
+    return new Promise((resolve, reject) => {
+        fetch(`${URL_API}bookshelf/?id_bookshelf=${idBookshelf}`, { 
+            method: 'DELETE', 
+            headers: { 
+                'Content-Type': 'application/json' 
+            }, 
+        })
+        .then(response => { return response.json(); })
+        .then(data => resolve(data))
+        .catch(error => reject('Error inserting bookshelf', error));
     })
 }

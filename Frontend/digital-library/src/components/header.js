@@ -30,10 +30,10 @@ function Header(props) {
 
     const configPage = () => {
         const favicon = document.querySelector('link[rel="icon"]');
-    favicon.href = favicon_logo;
+        favicon.href = favicon_logo;
 
-    // Altera o título da página
-    document.title = pageName + ' - IPB Library Digital';
+        // Altera o título da página
+        document.title = pageName + ' - IPB Library Digital';
     }
 
     return (
@@ -62,7 +62,7 @@ function Header(props) {
                                 <a className={pageName === 'Contact' ? 'nav-link link-active' : 'nav-link'} href="contact">Contact</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="profile"><Icon.Person className="icon-profile" />{userData}</a>
+                                <a className="nav-link" href="account"><Icon.Person className="icon-profile" />{userData}</a>
                             </li>
                         </ul>
                     </div>

@@ -11,6 +11,9 @@
     color: var(--primary);
     text-align: center;
 }
+.card-borrowed{
+    cursor: pointer;
+}
 .row-later{
     border: 3px solid var(--error);
 }
@@ -51,4 +54,8 @@
 }
 .card-borrowed p{
     font-size: 16px;
+}
+.card-title:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }

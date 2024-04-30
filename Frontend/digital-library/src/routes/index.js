@@ -9,6 +9,9 @@ import BookDetails from '../pages/BookDetails';
 import Bookshelf from '../pages/Bookshelf';
 import BookshelfDetails from '../pages/BookshelfDetails';
 import Borrowed from '../pages/borrowed';
+import Contact from '../pages/Contact';
+import Account from '../pages/Account';
+import Page404 from '../pages/page404';
 
 
 function AppRoutes() {
@@ -24,6 +27,9 @@ function AppRoutes() {
           <Route path='/bookshelf' element={<Bookshelf /> } />
           <Route path='/bookshelf-details' element={<BookshelfDetails />} />
           <Route path='/borrowed' element={<Borrowed />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/account' element={<Account />} />
+          <Route path='*' element={<Page404 />} />
         </Routes>
       </BrowserRouter>
     </div>
