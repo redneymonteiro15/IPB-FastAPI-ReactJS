@@ -14,6 +14,7 @@ category_collection = db['category']
 bookshelf_collection = db['bookshelf']
 book_in_bookshelf_collection = db['book_in_bookshelf']
 borrowed_collection = db['borrowed']
+comment_collection = db['comment']
 
 
 def valid_id(id):

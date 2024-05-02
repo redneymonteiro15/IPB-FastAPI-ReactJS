@@ -7,6 +7,7 @@ from routes.category import category
 from routes.bookshelf import bookshelf
 from routes.borrowed import borrowed
 from routes.book_in_bookshelf import book_in_bookshelf
+from routes.comment import comment
 
 app = FastAPI()
 
@@ -25,3 +26,4 @@ app.include_router(category, prefix='/category')
 app.include_router(bookshelf, prefix='/bookshelf')
 app.include_router(borrowed, prefix='/borrowed')
 app.include_router(book_in_bookshelf, prefix='/book-in-bookshelf')
+app.include_router(comment, prefix='/comment')
