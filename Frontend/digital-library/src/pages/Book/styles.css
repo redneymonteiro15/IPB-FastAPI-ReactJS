@@ -1,29 +1,29 @@
 
 
-.section{
+.book{
     width: 80%;
     margin: auto;
 }
 
-.section .aside-search{
+.book .aside-search{
     width: 60%;
     display: flex;
     margin: auto;
     margin-top: 50px;
 }
 
-.section .aside-search input,
-.section .aside-search select{
+.book .aside-search input,
+.book .aside-search select{
     border: 1px solid #808080;
     margin: 10px;
     width: 40%;
     border-radius: 10px;
     color: #808080;
 }
-.section .aside-search select{
+.book .aside-search select{
     padding: 10px;
 }
-.section .aside-search button{
+.book .aside-search button{
     width: 20%;
     background-color: #93278F;
     margin: 10px;
@@ -31,13 +31,9 @@
     border-radius: 10px;
     color: #fff;
 }
-.row{
-    margin: 20px;
-    margin-top: 30px;
+.book .row{
     border-radius: 10px;
-    box-shadow: 5px 5px 5px 5px rgb(0,0,0,0.05);
-    z-index: 10px;
-    border: 1px solid rgb(0,0,0,0.05);
+    box-shadow: 1px 1px 5px 0px var(--secondary);
 }
 
 .row .col-md-8{
@@ -83,12 +79,12 @@
     font-size: 16pt;
 }
 @media screen and (max-width: 800px) {
-    .section .aside-search{
+    .book .aside-search{
         display: block;
     }
-    .section .aside-search input,
-    .section .aside-search select,
-    .section .aside-search button{
+    .book .aside-search input,
+    .book .aside-search select,
+    .book .aside-search button{
         width: 100%;
         margin: 5px 0;
         height: 40px;

@@ -18,9 +18,9 @@ export const getBookInBookshelf = (idBook, idUser) => {
     })
 }
 
-export const getBookInBookshelfByIdBookshelf = (idBookshelf) => {
+export const getBookInBookshelfByIdBookshelf = (idBookshelf, nameBook) => {
     return new Promise((resolve, reject) => {
-        fetch(`${URL_API}book-in-bookshelf/?id_bookshelf=${idBookshelf}`)
+        fetch(`${URL_API}book-in-bookshelf/?id_bookshelf=${idBookshelf}&name_book=${nameBook}`)
             .then(response => response.json())
             .then(data => resolve(data))
             .catch(error => reject('Error inserting bookshelf', error));

@@ -1,0 +1,28 @@
+
+h3{
+    color: var(--secondary);
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.btUpdate{
+    display: block;
+    width: 80%;
+    margin: auto;
+    border: none;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--primary);
+    color: #fff;
+    margin-top: 20px;
+}
+.iconBack{
+    font-size: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.inputError{
+    border: 2px solid red;
+}

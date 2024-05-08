@@ -39,7 +39,7 @@ function BookshelfDetails() {
 
 
         console.log("id: " + data)
-        getBookInBookshelfByIdBookshelf(data)
+        getBookInBookshelfByIdBookshelf(data, 'All')
             .then(data => {
                 setBooks(data)
             })
@@ -52,7 +52,11 @@ function BookshelfDetails() {
     }
 
     const searchBook = () => {
-
+        getBookInBookshelfByIdBookshelf(id, searchBookName)
+            .then(data => {
+                setBooks(data)
+            })
+            .catch(error => console.error('Error fetching books:', error));
     }
 
     const handleCloseModal = () => {
@@ -101,7 +105,7 @@ function BookshelfDetails() {
     }
 
     const goBookshelfDetails = (id) => {
-        navigate(`/bookshelf-details?id=${encodeURIComponent(id)}`);
+        navigate(`/book-details?id=${encodeURIComponent(id)}`);
     }
 
     const [idBook, setIdBook] = useState('')

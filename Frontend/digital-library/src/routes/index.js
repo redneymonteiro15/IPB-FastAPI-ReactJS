@@ -12,6 +12,7 @@ import Borrowed from '../pages/borrowed';
 import Contact from '../pages/Contact';
 import Account from '../pages/Account';
 import Page404 from '../pages/page404';
+import ChangePassword from '../pages/ChangePassword';
 
 
 function AppRoutes() {
@@ -29,6 +30,7 @@ function AppRoutes() {
           <Route path='/borrowed' element={<Borrowed />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/account' element={<Account />} />
+          <Route path='/change-password' element={<ChangePassword />} />
           <Route path='*' element={<Page404 />} />
         </Routes>
       </BrowserRouter>

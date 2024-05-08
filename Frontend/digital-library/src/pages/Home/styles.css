@@ -34,7 +34,6 @@
 .home .col-info{
     width: 100%;
 }
-
 .home .col-info .col-md-8{
     width: 66%;
     background-color: #93278F;
@@ -42,6 +41,10 @@
     text-align: justify;
     border-radius: 10px;
     padding: 30px;
+}
+.home .col-info .col-md-8 h3{
+    color: var(--white);
+    text-align: left;
 }
 .home .col-info .col-md-4{
     padding: 0;

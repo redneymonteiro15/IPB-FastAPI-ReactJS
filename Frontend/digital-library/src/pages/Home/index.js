@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import * as Icon from 'react-bootstrap-icons';
 import './styles.css'
 import { useNavigate } from 'react-router-dom';
+import { getUserData } from '../../action/API/setup';
 
 const link = [
   'https://portal3.ipb.pt/uploads/bibliotecas/Politica_de_Acesso_Aberto_de_Publicacoes_Cientificas_na_Biblioteca_Digital_do_IPB.pdf',
@@ -18,6 +19,14 @@ function Home() {
   const navigate = useNavigate();
 
   const [search, setSerach] = useState('')
+
+  const [user, setUser] = useState('')
+
+  useEffect(() => {
+    getUserData().then((u) => {
+      setUser(u)
+    })
+  }, [])
 
   const searchBook = () => {
     navigate(`/book/?search=${encodeURIComponent(search)}`);

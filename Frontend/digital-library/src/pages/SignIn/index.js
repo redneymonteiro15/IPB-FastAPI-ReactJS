@@ -3,6 +3,7 @@ import './styles.css';
 import favicon_logo from '../../assets/favicon.png'
 import { Link } from 'react-router-dom';
 import { getUserData, saveUserData, signInAPI } from '../../action/API/setup';
+import { getIdUserByUsername } from '../../action/API/user';
 
 function SignIn() {
   const [username, setUsername] = useState('');
@@ -31,8 +32,13 @@ function SignIn() {
       setError("Res: " + res)
       if(res === true){
         setError('Valid signin')
-        saveUserData(username)
-        window.location.href='/home'
+        getIdUserByUsername(username)
+          .then((user) => {
+            console.log(user)
+            //saveUserData(id.toString())
+            //window.location.href='/home'
+          })
+
       } else {
         setError('Invalid username or password')
       }

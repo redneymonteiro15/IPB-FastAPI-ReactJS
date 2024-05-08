@@ -18,7 +18,11 @@ function Account(){
         getInfoUser('66251e4eede07cfa79f98bf9')
             .then((res) => {
                 setUser(res)
-                //setCellPhone(res?.cell_phone)
+                //setCellPhone('351 '+res?.cell_phone)
+                const onlyNums = res?.cell_phone.replace(/[^0-9]/g, '');
+                if (onlyNums.length < 13) {
+                    setCellPhone('+351 ' + onlyNums.slice(3));
+                }
             })
     }, [])
 
@@ -62,6 +66,10 @@ function Account(){
         return () => clearTimeout(timer);
     }, [res]);
 
+    const goPage = () => {
+        window.location.href = '/change-password';
+    }
+
     return(
         <div>
             <Header pageName={'Account'} />
@@ -79,6 +87,7 @@ function Account(){
                     ) }
                 </div>
                 <div>
+                    <h3>Update</h3>
                     <label>Number student</label>
                     <input type="text" value={user?.num_student} readOnly/>
                     <label>Name</label>
@@ -96,7 +105,7 @@ function Account(){
                             Logout
                         </button>
                     </div>
-                    <p className="changePassword">Change password</p>
+                    <p className="changePassword" onClick={() => goPage()}>You how change the password?</p>
                 </div>
                 
             </section>

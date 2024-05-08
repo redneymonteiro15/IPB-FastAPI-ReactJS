@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import { useLocation, useNavigate } from 'react-router-dom';
-import './styles.css'
 import * as Icon from 'react-bootstrap-icons'
 import { getAllBooks, getAllCategories, getBookByCategory, getBookByCategoryAndName, getBookByName } from "../../action/API/book";
+import './styles.css'
 
 
 function Book() {
@@ -71,7 +71,7 @@ function Book() {
       <div>
           <Header pageName={'Books'} />
           
-          <section className="section">
+          <section className="book">
               <aside className="aside-search">
                 <input type="search" placeholder="Book name" value={bookName} onChange={handleBookNameChange} />
                 <select value={category} onChange={handleCategoryChange}>

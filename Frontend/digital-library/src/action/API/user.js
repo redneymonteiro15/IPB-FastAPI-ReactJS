@@ -5,8 +5,16 @@ export const getInfoUser = (id) => {
         fetch(`${URL_API}user/?id=${id}`)
             .then(response => response.json())
             .then(data => resolve(data))
-            .catch(error => reject('Error fetching books:', error));
+            .catch(error => reject('Error: :', error));
     })
+}
+export const getIdUserByUsername = (email) => {
+  return new Promise((resolve, reject) => {
+      fetch(`${URL_API}user/?email=${email}`)
+          .then(response => response.json())
+          .then(data => resolve(data))
+          .catch(error => reject('Error: :', error));
+  })
 }
 export const updateUser = (id, cell_phone) => {
     return new Promise((resolve, reject) => {
@@ -18,6 +26,20 @@ export const updateUser = (id, cell_phone) => {
             })
             .then(response => response.json())
             .then(data => resolve(data))
-            .catch(error => reject('Error inserting bookshelf', error));
+            .catch(error => reject('Error: ', error));
+    })
+}
+
+export const changePassword = (id, password, newPassword) => {
+    return new Promise((resolve, reject) => {
+        fetch(`${URL_API}user/?id=${id}&password=${password}&new_password=${newPassword}`, {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+            })
+            .then(response => response.json())
+            .then(data => resolve(data))
+            .catch(error => reject('Error: ', error));
     })
 }
