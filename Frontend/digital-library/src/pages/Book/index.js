@@ -28,7 +28,46 @@ function Book() {
   };
 
   useEffect(() => {
-    const searchParams = new URLSearchParams(search);
+    const b = [
+      {
+        "_id": "66262d1e8606915195d6bdb9",
+        "name": "Programmer",
+        "description": "The definitive reference to C++ by the creator of C++, The C++ Programming Language teaches one of the most widely-used, general-purpose programming languages. At an advanced pace this book teaches how to work with compilers updated for the new standard. Students with experience with C++ heading toward domains where mid-size to large applications are being developed - networking, finance, graphics, and games - will find this book an excellent learning tool.",
+        "isbn": "4325513251",
+        "pages": 416,
+        "category": "Programmer",
+        "author": "Bjarne Stoustrup",
+        "published": "TAG Livros - Paralela",
+        "publication_date": "2019",
+        "image": ""
+      },
+      {
+        "_id": "66262d318606915195d6bdba",
+        "name": "C++ Programming Language",
+        "description": "The definitive reference to C++ by the creator of C++, The C++ Programming Language teaches one of the most widely-used, general-purpose programming languages. At an advanced pace this book teaches how to work with compilers updated for the new standard. Students with experience with C++ heading toward domains where mid-size to large applications are being developed - networking, finance, graphics, and games - will find this book an excellent learning tool.",
+        "isbn": "4325513251",
+        "pages": 416,
+        "category": "Database",
+        "author": "Bjarne Stoustrup",
+        "published": "TAG Livros - Paralela",
+        "publication_date": "2019",
+        "image": ""
+      }
+    ]
+    const c = [
+      {
+        "_id": "66266535876d0fec6d732dff",
+        "name": "Programmer"
+      },
+      {
+        "_id": "66266562876d0fec6d732e00",
+        "name": "Database"
+      }
+    ]
+
+    setBooks(b)
+    setCategories(c)
+    /* const searchParams = new URLSearchParams(search);
     const data = searchParams.get('search');
     setBookName(data)
     
@@ -45,7 +84,7 @@ function Book() {
     
     getAllCategories()
       .then(data => setCategories(data))
-      .catch(error => console.error('Error fetching categories:', error));
+      .catch(error => console.error('Error fetching categories:', error)); */
   }, [])
 
   const searchBook = () => {
@@ -94,7 +133,7 @@ function Book() {
                   : books.map(book => (    
                       <div class="row g-0">
                         <div class="col-md-4">
-                          <img src='../../assets/favicon.png' class="img-fluid rounded-start" alt="..."/>
+                          <img src={book.image} class="img-fluid rounded-start" alt="..."/>
                         </div>
                         <div class="col-md-8">
                           <div class="card-body">

@@ -1,7 +1,7 @@
 
 from server.database.setup import user_collection, DESCENDING, valid_id
 from server.database.security import hash_password, verify_password
-from server.models.user import User, individual_user_simple
+from server.models.user import User, individual_user_simple, individual_user
 from bson import ObjectId
 
 
@@ -26,6 +26,7 @@ def insert_user_db(user: User):
         'name': user.name,
         'email': user.email,
         'cell_phone': user.cell_phone,
+        'is_admin': user.is_admin,
         'password': hash_password(user.password)
     })
 
@@ -72,15 +73,7 @@ def get_user_by_id(id):
     user = user_collection.find_one({'_id': ObjectId(id)})
 
     if user is not None:
-        u = User(
-            id=str(user.get('_id')),
-            num_student=str(user.get('num_student')),
-            name=user.get('name'),
-            email=user.get('email'),
-            cell_phone=user.get('cell_phone'),
-            password=''
-        )
-        return u
+        individual_user(user)
 
     return None
 

@@ -28,7 +28,48 @@ function BookshelfDetails() {
     const [res, setRes] = useState(null)
 
     useEffect(() => {
-        const searchParams = new URLSearchParams(search);
+        const b = [
+            {
+              "_id": "66262d1e8606915195d6bdb9",
+              "name": "Programmer",
+              "description": "The definitive reference to C++ by the creator of C++, The C++ Programming Language teaches one of the most widely-used, general-purpose programming languages. At an advanced pace this book teaches how to work with compilers updated for the new standard. Students with experience with C++ heading toward domains where mid-size to large applications are being developed - networking, finance, graphics, and games - will find this book an excellent learning tool.",
+              "isbn": "4325513251",
+              "pages": 416,
+              "category": "Programmer",
+              "author": "Bjarne Stoustrup",
+              "published": "TAG Livros - Paralela",
+              "publication_date": "2019",
+              "image": ""
+            },
+            {
+              "_id": "66262d318606915195d6bdba",
+              "name": "C++ Programming Language",
+              "description": "The definitive reference to C++ by the creator of C++, The C++ Programming Language teaches one of the most widely-used, general-purpose programming languages. At an advanced pace this book teaches how to work with compilers updated for the new standard. Students with experience with C++ heading toward domains where mid-size to large applications are being developed - networking, finance, graphics, and games - will find this book an excellent learning tool.",
+              "isbn": "4325513251",
+              "pages": 416,
+              "category": "Database",
+              "author": "Bjarne Stoustrup",
+              "published": "TAG Livros - Paralela",
+              "publication_date": "2019",
+              "image": ""
+            }
+          ]
+
+        setBooks(b)
+
+        const bo = {
+            "_id": {
+              "$oid": "6627f46bfc997a65a9818252"
+            },
+            "name": "Database",
+            "date_create": {
+              "$date": "2024-04-23T18:48:27.300Z"
+            },
+            "id_user": "66251e4eede07cfa79f98bf9"
+          }
+        setBookshelf(bo)
+
+        /* const searchParams = new URLSearchParams(search);
         const data = searchParams.get('id');
         setId(data)
 
@@ -49,7 +90,7 @@ function BookshelfDetails() {
             .then(data => {
                 setBooks(data)
             })
-            .catch(error => console.error('Error fetching books:', error));
+            .catch(error => console.error('Error fetching books:', error)); */
         
     }, [search])
 

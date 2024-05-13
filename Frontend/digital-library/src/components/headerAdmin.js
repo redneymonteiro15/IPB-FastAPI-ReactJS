@@ -18,7 +18,7 @@ function HeaderAdmin(props) {
 
     useEffect(() => {
 
-        const res = getUserData()
+        /* const res = getUserData()
         console.log(JSON.stringify(res))
         if(res !== null){
             setUserData("Hello " + res.name)
@@ -26,7 +26,7 @@ function HeaderAdmin(props) {
         } else {
             window.location.href = '/'
         }
-        configPage()
+        configPage() */
     }, [])
 
     const configPage = () => {

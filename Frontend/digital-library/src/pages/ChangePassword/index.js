@@ -22,12 +22,12 @@ function ChangePassword(){
     const [resValid, setResValid] = useState('')
 
     useEffect(() => {
-        const u = getUserData()
+        /* const u = getUserData()
         getInfoUser(u.id)
             .then((res) => {
                 setUser(res)
                 //setCellPhone(res?.cell_phone)
-            })
+            }) */
     }, [])
 
     useEffect(() => {
@@ -46,7 +46,7 @@ function ChangePassword(){
     }
 
     const update = () => {
-        if(isValidForm()){
+        /* if(isValidForm()){
             console.log('Valid')
             changePassword(user.id, password, newPassword)
                 .then((res) => {
@@ -57,7 +57,7 @@ function ChangePassword(){
                         setConfirmNewPassword('')
                     }
                 })
-        }   
+        }   */ 
     }
 
     const handlePassword = (event) => {

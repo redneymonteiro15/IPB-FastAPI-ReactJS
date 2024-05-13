@@ -5,6 +5,7 @@ import './styles.css'
 import * as Icon from 'react-bootstrap-icons'
 import { getInfoUser, updateUser } from "../../action/API/user";
 import { deleteUserData, getUserData } from "../../action/API/setup";
+import { navigationTo } from "../../action/constant/function";
 
 function Account(){
 
@@ -14,7 +15,7 @@ function Account(){
 
     const [res, setRes] = useState(null)
 
-    useEffect(() => {
+    /* useEffect(() => {
         const u = getUserData()
         getInfoUser(u.id)
             .then((res) => {
@@ -25,15 +26,16 @@ function Account(){
                     setCellPhone('+351 ' + onlyNums.slice(3));
                 }
             })
-    }, [])
+    }, []) */
 
     const logout = () => {
-        deleteUserData();
+        //deleteUserData();
         window.location.reload();
+        navigationTo('signin', true)
     }
 
     const update = () => {
-        let cell_phone = cellPhone.replace(' ','');
+        /* let cell_phone = cellPhone.replace(' ','');
         if (cell_phone.length == 13){
             setIsValidCellPhone(true)
             updateUser(user.id, cell_phone)
@@ -45,7 +47,7 @@ function Account(){
         } else {
             setIsValidCellPhone(false)
         }
-        console.log(cell_phone);
+        console.log(cell_phone); */
     }
 
     const handleCellPhone = (event) => {

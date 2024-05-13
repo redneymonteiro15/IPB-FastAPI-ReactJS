@@ -44,7 +44,20 @@ function BookDetails() {
     twoDaysAfter.setDate(twoDaysAfter.getDate() + 2); 
 
     useEffect(() => {
-        const searchParams = new URLSearchParams(search);
+        const b = {
+            "_id": "66262d1e8606915195d6bdb9",
+            "name": "Programmer",
+            "description": "The definitive reference to C++ by the creator of C++, The C++ Programming Language teaches one of the most widely-used, general-purpose programming languages. At an advanced pace this book teaches how to work with compilers updated for the new standard. Students with experience with C++ heading toward domains where mid-size to large applications are being developed - networking, finance, graphics, and games - will find this book an excellent learning tool.",
+            "isbn": "4325513251",
+            "pages": 416,
+            "category": "Programmer",
+            "author": "Bjarne Stoustrup",
+            "published": "TAG Livros - Paralela",
+            "publication_date": "2019"
+          }
+
+        setBook(b)
+        /* const searchParams = new URLSearchParams(search);
         const data = searchParams.get('id');
         setId(data);
 
@@ -74,7 +87,7 @@ function BookDetails() {
             })
 
         getBookIsBorrowed(u.id, data)
-            .then((data) => setMyBorrowed(data))
+            .then((data) => setMyBorrowed(data)) */
         
 
     }, []);

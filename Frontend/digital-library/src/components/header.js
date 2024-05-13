@@ -16,7 +16,7 @@ function Header(props) {
 
     const [userData, setUserData] = useState('');
 
-    useEffect(() => {
+    /* useEffect(() => {
 
         const res = getUserData()
         console.log(JSON.stringify(res))
@@ -27,7 +27,7 @@ function Header(props) {
             window.location.href = '/'
         }
         configPage()
-    }, [])
+    }, []) */
 
     const configPage = () => {
         const favicon = document.querySelector('link[rel="icon"]');
