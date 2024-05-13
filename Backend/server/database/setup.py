@@ -1,8 +1,6 @@
 
 from pymongo import MongoClient, DESCENDING
 from bson import ObjectId
-import re
-from datetime import datetime
 
 
 client = MongoClient('mongodb://localhost:27017')

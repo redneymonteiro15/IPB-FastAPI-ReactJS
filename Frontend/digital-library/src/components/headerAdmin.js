@@ -10,7 +10,7 @@ import favicon_logo from '../assets/favicon.png'
 import { getUserData } from "../action/API/setup";
 import './styles.css'
 
-function Header(props) {
+function HeaderAdmin(props) {
 
     const {pageName} = props
 
@@ -51,16 +51,10 @@ function Header(props) {
                                 <a className={pageName === 'Home' ? 'nav-link link-active' : 'nav-link'} href="home">Home</a>
                             </li>
                             <li className="nav-item">
+                                <a className={pageName === 'Add book' ? 'nav-link link-active' : 'nav-link'} href="add-book">Add book</a>
+                            </li>
+                            <li className="nav-item">
                                 <a className={pageName === 'Book' ? 'nav-link link-active' : 'nav-link'} href="book">Book</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className={pageName === 'Bookshelf' ? 'nav-link link-active' : 'nav-link'} href="bookshelf">Bookshelf</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className={pageName === 'Borrowed' ? 'nav-link link-active' : 'nav-link'} href="borrowed">Borrowed</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className={pageName === 'Contact' ? 'nav-link link-active' : 'nav-link'} href="contact">Contact</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="account"><Icon.Person className="icon-profile" />{userData}</a>
@@ -73,4 +67,4 @@ function Header(props) {
     );
 }
 
-export default Header;
+export default HeaderAdmin;

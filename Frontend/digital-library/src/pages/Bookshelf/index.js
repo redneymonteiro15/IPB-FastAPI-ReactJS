@@ -7,8 +7,11 @@ import { Modal, Button } from 'react-bootstrap';
 import './styles.css'
 import { useNavigate } from "react-router-dom";
 import { addBookshelf, deleteBookshelf, getAllBookshelfByIdUser } from "../../action/API/bookshelf";
+import { getUserData } from "../../action/API/setup";
 
 function Bookshelf(){
+    const [user, setser] = useState(null)
+
     const navigate = useNavigate();
 
     const [bookshelf, setBookshelf] = useState([]);
@@ -17,7 +20,8 @@ function Bookshelf(){
     const [idBookshelf, setIdBookshelf] = useState('')
 
     useEffect(() => {
-        getAllBookshelfByIdUser('66251e4eede07cfa79f98bf9')
+        const u = getUserData()
+        getAllBookshelfByIdUser(u.id)
             .then(data => setBookshelf(data))
             .catch(error => console.error('Error fetching books:', error));
     }, [])
@@ -48,11 +52,11 @@ function Bookshelf(){
     const [res, setRes] = useState(null)
     
     const handleAdd = () => {
-        addBookshelf(nameBookshelf, '66251e4eede07cfa79f98bf9')
+        addBookshelf(nameBookshelf, user.id)
         .then(response => {
             console.log('Bookshelf inserted successfully:', response);
             setRes(true)
-            getAllBookshelfByIdUser('66251e4eede07cfa79f98bf9')
+            getAllBookshelfByIdUser(user.id)
                 .then(data => setBookshelf(data))
                 .catch(error => console.error('Error fetching books:', error));
         })
@@ -66,7 +70,7 @@ function Bookshelf(){
         deleteBookshelf(idBookshelf)
         .then((data)=> {
             setRes(data)
-            getAllBookshelfByIdUser('66251e4eede07cfa79f98bf9')
+            getAllBookshelfByIdUser(user.id)
                 .then(data => setBookshelf(data))
                 .catch(error => console.error('Error fetching books:', error));
         })
@@ -117,7 +121,7 @@ function Bookshelf(){
                         </div>
                     :   bookshelf.map(b => {
                             return(
-                                <div class="col-sm-4">
+                                <div class="col-sm-5">
                                     <div class="card">
                                         <div class="card-body">
                                             <h5 class="card-title" onClick={() => goBookshelfDetails(b.id)}>{b.name} <Icon.CaretRightFill /></h5>

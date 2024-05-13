@@ -15,6 +15,7 @@
     font-size: 25px;
 }
 .home .col-search .col-md-4{
+    margin-top: 25px;
     display: flex;
     height: 40px;
 }
@@ -78,11 +79,31 @@
         margin: 10px 0;
         cursor: pointer;
     }
-    .home .col-search div{
-        width: 100%;
 
+}
+@media screen and (max-width: 1000px)  {
+    .home .col-search{
+        display: flex;
+    }
+    .home .col-info{
+        width: 100%;
+        display: block;
+    }
+    .home .col-info div{
+        width: 97%;
+        margin-top: 20px;
+    }
+    .home .col-info .col-md-8{
+        width: 100%;
     }
 }
+@media screen and (max-width: 575px)  {
+    .home .col-search .col-md-4{
+        width: 100%;
+        margin-top: -15px;
+    }
+}
+
 .row{
     box-shadow: none;
     border: none;

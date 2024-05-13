@@ -3,6 +3,7 @@ from server.database.setup import borrowed_collection, valid_id
 from server.database.crud_book import exist_book
 from server.database.crud_book import get_book_by_id_db
 from server.models.borrowed import list_borrowed, individual_borrowed
+from bson import ObjectId
 
 def insert_borrowed_db(id_book, id_user, borrow_date, returned_date):
     if valid_id(id_book) is False or valid_id(id_user) is False:
@@ -64,4 +65,17 @@ def get_borrowed_by_status(status, id_user):
 
     return list_borrowed(cursor)
 
+
+def update_borrowed_db(id, status):
+    if valid_id(id) is False:
+        return False
+
+    updated_borrowed = borrowed_collection.update_one({'_id': ObjectId(id)}, {
+        '$set': {'status': status}
+    }).modified_count
+
+    if updated_borrowed == 0:
+        return False
+
+    return True
 

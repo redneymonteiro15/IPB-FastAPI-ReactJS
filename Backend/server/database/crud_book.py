@@ -15,7 +15,7 @@ def insert_book_db(book: Book):
         'category': book.category,
         'author': book.author,
         'publisher': book.publisher,
-        'published': book.published
+        'publication_date': book.publication_date
     })
 
     return True
@@ -91,3 +91,45 @@ def get_book_by_name_db(name):
     })
 
     return list_book(cursor)
+
+
+def update_book_db(book):
+    existingBook = exist_book(book.id)
+
+    if existingBook is None:
+        print(existingBook)
+        return None
+
+
+    updated_book = book_collection.update_one({'_id': ObjectId(book.id)}, {
+            '$set': {
+                'name':book.name,
+                'description': book.description,
+                'isbn': book.isbn,
+                'pages': book.pages,
+                'category': book.category,
+                'author': book.author,
+                'publication_date': book.publication_date,
+                'publisher': book.publisher
+
+            }
+        }).modified_count
+
+    if updated_book == 0:
+        return False
+
+    return True
+
+def delete_book_db(id):
+    existingBook = exist_book(id)
+
+    if existingBook is None:
+        print(existingBook)
+        return None
+
+    deleted_book = book_collection.delete_one({'_id': ObjectId(id)}).deleted_count
+
+    if deleted_book == 0:
+        return False
+
+    return True

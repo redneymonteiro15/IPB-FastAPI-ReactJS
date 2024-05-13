@@ -1,5 +1,6 @@
 
 from server.database.setup import user_collection, DESCENDING, valid_id
+from server.database.security import hash_password, verify_password
 from server.models.user import User, individual_user_simple
 from bson import ObjectId
 
@@ -9,23 +10,23 @@ def exist_user(email: str):
     existing_user = user_collection.find_one({'email': email})
     return existing_user
 
+def exist_user_by_id(id: str):
+    existing_user = user_collection.find_one({'_id': ObjectId(id)})
+    return existing_user
+
 def insert_user_db(user: User):
     existing_user = exist_user(user.email)
     if existing_user is not None:
         print('Exist user')
-        return False
+        return None
 
     print('No exist user')
 
-    last_user = user_collection.find_one(sort=[('num_student', DESCENDING)])
-    last_num_user = last_user['num_student'] if last_user else 1
-
     user_collection.insert_one({
-        'num_student': last_num_user+1,
         'name': user.name,
         'email': user.email,
         'cell_phone': user.cell_phone,
-        'password': user.password
+        'password': hash_password(user.password)
     })
 
     return True
@@ -49,7 +50,7 @@ def get_user_by_email_and_password(email, password):
         return False
 
     print(existing_user)
-    if str(existing_user['password']) == password:
+    if verify_password(password, str(existing_user['password'])):
         print('True')
         return True
 
@@ -112,8 +113,17 @@ def change_password(id, password, new_password):
     if valid_id(id) is False:
         return False
 
-    updating_user = user_collection.update_one({'_id': ObjectId(id), 'password': password}, {
-        '$set': {'password': new_password}
+    existing_user = exist_user_by_id(id)
+
+    if existing_user is None:
+        return False
+
+    print(existing_user.get('password'))
+    if not verify_password(password, existing_user.get('password')):
+        return False
+
+    updating_user = user_collection.update_one({'_id': ObjectId(id)}, {
+        '$set': {'password': hash_password(new_password)}
     }).modified_count
 
     print(updating_user)

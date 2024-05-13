@@ -10,10 +10,11 @@ import { getBookById } from "../../action/API/book";
 import { getAllBookshelfByIdUser } from "../../action/API/bookshelf";
 import { getBookInBookshelf, getBookInBookshelfByIdBook, insertBookInBookshelf, updateBookInBookshelf } from "../../action/API/bookInBookshelf";
 import { getBookIsBorrowed, insertBorrowed } from "../../action/API/borrowed";
+import { getUserData } from "../../action/API/setup";
 
 function BookDetails() {
     
-    const [idUser, setIdUser] = useState('66251e4eede07cfa79f98bf9');
+    const [user, setUser] = useState(null);
     
     const { search } = useLocation();
     const [id, setId] = useState()
@@ -51,14 +52,20 @@ function BookDetails() {
             window.location.href = '/book';
         }
 
+        const u = getUserData()
+        setUser(u)
+
         
         getBookById(data)
-            .then((data) => setBook(data))
+            .then((data) => {
+                setBook(data)
+                console.log("Book: " + data)
+            })
         
-        getAllBookshelfByIdUser(idUser)
+        getAllBookshelfByIdUser(u.id)
             .then((data) => setBookshelf(data))
         
-        getBookInBookshelf(data, idUser)
+        getBookInBookshelf(data, u.id)
             .then((data) =>  {
                 setMyBookshelf(data)
                 if (myBookshelf !== null){
@@ -66,7 +73,7 @@ function BookDetails() {
                 }
             })
 
-        getBookIsBorrowed(idUser, data)
+        getBookIsBorrowed(u.id, data)
             .then((data) => setMyBorrowed(data))
         
 
@@ -119,7 +126,7 @@ function BookDetails() {
             insertBookInBookshelf(id, bookshelfIdSelect)
                 .then((data) => {
                     setRes(data)
-                    getBookInBookshelf(book.id, idUser)
+                    getBookInBookshelf(book.id, user.id)
                         .then((data) => setMyBookshelf(data))
                 })
                 
@@ -132,7 +139,7 @@ function BookDetails() {
             updateBookInBookshelf(myBookshelf.id, bookshelfIdSelect, book.id)
                 .then(data => {
                 //setRes(true)
-                getBookInBookshelfByIdBook(book.id, idUser)
+                getBookInBookshelfByIdBook(book.id, user.id)
                     .then(data => setMyBookshelf(data))
                 })
                 .catch(error => {
@@ -162,12 +169,12 @@ function BookDetails() {
             setRes(true);
             console.log('valid')
             //
-            insertBorrowed(book.id, idUser, borrowedDate, returnedDate)
+            insertBorrowed(book.id, user.id, borrowedDate, returnedDate)
                 .then(data => {
                     console.log(data)
                     setRes(data)
                     if(data == true){
-                        getBookIsBorrowed(idUser, book.id)
+                        getBookIsBorrowed(user.id, book.id)
                             .then((data) => setMyBorrowed(data)) 
                     }
                 }).catch(error => {

@@ -4,6 +4,7 @@ import favicon_logo from '../../assets/favicon.png'
 import { Link } from 'react-router-dom';
 import { getUserData, saveUserData, signInAPI } from '../../action/API/setup';
 import { getIdUserByUsername } from '../../action/API/user';
+import { navigationTo } from '../../action/constant/function';
 
 function SignIn() {
   const [username, setUsername] = useState('');
@@ -35,8 +36,8 @@ function SignIn() {
         getIdUserByUsername(username)
           .then((user) => {
             console.log(user)
-            //saveUserData(id.toString())
-            //window.location.href='/home'
+            saveUserData(user)
+            window.location.href='/home'
           })
 
       } else {
@@ -77,6 +78,9 @@ function SignIn() {
           <p className="error-message">{error}</p>
           <button className="sign-in-button" onClick={handleSignIn}>
             Sign In
+          </button>
+          <button className="sign-un-button" onClick={() => navigationTo('signup', false)}>
+            Sign up
           </button>
           
           <Link to='https://myconfig.ccom.ipb.pt/conta/activate/'><p className="forgot-password">Forgot the password?</p></Link>

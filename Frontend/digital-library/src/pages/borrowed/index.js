@@ -5,6 +5,7 @@ import './styles.css';
 import * as Icon from 'react-bootstrap-icons'
 import { getBorrowedByStatus } from "../../action/API/borrowed";
 import { useNavigate } from "react-router-dom";
+import { getUserData } from "../../action/API/setup";
 
 function Borrowed() {
     const navigate = useNavigate();
@@ -12,23 +13,27 @@ function Borrowed() {
     const [currentButton, setCurrentButton] = useState('borrowed');
 
     const [books, setBooks] = useState([])
-    const [idUser, setIdUser] = useState('66251e4eede07cfa79f98bf9');
+    const [user, setUser] = useState(null);
 
     useEffect(() => {
         handleBorrowedButtonClick()
-            
+        
+        const u = getUserData()
+        setUser(u)
     }, [])
 
     const handleBorrowedButtonClick = () => {
         setCurrentButton('borrowed');
-        getBorrowedByStatus(idUser, true)
-            .then((data) => setBooks(data))
+        if(user !== null)
+            getBorrowedByStatus(user.id, true)
+                .then((data) => setBooks(data))
     };
     
     const handleReturnedButtonClick = () => {
         setCurrentButton('returned');
-        getBorrowedByStatus(idUser, false)
-            .then((data) => setBooks(data))
+        if(user !== null)
+            getBorrowedByStatus(user.id, false)
+                .then((data) => setBooks(data))
     };
 
     const openBook = (id) => {

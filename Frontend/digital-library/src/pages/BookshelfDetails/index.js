@@ -7,8 +7,11 @@ import './styles.css'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { deleteBookshelf, getAllBookshelfByIdUser, getBookshelfById, updateBookshelf } from "../../action/API/bookshelf";
 import { deleteBookInBookshelf, getBookInBookshelfByIdBookshelf } from "../../action/API/bookInBookshelf";
+import { getUserData } from "../../action/API/setup";
 
 function BookshelfDetails() {
+    const [user, setUser] = useState(null)
+
     const navigate = useNavigate();
 
     const { search } = useLocation();
@@ -28,6 +31,9 @@ function BookshelfDetails() {
         const searchParams = new URLSearchParams(search);
         const data = searchParams.get('id');
         setId(data)
+
+        const u = getUserData()
+        setUser(u)
 
         if(data == null){
             window.location.href='/book'

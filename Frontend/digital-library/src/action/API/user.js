@@ -1,8 +1,25 @@
-const URL_API = 'http://127.0.0.1:8000/';
+const URL_API = 'http://127.0.0.1:8000/user/';
+
+export const insertUser = (user) => {
+  return new Promise((resolve, reject) => {
+    fetch(URL_API, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    })
+    .then(response => response.json())
+    .then(data => resolve(data))
+    .catch(error => reject('Error: ', error));
+  });
+};
+
 
 export const getInfoUser = (id) => {
     return new Promise((resolve, reject) => {
-        fetch(`${URL_API}user/?id=${id}`)
+        fetch(`${URL_API}?id=${id}`)
             .then(response => response.json())
             .then(data => resolve(data))
             .catch(error => reject('Error: :', error));
@@ -10,7 +27,7 @@ export const getInfoUser = (id) => {
 }
 export const getIdUserByUsername = (email) => {
   return new Promise((resolve, reject) => {
-      fetch(`${URL_API}user/?email=${email}`)
+      fetch(`${URL_API}?email=${email}`)
           .then(response => response.json())
           .then(data => resolve(data))
           .catch(error => reject('Error: :', error));
@@ -18,7 +35,7 @@ export const getIdUserByUsername = (email) => {
 }
 export const updateUser = (id, cell_phone) => {
     return new Promise((resolve, reject) => {
-        fetch(`${URL_API}user/?id=${id}&cell_phone=${cell_phone}`, {
+        fetch(`${URL_API}?id=${id}&cell_phone=${cell_phone}`, {
               method: 'PUT',
               headers: {
                 'Content-Type': 'application/json'
@@ -32,7 +49,7 @@ export const updateUser = (id, cell_phone) => {
 
 export const changePassword = (id, password, newPassword) => {
     return new Promise((resolve, reject) => {
-        fetch(`${URL_API}user/?id=${id}&password=${password}&new_password=${newPassword}`, {
+        fetch(`${URL_API}?id=${id}&password=${password}&new_password=${newPassword}`, {
               method: 'PUT',
               headers: {
                 'Content-Type': 'application/json'

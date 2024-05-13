@@ -20,16 +20,16 @@ export const signInAPI = (username, password) => {
     });
 };
 
-export const saveUserData = (id) => {
-    sessionStorage.setItem('id', id)
+export const saveUserData = (user) => {
+    const userJSON = JSON.stringify(user);
+    sessionStorage.setItem('user', userJSON);
 }
 
 export const getUserData = () => {
-    const res = sessionStorage.getItem('id')
-
-    return res;
+    const userJSON = sessionStorage.getItem('user');
+    return JSON.parse(userJSON);
 }
-
+  
 export const deleteUserData = () => {
-    sessionStorage.removeItem('id');
+    sessionStorage.removeItem('user');
 }

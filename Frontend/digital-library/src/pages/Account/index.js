@@ -4,7 +4,7 @@ import Footer from "../../components/footer";
 import './styles.css'
 import * as Icon from 'react-bootstrap-icons'
 import { getInfoUser, updateUser } from "../../action/API/user";
-import { deleteUserData } from "../../action/API/setup";
+import { deleteUserData, getUserData } from "../../action/API/setup";
 
 function Account(){
 
@@ -15,7 +15,8 @@ function Account(){
     const [res, setRes] = useState(null)
 
     useEffect(() => {
-        getInfoUser('66251e4eede07cfa79f98bf9')
+        const u = getUserData()
+        getInfoUser(u.id)
             .then((res) => {
                 setUser(res)
                 //setCellPhone('351 '+res?.cell_phone)
@@ -35,7 +36,7 @@ function Account(){
         let cell_phone = cellPhone.replace(' ','');
         if (cell_phone.length == 13){
             setIsValidCellPhone(true)
-            updateUser('66251e4eede07cfa79f98bf9', cell_phone)
+            updateUser(user.id, cell_phone)
                 .then((res) => {
                     setRes(res)
                 })
@@ -88,8 +89,6 @@ function Account(){
                 </div>
                 <div>
                     <h3>Update</h3>
-                    <label>Number student</label>
-                    <input type="text" value={user?.num_student} readOnly/>
                     <label>Name</label>
                     <input type="text"value={user?.name} readOnly />
                     <label>Email</label>

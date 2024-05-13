@@ -4,7 +4,7 @@ import Footer from "../../components/footer";
 import './styles.css'
 import * as Icon from 'react-bootstrap-icons'
 import { changePassword, getInfoUser, updateUser } from "../../action/API/user";
-import { deleteUserData } from "../../action/API/setup";
+import { deleteUserData, getUserData } from "../../action/API/setup";
 
 function ChangePassword(){
 
@@ -22,7 +22,8 @@ function ChangePassword(){
     const [resValid, setResValid] = useState('')
 
     useEffect(() => {
-        getInfoUser('66251e4eede07cfa79f98bf9')
+        const u = getUserData()
+        getInfoUser(u.id)
             .then((res) => {
                 setUser(res)
                 //setCellPhone(res?.cell_phone)

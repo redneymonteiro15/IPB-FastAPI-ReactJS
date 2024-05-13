@@ -6,8 +6,8 @@ class Book(BaseModel):
     name: str
     description: str
     pages: int
+    publication_date: str
     published: str
-    publisher: str
     isbn: str
     author: str
     category: str
@@ -19,8 +19,8 @@ def individual_book(b):
         name=b.get('name'),
         description=b.get('description'),
         pages=b.get('pages'),
+        publication_date=b.get('publication_date'),
         published=b.get('published'),
-        publisher=b.get('publisher'),
         isbn=b.get('isbn'),
         author=b.get('author'),
         category=b.get('category')
