@@ -4,7 +4,6 @@ import Footer from "../../components/footer";
 import './styles.css'
 import * as Icon from 'react-bootstrap-icons'
 import { navigationTo } from "../../action/constant/function";
-import HeaderAdmin from "../../components/headerAdmin";
 
 function AddBook(){
 
@@ -12,7 +11,7 @@ function AddBook(){
 
     return(
         <div>
-            <HeaderAdmin pageName={'Add book'} />
+            <Header pageName={'Add book'} />
 
             <section className="add-book">
                 <div onClick={() => navigationTo('add-book-details')}>

@@ -11,6 +11,7 @@ class Book(BaseModel):
     isbn: str
     author: str
     category: str
+    image_url: str
 
 
 def individual_book(b):
@@ -23,7 +24,8 @@ def individual_book(b):
         published=b.get('published'),
         isbn=b.get('isbn'),
         author=b.get('author'),
-        category=b.get('category')
+        category=b.get('category'),
+        image_url=b.get('image_url')
     )
 
 

@@ -1,15 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import './styles.css'
 import { insertComment } from "../../action/API/comment";
+import { getUserData } from "../../action/API/setup";
 
 function Contact(){
-
+    const [user, setUser] = useState(null)
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [successfullyMessage, setSuccessfullyMessage] = useState('')
+
+    useEffect(() => {
+        const u = getUserData()
+        setUser(u)
+        setEmail(u.email)
+        
+    }, [])
 
     const handleMessage = (event) => {
         setMessage(event.target.value);
@@ -79,7 +87,7 @@ function Contact(){
                     <div className="col aside-comment">
                         <h3>Send comment</h3>
                         <label>Email</label>
-                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}  className={errorMessage && !validateEmail(email) ? 'errorBorder' : 'normalBorder'}  />
+                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}  className={errorMessage && !validateEmail(email) ? 'errorBorder' : 'normalBorder'}  readOnly/>
                         <label>Message</label>
                         <textarea value={message} onChange={handleMessage} className={errorMessage && !validateEmail(email) ? 'errorBorder' : 'normalBorder'}  />
                         {errorMessage && <p className="txError">{errorMessage}</p>}

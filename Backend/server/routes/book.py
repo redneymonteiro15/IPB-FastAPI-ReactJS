@@ -17,6 +17,6 @@ def get_book(id: str = None, category: str = None, name: str = None):
 def update_book(book: Book):
     return update_book_db(book)
 
-@book.delete('/')
+@book.delete('/{book_id}')
 def delete_book(id_book: str):
     return delete_book_db(id_book)

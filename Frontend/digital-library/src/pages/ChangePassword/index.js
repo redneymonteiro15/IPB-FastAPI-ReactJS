@@ -22,12 +22,8 @@ function ChangePassword(){
     const [resValid, setResValid] = useState('')
 
     useEffect(() => {
-        /* const u = getUserData()
-        getInfoUser(u.id)
-            .then((res) => {
-                setUser(res)
-                //setCellPhone(res?.cell_phone)
-            }) */
+        const u = getUserData()
+        setUser(u)
     }, [])
 
     useEffect(() => {
@@ -46,7 +42,7 @@ function ChangePassword(){
     }
 
     const update = () => {
-        /* if(isValidForm()){
+         if(isValidForm()){
             console.log('Valid')
             changePassword(user.id, password, newPassword)
                 .then((res) => {
@@ -57,7 +53,7 @@ function ChangePassword(){
                         setConfirmNewPassword('')
                     }
                 })
-        }   */ 
+        } 
     }
 
     const handlePassword = (event) => {
@@ -82,20 +78,25 @@ function ChangePassword(){
 
         let foundErrors = false
 
+    
         if(!password){
             newErrors.password = "Password é obrigatória";
             setValidPassword(false)
             foundErrors = true 
             
         }
-    
         // Validações aqui
         if (!newPassword) {
             newErrors.newPassword = 'Nova Password é obrigatória';
             setValidNewPassword(false)
             foundErrors = true 
 
-        } else if (newPassword.length < 8) {
+        } else if(password == newPassword) {
+            newErrors.newPassword = 'Nova Password é igual a antiga';
+            setValidNewPassword(false)
+            foundErrors = true 
+        }
+        else if (newPassword.length < 8) {
             newErrors.newPassword = 'Deve ter pelo menos 8 caracteres';
             setValidNewPassword(false)
             foundErrors = true 

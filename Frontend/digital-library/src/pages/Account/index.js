@@ -15,27 +15,29 @@ function Account(){
 
     const [res, setRes] = useState(null)
 
-    /* useEffect(() => {
+    useEffect(() => {
         const u = getUserData()
+        setUser(u)
+        setCellPhone('+351 ' + u.cell_phone);
         getInfoUser(u.id)
             .then((res) => {
-                setUser(res)
-                //setCellPhone('351 '+res?.cell_phone)
-                const onlyNums = res?.cell_phone.replace(/[^0-9]/g, '');
+                console.log("USerInfo: " + JSON.stringify(res))
+                //setUser(u)
+                /* const onlyNums = res?.cell_phone.replace(/[^0-9]/g, '');
                 if (onlyNums.length < 13) {
                     setCellPhone('+351 ' + onlyNums.slice(3));
-                }
+                } */
             })
-    }, []) */
+    }, [])
 
     const logout = () => {
-        //deleteUserData();
+        deleteUserData();
         window.location.reload();
         navigationTo('signin', true)
     }
 
     const update = () => {
-        /* let cell_phone = cellPhone.replace(' ','');
+        let cell_phone = cellPhone.replace(' ','');
         if (cell_phone.length == 13){
             setIsValidCellPhone(true)
             updateUser(user.id, cell_phone)
@@ -47,7 +49,7 @@ function Account(){
         } else {
             setIsValidCellPhone(false)
         }
-        console.log(cell_phone); */
+        console.log(cell_phone);
     }
 
     const handleCellPhone = (event) => {

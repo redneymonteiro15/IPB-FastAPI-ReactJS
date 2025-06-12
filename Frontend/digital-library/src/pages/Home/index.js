@@ -19,8 +19,6 @@ function Home() {
 
   const [search, setSerach] = useState('')
 
-  
-
   useEffect(() => {
     
   }, [])

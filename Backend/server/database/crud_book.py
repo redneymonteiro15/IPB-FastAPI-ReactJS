@@ -14,9 +14,14 @@ def insert_book_db(book: Book):
         'pages': book.pages,
         'category': book.category,
         'author': book.author,
-        'publisher': book.publisher,
-        'publication_date': book.publication_date
-    })
+        'published': book.published,
+        'publication_date': book.publication_date,
+        'image_url': book.image_url
+    }).inserted_id
+
+    print(book_insert)
+    if book_insert == 0:
+        return False
 
     return True
 
@@ -98,7 +103,7 @@ def update_book_db(book):
 
     if existingBook is None:
         print(existingBook)
-        return None
+        return False
 
 
     updated_book = book_collection.update_one({'_id': ObjectId(book.id)}, {
@@ -110,7 +115,7 @@ def update_book_db(book):
                 'category': book.category,
                 'author': book.author,
                 'publication_date': book.publication_date,
-                'publisher': book.publisher
+                'published': book.published
 
             }
         }).modified_count

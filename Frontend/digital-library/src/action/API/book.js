@@ -54,3 +54,34 @@ export const getAllCategories = () => {
             .catch(error => reject('Error fetching categories:', error));
     })
 }
+
+export const createBook = (book) => {
+    return new Promise((resolve, reject) => {
+        fetch(URL_API+ 'book/', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(book)
+        })
+        .then(response => response.json())
+        .then(data => resolve(data))
+        .catch(error => reject('Error: ', error));
+      });
+};
+
+export const updateBook = (book) => {
+    return new Promise((resolve, reject) => {
+        fetch(URL_API+ 'book/', {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(book)
+            })
+            .then(response => response.json())
+            .then(data => resolve(data))
+            .catch(error => reject('Error: ', error));
+    })
+}

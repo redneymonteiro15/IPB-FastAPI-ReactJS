@@ -32,25 +32,41 @@ function SignUp() {
     }
 
 
-    const handleSignIn = () => {
+    const handleSignUp = () => {
         const user = {
-            id: "123",
-            num_student: "S123456",
-            name: "João",
-            email: "joao@example.com",
-            cell_phone: "123456789",
-            password: "senha123"
+            id: "",
+            name: name,
+            email: username,
+            cell_phone: cellPhone,
+            is_admin: false,
+            password: password
           };
           
           // Chame a função insertUser e trate a promessa retornada
           insertUser(user)
             .then(response => {
                 if(response === null){
-
+                  setError('Null')
                 } else if (response === false){
-
+                  setError('inválid sign up')
                 } else {
-
+                  signInAPI(username, password).then((res) => {
+                    setError("Res: " + res)
+                    if(res === true){
+                        setError('Valid signin')
+                        getIdUserByUsername(username)
+                        .then((user) => {
+                            console.log(user)
+                            saveUserData(user)
+                            window.location.href='/home'
+                        })
+            
+                    } else {
+                        setError('Invalid username or password')
+                    }
+                    }).catch((res) => {
+                        setError("Res" + res)
+                    })
                 }
             })
         /* signInAPI(username, password).then((res) => {
@@ -127,7 +143,7 @@ function SignUp() {
             />
           </div>
           <p className="error-message">{error}</p>
-          <button className="sign-in-button" onClick={handleSignIn}>
+          <button className="sign-in-button" onClick={handleSignUp}>
             Sign up
           </button>
           <button className="sign-un-button" onClick={() => navigationTo('signin', false)}>

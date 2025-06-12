@@ -37,7 +37,11 @@ function SignIn() {
           .then((user) => {
             console.log(user)
             saveUserData(user)
-            window.location.href='/home'
+            if(user.isAdmin) {
+                window.location.href = '/add-book'
+            } else {
+                window.location.href = '/home'
+            }
           })
 
       } else {

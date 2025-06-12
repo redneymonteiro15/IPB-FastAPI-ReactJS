@@ -17,7 +17,7 @@
       </counter>
       <counter>
         <item-type type-id="class" type="Class" />
-        <value>1</value>
+        <value>8</value>
       </counter>
       <counter>
         <item-type type-id="element-detail" type="Element Detail" />
@@ -43,7 +43,7 @@
       </counter>
       <counter>
         <item-type type-id="property" type="Property" />
-        <value>97</value>
+        <value>133</value>
       </counter>
       <counter>
         <item-type type-id="include" type="Include" />
@@ -67,7 +67,7 @@
       </counter>
       <counter>
         <item-type type-id="class" type="Class" />
-        <value>2</value>
+        <value>9</value>
       </counter>
       <counter>
         <item-type type-id="element-detail" type="Element Detail" />
@@ -128,6 +128,16 @@
         <phone-number />
         <description />
         <color>#00000000</color>
+        <working-schedule uid="ws-32fdcf7aef964d14bcbe386df962dbcf" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
+      </person>
+      <person id="">
+        <first-name>Redney</first-name>
+        <last-name>Monteiro</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
       </person>
     </persons>
     <teams />
@@ -148,154 +158,73 @@
     </custom-types>
   </types>
   <items>
-    <item id="d55500cbe7054d3e97dcebb7b20f9be0" cid="EX009" type="extend" creation-date="04/18/2024 11:08:32" from="52ae530c090c451b952315a7e36cdc95" to="b65031185425481887e884a2caba6ce7" visibility="package">
-      <stereotypes>
-        <stereotype name="extend" />
-      </stereotypes>
-      <stereotype-instances>
-        <stereotype id="7c0c27da77ed4ac18cd27a1e301f75bc_extend_c" type="extend" creation-date="04/18/2024 11:08:32" ref="" />
-      </stereotype-instances>
-      <extend extension-point="" condition="" />
-    </item>
-    <item id="2379ff5b98d348f688e1768d2e577e28" cid="EX003" type="extend" creation-date="04/18/2024 10:57:50" from="26ff82b7d1914b528648d7bb07c751d2" to="5bcd2406253c4ac9abd11ae213424ad0" visibility="package">
-      <stereotypes>
-        <stereotype name="extend" />
-      </stereotypes>
-      <stereotype-instances>
-        <stereotype id="bf9281502c2c4c6aaac6097ce2247d7d_extend_c" type="extend" creation-date="04/18/2024 10:57:50" ref="" />
-      </stereotype-instances>
-      <extend extension-point="" condition="" />
-    </item>
-    <item id="6b616b7885664e5bba5c9734ae9461dc" cid="UC005" type="use-case" name="edit bookshelf" creation-date="04/18/2024 10:49:03" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="74eeaf514bcc4cb0aa5b06a038690084" cid="UC011" type="use-case" name="find borrowed" creation-date="04/18/2024 10:58:44" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="34c77bb322cb436ea3da8ae3187d2474" cid="UC002" type="use-case" name="find book" creation-date="04/18/2024 10:48:19" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="de60c82f78544eebb58661c67ef8392c" cid="AC001" type="actor" name="User" creation-date="04/18/2024 10:47:53" visibility="undefined" />
-    <item id="0cb80dd64b9f4ae2bf74db424db2d6f4" cid="PROP077" type="property" owner="eed5a01078d148329c66fa12ba7e39d5" creator="" creation-date="04/26/2024 14:22:28" visibility="private" />
-    <item id="e9781436419241c8a45508ac370ed36f" cid="UC009" type="use-case" name="find book unreturned" creation-date="04/18/2024 10:51:09" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
     <item id="6ad2d5b63f334e8fa67a8106a83a5a10" cid="PROP070" type="property" owner="bc98fd9b56774f30a70ef76c73fc5099" creator="" creation-date="04/26/2024 14:13:22" visibility="private" />
-    <item id="1de21f9fb03c4faea2722bdd257f791f" cid="UC007" type="use-case" name="create borrowed" creation-date="04/18/2024 10:50:31" visibility="undefined">
+    <item id="21bd6bbbfcd74b51b890e52010448ebc" cid="PROP095" type="property" owner="74835acebf8343b2871e3cf2c49d889d" creator="" creation-date="04/28/2024 18:08:01" visibility="private" />
+    <item id="035becc7ef6d403e9941b505e8d2906c" cid="PROP099" type="property" name="email" owner="48d1e6fc87344a55b8911ab0fb79d715" creator="" creation-date="05/13/2024 15:48:58" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+    </item>
+    <item id="3f85e69483ea4228b824e4b1e886e446" cid="PROP100" type="property" name="cell_phone" owner="48d1e6fc87344a55b8911ab0fb79d715" creator="" creation-date="05/13/2024 15:49:21" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+    </item>
+    <item id="4ce73747d441485698245f2fa816428f" cid="UC013" type="use-case" name="book information" creation-date="04/18/2024 11:00:44" visibility="undefined">
       <use-case>
         <stakeholders />
         <special-requirements />
         <issues />
       </use-case>
     </item>
-    <item id="9410bdeecaee4d7f9069afd2a174fe4d" cid="UC006" type="use-case" name="Find book in bookshelf" creation-date="04/18/2024 10:49:20" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="153f3f19d67b4242b3c68db653e78f32" cid="UC004" type="use-case" name="delete bookshelf" creation-date="04/18/2024 10:48:53" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="650448b61dbc4df8b46d3c03e24f29b7" cid="REL005" type="relationship" creation-date="04/18/2024 10:58:53" from="de60c82f78544eebb58661c67ef8392c" to="d0467e328f4c4d7d8986703af7a62e1f" visibility="package">
-      <owned-items />
-      <relation from="de60c82f78544eebb58661c67ef8392c" to="d0467e328f4c4d7d8986703af7a62e1f" derived="false">
-        <start-role id="umlar-2e37e933-563c-4640-96e9-adc33dfc972e" name="" navigability="" association-type="association" visibility="private" property-ref="a602609e5dc947229a16bce927511184" />
-        <end-role id="umlar-57903b37-10b5-4176-a9fe-7bc5739e1b29" name="" navigability="" association-type="association" visibility="private" property-ref="e708593d520141dea927388c966ac531" />
-      </relation>
-    </item>
-    <item id="c5ab13b285c3400eb4b09fee3f4a1947" cid="UC013" type="use-case" name="book information" creation-date="04/18/2024 11:00:44" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="7865c0c8e40d4d40a16c595517999c48" cid="EX005" type="extend" creation-date="04/18/2024 10:59:06" from="d0467e328f4c4d7d8986703af7a62e1f" to="b0d2b5f9d4e34bf183616940d0efff45" visibility="package">
+    <item id="6dfe6d3e241e4a03ac0bde7a47dcd1be" cid="EX001" type="extend" creation-date="04/18/2024 10:56:57" from="26ff82b7d1914b528648d7bb07c751d2" to="06307ac1152b43868e7827043e44a390" visibility="package">
       <stereotypes>
         <stereotype name="extend" />
       </stereotypes>
       <stereotype-instances>
-        <stereotype id="ff71de7721ee47ef9d133472e22f5524_extend_c" type="extend" creation-date="04/18/2024 10:59:06" ref="" />
+        <stereotype id="a81f15cc1cf54688a32b01a233ae283e_extend_c" type="extend" creation-date="04/18/2024 10:56:57" ref="" />
       </stereotype-instances>
       <extend extension-point="" condition="" />
     </item>
-    <item id="e63d437c760a4e079f1827d01f34b96c" cid="UC013" type="use-case" name="book information" creation-date="04/18/2024 11:00:44" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="0a4ad63228b44a4288e37a7ebc9df68d" cid="PROP055" type="property" owner="06d17b6eef624991bd3a9a741f06645b" creator="" creation-date="04/26/2024 14:10:26" visibility="private" />
-    <item id="8f838904ae9e4e46925b50e46eeceb13" cid="UC006" type="use-case" name="find book in bookshelf" creation-date="04/18/2024 10:49:20" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="b0d2b5f9d4e34bf183616940d0efff45" cid="UC008" type="use-case" name="find book returned" creation-date="04/18/2024 10:50:54" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="ff25b63f13f84a1d82d53b65971ae29a" cid="UC003" type="use-case" name="create bookshelft" creation-date="04/18/2024 10:48:31" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="d3333f271e664b2193f00228788026c8" cid="UC007" type="use-case" name="create borrowed" creation-date="04/18/2024 10:50:31" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="4278d0ce81a7401b8f50d3dc96d1e020" cid="UC012" type="use-case" name="book details" creation-date="04/18/2024 10:59:38" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="71c139098f0f42a8b6821e92dce62499" cid="PROP078" type="property" owner="eed5a01078d148329c66fa12ba7e39d5" creator="" creation-date="04/26/2024 14:22:28" visibility="private" />
-    <item id="5a2a0c8f981c4166819fd16963711bd1" cid="EX008" type="extend" creation-date="04/18/2024 11:01:18" from="5012d2304eaa4729b146f5a9569c495c" to="52ae530c090c451b952315a7e36cdc95" visibility="package">
-      <stereotypes>
-        <stereotype name="extend" />
-      </stereotypes>
-      <stereotype-instances>
-        <stereotype id="f66043428431461094fbee96cad28e30_extend_c" type="extend" creation-date="04/18/2024 11:01:18" ref="" />
-      </stereotype-instances>
-      <extend extension-point="" condition="" />
-    </item>
-    <item id="e9355bebd5cd44568ea91ad5f32dba35" cid="PROP089" type="property" owner="3affd2b49a7842eb982cdf27d7dd070a" creator="" creation-date="04/26/2024 14:25:33" visibility="private" />
-    <item id="1e82bb57e065470ca6564817ecc46ca9" cid="UC007" type="use-case" name="create borrowed" creation-date="04/18/2024 10:50:31" visibility="undefined">
+    <item id="ffeb8d849b3245c580825a122f0f8ebb" cid="UC012" type="use-case" name="book details" creation-date="04/18/2024 10:59:38" visibility="undefined">
       <use-case>
         <stakeholders />
         <special-requirements />
@@ -303,22 +232,14 @@
       </use-case>
     </item>
     <item id="4b099429ef8342e491f11359822dab3a" cid="PROP058" type="property" owner="0e3d3dbf18614eff863f7218f23e9e7d" creator="" creation-date="04/26/2024 14:10:31" visibility="private" />
-    <item id="423fbdd88b3f471c9a672ec9ee88099e" cid="PROP093" type="property" owner="616b695f931f4280b1a02daf2b332c8a" creator="" creation-date="04/28/2024 18:07:28" visibility="private" />
-    <item id="21d2ad44ec9f4ceda3c708d5295102a5" cid="REL004" type="relationship" creation-date="04/18/2024 10:58:19" from="de60c82f78544eebb58661c67ef8392c" to="21d67c625a4a419f8481e31873a8eb10" visibility="package">
-      <owned-items />
-      <relation from="de60c82f78544eebb58661c67ef8392c" to="21d67c625a4a419f8481e31873a8eb10" derived="false">
-        <start-role id="umlar-d19bfa70-e342-475d-8d4e-458c7ba40f04" name="" navigability="" association-type="association" visibility="private" property-ref="6864e595ce314068b08bca22203929a7" />
-        <end-role id="umlar-69a9fa3d-ea8a-4882-8b14-55b81a354d87" name="" navigability="" association-type="association" visibility="private" property-ref="68ace66489b84482a46e4219df2f682e" />
-      </relation>
-    </item>
-    <item id="fc84d661a07b4466b856c2244c344058" cid="UC010" type="use-case" name="find bookshelf" creation-date="04/18/2024 10:52:59" visibility="undefined">
+    <item id="26ff82b7d1914b528648d7bb07c751d2" cid="UC010" type="use-case" name="find bookshelf" creation-date="04/18/2024 10:52:59" visibility="undefined">
       <use-case>
         <stakeholders />
         <special-requirements />
         <issues />
       </use-case>
     </item>
-    <item id="02c8f53580874004968e1b9bc22c4614" cid="UC008" type="use-case" name="find book returned" creation-date="04/18/2024 10:50:54" visibility="undefined">
+    <item id="1de21f9fb03c4faea2722bdd257f791f" cid="UC007" type="use-case" name="create borrowed" creation-date="04/18/2024 10:50:31" visibility="undefined">
       <use-case>
         <stakeholders />
         <special-requirements />
@@ -332,140 +253,7 @@
         <issues />
       </use-case>
     </item>
-    <item id="885a3335345d49ccb534fd2faf2fdb6a" cid="UC009" type="use-case" name="find book unreturned" creation-date="04/18/2024 10:51:09" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="faa55b646ebf451bb33c15da38777cd1" cid="UC005" type="use-case" name="Edit bookshelf" creation-date="04/18/2024 10:49:03" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="079e3e7d1ce34f56b74e1efe2ab48df3" cid="UC009" type="use-case" name="find book unreturned" creation-date="04/18/2024 10:51:09" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="0b37684f4d5f46508f21a8675adfa6a9" cid="UC013" type="use-case" name="book information" creation-date="04/18/2024 11:00:44" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="4ce73747d441485698245f2fa816428f" cid="UC013" type="use-case" name="book information" creation-date="04/18/2024 11:00:44" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="5012d2304eaa4729b146f5a9569c495c" cid="UC002" type="use-case" name="find book" creation-date="04/18/2024 10:48:19" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="d03a1dc786cc45b193aa4bcc867cd261" cid="PROP062" type="property" owner="7b748fce326f40be8bcbf68141d481e2" creator="" creation-date="04/26/2024 14:10:41" visibility="private" />
-    <item id="9240671fd3754c85bfb4d7a1f4e63210" cid="UC002" type="use-case" name="find book" creation-date="04/18/2024 10:48:19" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="3d3b0d0bc08340acac2995062ef0591d" cid="REL001" type="relationship" creation-date="04/18/2024 10:52:16" to="43b6cad985d4453daf1bc4965b48e388" visibility="package">
-      <owned-items />
-      <relation from="82714c5be56a45d9a286fbcbafbe226f" to="43b6cad985d4453daf1bc4965b48e388" derived="false">
-        <start-role id="umlar-dd1fbfc3-476a-4e72-a82b-3bae2f095734" name="" navigability="" association-type="association" visibility="private" property-ref="634cb55ebc3f4b1bbbdef60cd72ea707" />
-        <end-role id="umlar-9a774001-2edd-4792-b8b8-41e2a0bb18de" name="" navigability="" association-type="association" visibility="private" property-ref="707de1adecee44bea19561deeec2902b" />
-      </relation>
-    </item>
-    <item id="8e62509be8884b658c304c430ec2ade5" cid="EX005" type="extend" creation-date="04/18/2024 10:59:06" from="74eeaf514bcc4cb0aa5b06a038690084" to="92b2efbdda4d48779c428347482bc8a6" visibility="package">
-      <stereotypes>
-        <stereotype name="extend" />
-      </stereotypes>
-      <stereotype-instances>
-        <stereotype id="ff71de7721ee47ef9d133472e22f5524_extend_c" type="extend" creation-date="04/18/2024 10:59:06" ref="" />
-      </stereotype-instances>
-      <extend extension-point="" condition="" />
-    </item>
-    <item id="d775153cad12459f89c3ea02ff091764" cid="UC011" type="use-case" name="find borrowed" creation-date="04/18/2024 10:58:44" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="52ae530c090c451b952315a7e36cdc95" cid="UC012" type="use-case" name="book details" creation-date="04/18/2024 10:59:38" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="1ebfab5bfdd0413e948e16ae9f373128" cid="UC003" type="use-case" name="create bookshelft" creation-date="04/18/2024 10:48:31" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="5bcd2406253c4ac9abd11ae213424ad0" cid="UC006" type="use-case" name="find book in bookshelf" creation-date="04/18/2024 10:49:20" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="df08f54db5aa4885a56ca6e22db1dd21" cid="REL003" type="relationship" creation-date="04/18/2024 10:53:08" from="4266240214e04d98b9f47fb9ead1cb00" to="9f0f0867149f427aaf65a6e71176f82f" visibility="package">
-      <owned-items />
-      <relation from="4266240214e04d98b9f47fb9ead1cb00" to="9f0f0867149f427aaf65a6e71176f82f" derived="false">
-        <start-role id="umlar-1016c95f-32c1-45c6-8e3a-af4243713292" name="" navigability="" association-type="association" visibility="private" property-ref="b21400d50cc14f0fbd93d0d6f06a93ab" />
-        <end-role id="umlar-1cceafa9-f0a0-4bf5-a339-84ad4c1f74da" name="" navigability="" association-type="association" visibility="private" property-ref="f5f7ff3ed09b42a29bba23b008879675" />
-      </relation>
-    </item>
-    <item id="7d6210b7215d4aaf8fdc667d30d9debe" cid="UC001" type="use-case" name="Login" creation-date="04/18/2024 10:48:09" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="67ea8d3328d74d98b0aa9a40ee49928f" cid="EX009" type="extend" creation-date="04/18/2024 11:08:32" from="9e2e1d2ac31d4d4b89dac45aba67dffc" to="1ebfab5bfdd0413e948e16ae9f373128" visibility="package">
-      <stereotypes>
-        <stereotype name="extend" />
-      </stereotypes>
-      <stereotype-instances>
-        <stereotype id="7c0c27da77ed4ac18cd27a1e301f75bc_extend_c" type="extend" creation-date="04/18/2024 11:08:32" ref="" />
-      </stereotype-instances>
-      <extend extension-point="" condition="" />
-    </item>
-    <item id="92b2efbdda4d48779c428347482bc8a6" cid="UC008" type="use-case" name="find book returned" creation-date="04/18/2024 10:50:54" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="5b64b341a85141cf97671795560a4584" cid="EX002" type="extend" creation-date="04/18/2024 10:57:39" from="26ff82b7d1914b528648d7bb07c751d2" to="153f3f19d67b4242b3c68db653e78f32" visibility="package">
-      <stereotypes>
-        <stereotype name="extend" />
-      </stereotypes>
-      <stereotype-instances>
-        <stereotype id="e59a389415804905b7b4129d90c7254e_extend_c" type="extend" creation-date="04/18/2024 10:57:39" ref="" />
-      </stereotype-instances>
-      <extend extension-point="" condition="" />
-    </item>
-    <item id="fa0e300f71ea44fdbd787a2f457e0736" cid="UC009" type="use-case" name="find book unreturned" creation-date="04/18/2024 10:51:09" visibility="undefined">
+    <item id="d3333f271e664b2193f00228788026c8" cid="UC007" type="use-case" name="create borrowed" creation-date="04/18/2024 10:50:31" visibility="undefined">
       <use-case>
         <stakeholders />
         <special-requirements />
@@ -481,7 +269,62 @@
       </stereotype-instances>
     </item>
     <item id="230f8573e090435a991d9ea4a0c76fc4" cid="PROP094" type="property" owner="616b695f931f4280b1a02daf2b332c8a" creator="" creation-date="04/28/2024 18:07:28" visibility="private" />
-    <item id="4266240214e04d98b9f47fb9ead1cb00" cid="AC001" type="actor" name="Student" creation-date="04/18/2024 10:47:53" visibility="undefined" />
+    <item id="f34503b0eec646b0965802b52a2b43ed" cid="UC008" type="use-case" name="find book returned" creation-date="04/18/2024 10:50:54" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="52ae530c090c451b952315a7e36cdc95" cid="UC012" type="use-case" name="book details" creation-date="04/18/2024 10:59:38" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="913a056d4f8b423fab49b4c2d2354f0d" cid="UC004" type="use-case" name="Delete bookshelf" creation-date="04/18/2024 10:48:53" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="396fd49f03bf4bb098d9c5228acc7c1e" cid="PROP096" type="property" owner="74835acebf8343b2871e3cf2c49d889d" creator="" creation-date="04/28/2024 18:08:01" visibility="private" />
+    <item id="1aa7f0b1e61643f690b127ac320b7b1a" cid="PROP092" type="property" owner="019a1571428f4f9da372e477f8c4830a" creator="" creation-date="04/26/2024 14:27:33" visibility="private" />
+    <item id="92b2efbdda4d48779c428347482bc8a6" cid="UC008" type="use-case" name="find book returned" creation-date="04/18/2024 10:50:54" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="d0467e328f4c4d7d8986703af7a62e1f" cid="UC011" type="use-case" name="find borrowed" creation-date="04/18/2024 10:58:44" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="ef0f92717b6a4cafa1cbbd0cd4ae8004" cid="PROP091" type="property" owner="019a1571428f4f9da372e477f8c4830a" creator="" creation-date="04/26/2024 14:27:33" visibility="private" />
+    <item id="5b64b341a85141cf97671795560a4584" cid="EX002" type="extend" creation-date="04/18/2024 10:57:39" from="26ff82b7d1914b528648d7bb07c751d2" to="153f3f19d67b4242b3c68db653e78f32" visibility="package">
+      <stereotypes>
+        <stereotype name="extend" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="e59a389415804905b7b4129d90c7254e_extend_c" type="extend" creation-date="04/18/2024 10:57:39" ref="" />
+      </stereotype-instances>
+      <extend extension-point="" condition="" />
+    </item>
+    <item id="7865c0c8e40d4d40a16c595517999c48" cid="EX005" type="extend" creation-date="04/18/2024 10:59:06" from="d0467e328f4c4d7d8986703af7a62e1f" to="b0d2b5f9d4e34bf183616940d0efff45" visibility="package">
+      <stereotypes>
+        <stereotype name="extend" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="ff71de7721ee47ef9d133472e22f5524_extend_c" type="extend" creation-date="04/18/2024 10:59:06" ref="" />
+      </stereotype-instances>
+      <extend extension-point="" condition="" />
+    </item>
     <item id="b4357a4973374358818ac26568d33965" cid="EX006" type="extend" creation-date="04/18/2024 11:01:05" from="52ae530c090c451b952315a7e36cdc95" to="1e82bb57e065470ca6564817ecc46ca9" visibility="package">
       <stereotypes>
         <stereotype name="extend" />
@@ -491,41 +334,152 @@
       </stereotype-instances>
       <extend extension-point="" condition="" />
     </item>
-    <item id="26ff82b7d1914b528648d7bb07c751d2" cid="UC010" type="use-case" name="find bookshelf" creation-date="04/18/2024 10:52:59" visibility="undefined">
+    <item id="fc84d661a07b4466b856c2244c344058" cid="UC010" type="use-case" name="find bookshelf" creation-date="04/18/2024 10:52:59" visibility="undefined">
       <use-case>
         <stakeholders />
         <special-requirements />
         <issues />
       </use-case>
     </item>
-    <item id="ffeb8d849b3245c580825a122f0f8ebb" cid="UC012" type="use-case" name="book details" creation-date="04/18/2024 10:59:38" visibility="undefined">
+    <item id="833ece9953a748c4bbce675478b2134e" cid="PROP116" type="property" name="name" owner="5342812df34b4204b4167d257b90c53d" creator="" creation-date="05/13/2024 15:51:37" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+    </item>
+    <item id="c5ab13b285c3400eb4b09fee3f4a1947" cid="UC013" type="use-case" name="book information" creation-date="04/18/2024 11:00:44" visibility="undefined">
       <use-case>
         <stakeholders />
         <special-requirements />
         <issues />
       </use-case>
     </item>
-    <item id="edfae4be2a9f439db85e38e46b54d127" cid="UC003" type="use-case" name="create bookshelft" creation-date="04/18/2024 10:48:31" visibility="undefined">
+    <item id="19f33144bedc406c9339c26fda3400b7" cid="UC001" type="use-case" name="Login" creation-date="04/18/2024 10:48:09" visibility="undefined">
       <use-case>
         <stakeholders />
         <special-requirements />
         <issues />
       </use-case>
     </item>
-    <item id="a4c4310c0aec496f9b705da348a84883" cid="REL004" type="relationship" creation-date="04/18/2024 10:58:19" from="0510f12ed6a744cc97b625592898616f" to="5012d2304eaa4729b146f5a9569c495c" visibility="package">
-      <owned-items />
-      <relation from="0510f12ed6a744cc97b625592898616f" to="5012d2304eaa4729b146f5a9569c495c" derived="false">
-        <start-role id="umlar-05203a2b-ce1f-4218-8d2d-26600e1e8eb3" name="" navigability="" association-type="association" visibility="private" property-ref="68073b8f27fe493bb996f9e5d9e65e36" />
-        <end-role id="umlar-5a5d4d82-ede5-44ce-a8f2-96f633e9f7c4" name="" navigability="" association-type="association" visibility="private" property-ref="47220ece8f47466a9e753c2c3fd48201" />
-      </relation>
+    <item id="71c139098f0f42a8b6821e92dce62499" cid="PROP078" type="property" owner="eed5a01078d148329c66fa12ba7e39d5" creator="" creation-date="04/26/2024 14:22:28" visibility="private" />
+    <item id="9e2e1d2ac31d4d4b89dac45aba67dffc" cid="UC012" type="use-case" name="book details" creation-date="04/18/2024 10:59:38" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
     </item>
-    <item id="5d30bce138214fbba9f38d6258299397" cid="PROP081" type="property" owner="401a8738e80b4944897d309051e86e3f" creator="" creation-date="04/26/2024 14:23:06" visibility="private" />
-    <item id="1bcc112f63bf4847a15fcf74d8df0052" cid="REL003" type="relationship" creation-date="04/18/2024 10:53:08" from="0510f12ed6a744cc97b625592898616f" to="41183f00d445456db4036d3faa59fd9a" visibility="package">
-      <owned-items />
-      <relation from="0510f12ed6a744cc97b625592898616f" to="41183f00d445456db4036d3faa59fd9a" derived="false">
-        <start-role id="umlar-cdef280c-0a95-4e93-8c68-ce747a3ccc8e" name="" navigability="" association-type="association" visibility="private" property-ref="43c7acce0da74a9d86a8d7afadaded5c" />
-        <end-role id="umlar-c9460045-dcdf-4f4f-a34b-80d781de96f1" name="" navigability="" association-type="association" visibility="private" property-ref="2166e8f1c12046c09475a1fee9622e63" />
-      </relation>
+    <item id="a2db49fbe3314b14a86769bd37698eaa" cid="EX002" type="extend" creation-date="04/18/2024 10:57:39" from="9f0f0867149f427aaf65a6e71176f82f" to="913a056d4f8b423fab49b4c2d2354f0d" visibility="package">
+      <stereotypes>
+        <stereotype name="extend" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="e59a389415804905b7b4129d90c7254e_extend_c" type="extend" creation-date="04/18/2024 10:57:39" ref="" />
+      </stereotype-instances>
+      <extend extension-point="" condition="" />
+    </item>
+    <item id="8609dc4790434a859c1c56adc658fc47" cid="PROP103" type="property" name="name" owner="48d1e6fc87344a55b8911ab0fb79d715" creator="" creation-date="05/13/2024 15:49:36" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+    </item>
+    <item id="153f3f19d67b4242b3c68db653e78f32" cid="UC004" type="use-case" name="delete bookshelf" creation-date="04/18/2024 10:48:53" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="9240671fd3754c85bfb4d7a1f4e63210" cid="UC002" type="use-case" name="find book" creation-date="04/18/2024 10:48:19" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="fa0e300f71ea44fdbd787a2f457e0736" cid="UC009" type="use-case" name="find book unreturned" creation-date="04/18/2024 10:51:09" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="858fd3bfc58843c8a5a00e271671444e" cid="EX006" type="extend" creation-date="04/18/2024 11:01:05" from="9e2e1d2ac31d4d4b89dac45aba67dffc" to="58b64938ade74ac4a4a75e00fbd2c015" visibility="package">
+      <stereotypes>
+        <stereotype name="extend" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="db2dc1f93c5d4352b4fd278e303816cf_extend_c" type="extend" creation-date="04/18/2024 11:01:05" ref="" />
+      </stereotype-instances>
+      <extend extension-point="" condition="" />
+    </item>
+    <item id="38bd762649a34334bc540f7eaf1ee46a" cid="UC011" type="use-case" name="find borrowed" creation-date="04/18/2024 10:58:44" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="2c90d817af844acf94fbec3478cacfff" cid="PROP102" type="property" name="isAdmin" owner="48d1e6fc87344a55b8911ab0fb79d715" creator="" creation-date="05/13/2024 15:49:28" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
     </item>
     <item id="43b6cad985d4453daf1bc4965b48e388" cid="UC001" type="use-case" name="Login" creation-date="04/18/2024 10:48:09" visibility="undefined">
       <use-case>
@@ -534,8 +488,140 @@
         <issues />
       </use-case>
     </item>
+    <item id="7d6210b7215d4aaf8fdc667d30d9debe" cid="UC001" type="use-case" name="Login" creation-date="04/18/2024 10:48:09" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="4278d0ce81a7401b8f50d3dc96d1e020" cid="UC012" type="use-case" name="book details" creation-date="04/18/2024 10:59:38" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="0510f12ed6a744cc97b625592898616f" cid="AC001" type="actor" name="Student" creation-date="04/18/2024 10:47:53" visibility="undefined" />
+    <item id="e63d437c760a4e079f1827d01f34b96c" cid="UC013" type="use-case" name="book information" creation-date="04/18/2024 11:00:44" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="7d615c44dc444d25b8313ca5adda5b5c" cid="PROP067" type="property" owner="c29589865fd54d3a8f407d9ad0bb301a" creator="" creation-date="04/26/2024 14:13:10" visibility="private" />
+    <item id="6b616b7885664e5bba5c9734ae9461dc" cid="UC005" type="use-case" name="edit bookshelf" creation-date="04/18/2024 10:49:03" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="423fbdd88b3f471c9a672ec9ee88099e" cid="PROP093" type="property" owner="616b695f931f4280b1a02daf2b332c8a" creator="" creation-date="04/28/2024 18:07:28" visibility="private" />
+    <item id="8e62509be8884b658c304c430ec2ade5" cid="EX005" type="extend" creation-date="04/18/2024 10:59:06" from="74eeaf514bcc4cb0aa5b06a038690084" to="92b2efbdda4d48779c428347482bc8a6" visibility="package">
+      <stereotypes>
+        <stereotype name="extend" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="ff71de7721ee47ef9d133472e22f5524_extend_c" type="extend" creation-date="04/18/2024 10:59:06" ref="" />
+      </stereotype-instances>
+      <extend extension-point="" condition="" />
+    </item>
+    <item id="b0d2b5f9d4e34bf183616940d0efff45" cid="UC008" type="use-case" name="find book returned" creation-date="04/18/2024 10:50:54" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="de60c82f78544eebb58661c67ef8392c" cid="AC001" type="actor" name="User" creation-date="04/18/2024 10:47:53" visibility="undefined" />
+    <item id="df08f54db5aa4885a56ca6e22db1dd21" cid="REL003" type="relationship" creation-date="04/18/2024 10:53:08" from="4266240214e04d98b9f47fb9ead1cb00" to="9f0f0867149f427aaf65a6e71176f82f" visibility="package">
+      <owned-items />
+      <relation from="4266240214e04d98b9f47fb9ead1cb00" to="9f0f0867149f427aaf65a6e71176f82f" derived="false">
+        <start-role id="umlar-8574cade-a93a-46e2-bb32-d466c3c4e824" name="" navigability="" association-type="association" visibility="private" property-ref="b21400d50cc14f0fbd93d0d6f06a93ab" />
+        <end-role id="umlar-8fb1afe6-5739-4bf8-a3f3-10f80f5999a0" name="" navigability="" association-type="association" visibility="private" property-ref="f5f7ff3ed09b42a29bba23b008879675" />
+      </relation>
+    </item>
+    <item id="cd385ea4457146c2816a95cb6d7e8e40" cid="EX008" type="extend" creation-date="04/18/2024 11:01:18" from="21d67c625a4a419f8481e31873a8eb10" to="9e2e1d2ac31d4d4b89dac45aba67dffc" visibility="package">
+      <stereotypes>
+        <stereotype name="extend" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="f66043428431461094fbee96cad28e30_extend_c" type="extend" creation-date="04/18/2024 11:01:18" ref="" />
+      </stereotype-instances>
+      <extend extension-point="" condition="" />
+    </item>
+    <item id="9605d449347f4364aad6c600abbcb1a5" cid="REL005" type="relationship" creation-date="04/18/2024 10:58:53" from="623f6f4fb9ca4d95841f1646cc651620" to="74eeaf514bcc4cb0aa5b06a038690084" visibility="package">
+      <owned-items />
+      <relation from="623f6f4fb9ca4d95841f1646cc651620" to="74eeaf514bcc4cb0aa5b06a038690084" derived="false">
+        <start-role id="umlar-f6f209c0-cdba-493a-8405-d4bb2cdf73f1" name="" navigability="" association-type="association" visibility="private" property-ref="3270b768fc43458f83ae2fb013834c83" />
+        <end-role id="umlar-98af71fa-00fe-4629-9348-edcbeb9032f4" name="" navigability="" association-type="association" visibility="private" property-ref="f987860635dc474e82c701b62697f77a" />
+      </relation>
+    </item>
+    <item id="4266240214e04d98b9f47fb9ead1cb00" cid="AC001" type="actor" name="Student" creation-date="04/18/2024 10:47:53" visibility="undefined" />
+    <item id="34c77bb322cb436ea3da8ae3187d2474" cid="UC002" type="use-case" name="find book" creation-date="04/18/2024 10:48:19" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="21d2ad44ec9f4ceda3c708d5295102a5" cid="REL004" type="relationship" creation-date="04/18/2024 10:58:19" from="de60c82f78544eebb58661c67ef8392c" to="21d67c625a4a419f8481e31873a8eb10" visibility="package">
+      <owned-items />
+      <relation from="de60c82f78544eebb58661c67ef8392c" to="21d67c625a4a419f8481e31873a8eb10" derived="false">
+        <start-role id="umlar-2698d3c8-d63d-4871-a1f6-6caebfa28284" name="" navigability="" association-type="association" visibility="private" property-ref="6864e595ce314068b08bca22203929a7" />
+        <end-role id="umlar-1c3a67b7-aba6-45ed-a35b-22a715e0684c" name="" navigability="" association-type="association" visibility="private" property-ref="68ace66489b84482a46e4219df2f682e" />
+      </relation>
+    </item>
+    <item id="b65031185425481887e884a2caba6ce7" cid="UC003" type="use-case" name="Add book to a bookshelft" creation-date="04/18/2024 10:48:31" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
     <item id="d8ddb5e6439f48f08edaedcfc429d10b" cid="PROP056" type="property" owner="06d17b6eef624991bd3a9a741f06645b" creator="" creation-date="04/26/2024 14:10:26" visibility="private" />
-    <item id="913a056d4f8b423fab49b4c2d2354f0d" cid="UC004" type="use-case" name="Delete bookshelf" creation-date="04/18/2024 10:48:53" visibility="undefined">
+    <item id="c0ae01cf3c834a6286eb5ce56bf6d5d6" cid="PROP122" type="property" name="published" owner="5342812df34b4204b4167d257b90c53d" creator="" creation-date="05/13/2024 15:52:07" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+    </item>
+    <item id="71b984e40161497e9e8e75215e0225ef" cid="UC006" type="use-case" name="find book in bookshelf" creation-date="04/18/2024 10:49:20" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="0fd98e4f0b194cf9b9430499a2999699" cid="PROP090" type="property" owner="3affd2b49a7842eb982cdf27d7dd070a" creator="" creation-date="04/26/2024 14:25:33" visibility="private" />
+    <item id="650448b61dbc4df8b46d3c03e24f29b7" cid="REL005" type="relationship" creation-date="04/18/2024 10:58:53" from="de60c82f78544eebb58661c67ef8392c" to="d0467e328f4c4d7d8986703af7a62e1f" visibility="package">
+      <owned-items />
+      <relation from="de60c82f78544eebb58661c67ef8392c" to="d0467e328f4c4d7d8986703af7a62e1f" derived="false">
+        <start-role id="umlar-506155fb-1450-48f4-9d48-b5bfc37fe26a" name="" navigability="" association-type="association" visibility="private" property-ref="a602609e5dc947229a16bce927511184" />
+        <end-role id="umlar-d8928355-f573-4692-942f-efcca335325d" name="" navigability="" association-type="association" visibility="private" property-ref="e708593d520141dea927388c966ac531" />
+      </relation>
+    </item>
+    <item id="1e82bb57e065470ca6564817ecc46ca9" cid="UC007" type="use-case" name="create borrowed" creation-date="04/18/2024 10:50:31" visibility="undefined">
       <use-case>
         <stakeholders />
         <special-requirements />
@@ -549,65 +635,58 @@
         <issues />
       </use-case>
     </item>
-    <item id="7d615c44dc444d25b8313ca5adda5b5c" cid="PROP067" type="property" owner="c29589865fd54d3a8f407d9ad0bb301a" creator="" creation-date="04/26/2024 14:13:10" visibility="private" />
-    <item id="f34503b0eec646b0965802b52a2b43ed" cid="UC008" type="use-case" name="find book returned" creation-date="04/18/2024 10:50:54" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
+    <item id="a4c4310c0aec496f9b705da348a84883" cid="REL004" type="relationship" creation-date="04/18/2024 10:58:19" from="0510f12ed6a744cc97b625592898616f" to="5012d2304eaa4729b146f5a9569c495c" visibility="package">
+      <owned-items />
+      <relation from="0510f12ed6a744cc97b625592898616f" to="5012d2304eaa4729b146f5a9569c495c" derived="false">
+        <start-role id="umlar-459c719c-5c4b-4693-a902-5c6784ae0434" name="" navigability="" association-type="association" visibility="private" property-ref="68073b8f27fe493bb996f9e5d9e65e36" />
+        <end-role id="umlar-aa0d703e-a064-4a3e-9850-fd292a963f7b" name="" navigability="" association-type="association" visibility="private" property-ref="47220ece8f47466a9e753c2c3fd48201" />
+      </relation>
     </item>
-    <item id="a563e61b90244d4986baf0d49d1540db" cid="EX001" type="extend" creation-date="04/18/2024 10:56:57" from="9f0f0867149f427aaf65a6e71176f82f" to="faa55b646ebf451bb33c15da38777cd1" visibility="package">
+    <item id="0a4ad63228b44a4288e37a7ebc9df68d" cid="PROP055" type="property" owner="06d17b6eef624991bd3a9a741f06645b" creator="" creation-date="04/26/2024 14:10:26" visibility="private" />
+    <item id="d03a1dc786cc45b193aa4bcc867cd261" cid="PROP062" type="property" owner="7b748fce326f40be8bcbf68141d481e2" creator="" creation-date="04/26/2024 14:10:41" visibility="private" />
+    <item id="0cb80dd64b9f4ae2bf74db424db2d6f4" cid="PROP077" type="property" owner="eed5a01078d148329c66fa12ba7e39d5" creator="" creation-date="04/26/2024 14:22:28" visibility="private" />
+    <item id="623f6f4fb9ca4d95841f1646cc651620" cid="AC001" type="actor" name="Student" creation-date="04/18/2024 10:47:53" visibility="undefined" />
+    <item id="5a2a0c8f981c4166819fd16963711bd1" cid="EX008" type="extend" creation-date="04/18/2024 11:01:18" from="5012d2304eaa4729b146f5a9569c495c" to="52ae530c090c451b952315a7e36cdc95" visibility="package">
       <stereotypes>
         <stereotype name="extend" />
       </stereotypes>
       <stereotype-instances>
-        <stereotype id="a81f15cc1cf54688a32b01a233ae283e_extend_c" type="extend" creation-date="04/18/2024 10:56:57" ref="" />
+        <stereotype id="f66043428431461094fbee96cad28e30_extend_c" type="extend" creation-date="04/18/2024 11:01:18" ref="" />
       </stereotype-instances>
       <extend extension-point="" condition="" />
     </item>
-    <item id="623f6f4fb9ca4d95841f1646cc651620" cid="AC001" type="actor" name="Student" creation-date="04/18/2024 10:47:53" visibility="undefined" />
-    <item id="5692d69c2a1c426bb1d94692ad67b5d2" cid="REL003" type="relationship" creation-date="04/18/2024 10:53:08" from="de60c82f78544eebb58661c67ef8392c" to="26ff82b7d1914b528648d7bb07c751d2" visibility="package">
-      <owned-items />
-      <relation from="de60c82f78544eebb58661c67ef8392c" to="26ff82b7d1914b528648d7bb07c751d2" derived="false">
-        <start-role id="umlar-d42b9c28-57ba-419b-a838-308653007d1c" name="" navigability="" association-type="association" visibility="private" property-ref="0671dfcd20774ef39c29de985f76e14e" />
-        <end-role id="umlar-1906a768-3714-4c2e-8293-d86bbbddb5b5" name="" navigability="" association-type="association" visibility="private" property-ref="6b1d5df13f0c4714885776382390d777" />
-      </relation>
-    </item>
-    <item id="9605d449347f4364aad6c600abbcb1a5" cid="REL005" type="relationship" creation-date="04/18/2024 10:58:53" from="623f6f4fb9ca4d95841f1646cc651620" to="74eeaf514bcc4cb0aa5b06a038690084" visibility="package">
-      <owned-items />
-      <relation from="623f6f4fb9ca4d95841f1646cc651620" to="74eeaf514bcc4cb0aa5b06a038690084" derived="false">
-        <start-role id="umlar-008941b9-53cf-459b-a255-8f610342a865" name="" navigability="" association-type="association" visibility="private" property-ref="3270b768fc43458f83ae2fb013834c83" />
-        <end-role id="umlar-823afc11-b4f2-4820-affb-7c8f7662e47f" name="" navigability="" association-type="association" visibility="private" property-ref="f987860635dc474e82c701b62697f77a" />
-      </relation>
-    </item>
-    <item id="dc8044527b094ac19584b4c4688e9f3a" cid="PROP068" type="property" owner="c29589865fd54d3a8f407d9ad0bb301a" creator="" creation-date="04/26/2024 14:13:10" visibility="private" />
-    <item id="21d67c625a4a419f8481e31873a8eb10" cid="UC002" type="use-case" name="find book" creation-date="04/18/2024 10:48:19" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="223db9f2d71e47ee9ab049e46bf8ee2e" cid="UC004" type="use-case" name="delete bookshelf" creation-date="04/18/2024 10:48:53" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="ea199ab761c74cbfad3ffaff4640234b" cid="PROP057" type="property" owner="0e3d3dbf18614eff863f7218f23e9e7d" creator="" creation-date="04/26/2024 14:10:31" visibility="private" />
-    <item id="0fd98e4f0b194cf9b9430499a2999699" cid="PROP090" type="property" owner="3affd2b49a7842eb982cdf27d7dd070a" creator="" creation-date="04/26/2024 14:25:33" visibility="private" />
-    <item id="21bd6bbbfcd74b51b890e52010448ebc" cid="PROP095" type="property" owner="74835acebf8343b2871e3cf2c49d889d" creator="" creation-date="04/28/2024 18:08:01" visibility="private" />
-    <item id="8ddf1176066e4ae593b845deaac4b904" cid="PROP061" type="property" owner="7b748fce326f40be8bcbf68141d481e2" creator="" creation-date="04/26/2024 14:10:41" visibility="private" />
     <item id="2ce6ce26ed034ada8d7e38bdda013658" cid="PROP069" type="property" owner="bc98fd9b56774f30a70ef76c73fc5099" creator="" creation-date="04/26/2024 14:13:22" visibility="private" />
-    <item id="19f33144bedc406c9339c26fda3400b7" cid="UC001" type="use-case" name="Login" creation-date="04/18/2024 10:48:09" visibility="undefined">
+    <item id="5012d2304eaa4729b146f5a9569c495c" cid="UC002" type="use-case" name="find book" creation-date="04/18/2024 10:48:19" visibility="undefined">
       <use-case>
         <stakeholders />
         <special-requirements />
         <issues />
       </use-case>
     </item>
+    <item id="d3bb1e3d42de4ac686af5a54c1ce4847" cid="EX007" type="extend" creation-date="04/18/2024 11:01:09" from="52ae530c090c451b952315a7e36cdc95" to="0b37684f4d5f46508f21a8675adfa6a9" visibility="package">
+      <stereotypes>
+        <stereotype name="extend" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="cc0106997fc742b5bbe350b7f09ebf5f_extend_c" type="extend" creation-date="04/18/2024 11:01:09" ref="" />
+      </stereotype-instances>
+      <extend extension-point="" condition="" />
+    </item>
+    <item id="1bcc112f63bf4847a15fcf74d8df0052" cid="REL003" type="relationship" creation-date="04/18/2024 10:53:08" from="0510f12ed6a744cc97b625592898616f" to="41183f00d445456db4036d3faa59fd9a" visibility="package">
+      <owned-items />
+      <relation from="0510f12ed6a744cc97b625592898616f" to="41183f00d445456db4036d3faa59fd9a" derived="false">
+        <start-role id="umlar-7677ca1d-3acf-4365-aeb7-bbe1f1041e0a" name="" navigability="" association-type="association" visibility="private" property-ref="43c7acce0da74a9d86a8d7afadaded5c" />
+        <end-role id="umlar-d7357476-a3ea-430e-ba64-b61eb24858a4" name="" navigability="" association-type="association" visibility="private" property-ref="2166e8f1c12046c09475a1fee9622e63" />
+      </relation>
+    </item>
+    <item id="0b37684f4d5f46508f21a8675adfa6a9" cid="UC013" type="use-case" name="book information" creation-date="04/18/2024 11:00:44" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="8e0ad3ba73f44b94a9536e726183f662" cid="PROP082" type="property" owner="401a8738e80b4944897d309051e86e3f" creator="" creation-date="04/26/2024 14:23:06" visibility="private" />
     <item id="be94aa734b224b21b2862e451cd4ea0d" cid="INC001" type="include" creation-date="04/18/2024 10:56:35" from="1ebfab5bfdd0413e948e16ae9f373128" to="26ff82b7d1914b528648d7bb07c751d2" visibility="package">
       <stereotypes>
         <stereotype name="include" />
@@ -616,94 +695,46 @@
         <stereotype id="7e6ecfbdf75644ac8f69105f8431acdc_include_c" type="include" creation-date="04/18/2024 10:56:35" ref="" />
       </stereotype-instances>
     </item>
-    <item id="47e56e9c90ea4c12a48950c93a895c76" cid="EX004" type="extend" creation-date="04/18/2024 10:59:02" from="74eeaf514bcc4cb0aa5b06a038690084" to="fa0e300f71ea44fdbd787a2f457e0736" visibility="package">
-      <stereotypes>
-        <stereotype name="extend" />
-      </stereotypes>
-      <stereotype-instances>
-        <stereotype id="a60ba92a6b9c4b2b8516ee7276600e28_extend_c" type="extend" creation-date="04/18/2024 10:59:02" ref="" />
-      </stereotype-instances>
-      <extend extension-point="" condition="" />
+    <item id="3d3b0d0bc08340acac2995062ef0591d" cid="REL001" type="relationship" creation-date="04/18/2024 10:52:16" to="43b6cad985d4453daf1bc4965b48e388" visibility="package">
+      <owned-items />
+      <relation from="82714c5be56a45d9a286fbcbafbe226f" to="43b6cad985d4453daf1bc4965b48e388" derived="false">
+        <start-role id="umlar-74485fd8-e59c-46ec-8430-cca6d1038582" name="" navigability="" association-type="association" visibility="private" property-ref="634cb55ebc3f4b1bbbdef60cd72ea707" />
+        <end-role id="umlar-8e819586-b5a1-45d5-a31f-370b93b7e0ee" name="" navigability="" association-type="association" visibility="private" property-ref="707de1adecee44bea19561deeec2902b" />
+      </relation>
     </item>
-    <item id="d0467e328f4c4d7d8986703af7a62e1f" cid="UC011" type="use-case" name="find borrowed" creation-date="04/18/2024 10:58:44" visibility="undefined">
+    <item id="e0543cda51bc48d898155ee04ba525d4" cid="PROP101" type="property" name="password" owner="48d1e6fc87344a55b8911ab0fb79d715" creator="" creation-date="05/13/2024 15:49:24" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+    </item>
+    <item id="8ddf1176066e4ae593b845deaac4b904" cid="PROP061" type="property" owner="7b748fce326f40be8bcbf68141d481e2" creator="" creation-date="04/26/2024 14:10:41" visibility="private" />
+    <item id="74eeaf514bcc4cb0aa5b06a038690084" cid="UC011" type="use-case" name="find borrowed" creation-date="04/18/2024 10:58:44" visibility="undefined">
       <use-case>
         <stakeholders />
         <special-requirements />
         <issues />
       </use-case>
     </item>
-    <item id="ef0f92717b6a4cafa1cbbd0cd4ae8004" cid="PROP091" type="property" owner="019a1571428f4f9da372e477f8c4830a" creator="" creation-date="04/26/2024 14:27:33" visibility="private" />
-    <item id="a2db49fbe3314b14a86769bd37698eaa" cid="EX002" type="extend" creation-date="04/18/2024 10:57:39" from="9f0f0867149f427aaf65a6e71176f82f" to="913a056d4f8b423fab49b4c2d2354f0d" visibility="package">
-      <stereotypes>
-        <stereotype name="extend" />
-      </stereotypes>
-      <stereotype-instances>
-        <stereotype id="e59a389415804905b7b4129d90c7254e_extend_c" type="extend" creation-date="04/18/2024 10:57:39" ref="" />
-      </stereotype-instances>
-      <extend extension-point="" condition="" />
-    </item>
-    <item id="448d8863521a41a48fc8e8c3e78abe00" cid="EX003" type="extend" creation-date="04/18/2024 10:57:50" from="9f0f0867149f427aaf65a6e71176f82f" to="9410bdeecaee4d7f9069afd2a174fe4d" visibility="package">
-      <stereotypes>
-        <stereotype name="extend" />
-      </stereotypes>
-      <stereotype-instances>
-        <stereotype id="bf9281502c2c4c6aaac6097ce2247d7d_extend_c" type="extend" creation-date="04/18/2024 10:57:50" ref="" />
-      </stereotype-instances>
-      <extend extension-point="" condition="" />
-    </item>
-    <item id="06307ac1152b43868e7827043e44a390" cid="UC005" type="use-case" name="edit bookshelf" creation-date="04/18/2024 10:49:03" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="71b984e40161497e9e8e75215e0225ef" cid="UC006" type="use-case" name="find book in bookshelf" creation-date="04/18/2024 10:49:20" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="1aa7f0b1e61643f690b127ac320b7b1a" cid="PROP092" type="property" owner="019a1571428f4f9da372e477f8c4830a" creator="" creation-date="04/26/2024 14:27:33" visibility="private" />
-    <item id="58b64938ade74ac4a4a75e00fbd2c015" cid="UC007" type="use-case" name="create borrowed" creation-date="04/18/2024 10:50:31" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="38bd762649a34334bc540f7eaf1ee46a" cid="UC011" type="use-case" name="find borrowed" creation-date="04/18/2024 10:58:44" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="0510f12ed6a744cc97b625592898616f" cid="AC001" type="actor" name="Student" creation-date="04/18/2024 10:47:53" visibility="undefined" />
-    <item id="396fd49f03bf4bb098d9c5228acc7c1e" cid="PROP096" type="property" owner="74835acebf8343b2871e3cf2c49d889d" creator="" creation-date="04/28/2024 18:08:01" visibility="private" />
-    <item id="5905374d6066496f8c3b29e4819a241a" cid="UC005" type="use-case" name="edit bookshelf" creation-date="04/18/2024 10:49:03" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="8367107bd2a04036a145850107e97244" cid="UC004" type="use-case" name="delete bookshelf" creation-date="04/18/2024 10:48:53" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="eb095cdbb7af40f2acbee8157e2033d9" cid="UC001" type="use-case" name="Login" creation-date="04/18/2024 10:48:09" visibility="undefined">
-      <use-case>
-        <stakeholders />
-        <special-requirements />
-        <issues />
-      </use-case>
-    </item>
-    <item id="9e2e1d2ac31d4d4b89dac45aba67dffc" cid="UC012" type="use-case" name="book details" creation-date="04/18/2024 10:59:38" visibility="undefined">
+    <item id="9410bdeecaee4d7f9069afd2a174fe4d" cid="UC006" type="use-case" name="Find book in bookshelf" creation-date="04/18/2024 10:49:20" visibility="undefined">
       <use-case>
         <stakeholders />
         <special-requirements />
@@ -719,17 +750,15 @@
       </stereotype-instances>
       <extend extension-point="" condition="" />
     </item>
-    <item id="8e0ad3ba73f44b94a9536e726183f662" cid="PROP082" type="property" owner="401a8738e80b4944897d309051e86e3f" creator="" creation-date="04/26/2024 14:23:06" visibility="private" />
-    <item id="858fd3bfc58843c8a5a00e271671444e" cid="EX006" type="extend" creation-date="04/18/2024 11:01:05" from="9e2e1d2ac31d4d4b89dac45aba67dffc" to="58b64938ade74ac4a4a75e00fbd2c015" visibility="package">
-      <stereotypes>
-        <stereotype name="extend" />
-      </stereotypes>
-      <stereotype-instances>
-        <stereotype id="db2dc1f93c5d4352b4fd278e303816cf_extend_c" type="extend" creation-date="04/18/2024 11:01:05" ref="" />
-      </stereotype-instances>
-      <extend extension-point="" condition="" />
+    <item id="ea199ab761c74cbfad3ffaff4640234b" cid="PROP057" type="property" owner="0e3d3dbf18614eff863f7218f23e9e7d" creator="" creation-date="04/26/2024 14:10:31" visibility="private" />
+    <item id="5bcd2406253c4ac9abd11ae213424ad0" cid="UC006" type="use-case" name="find book in bookshelf" creation-date="04/18/2024 10:49:20" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
     </item>
-    <item id="6dfe6d3e241e4a03ac0bde7a47dcd1be" cid="EX001" type="extend" creation-date="04/18/2024 10:56:57" from="26ff82b7d1914b528648d7bb07c751d2" to="06307ac1152b43868e7827043e44a390" visibility="package">
+    <item id="a563e61b90244d4986baf0d49d1540db" cid="EX001" type="extend" creation-date="04/18/2024 10:56:57" from="9f0f0867149f427aaf65a6e71176f82f" to="faa55b646ebf451bb33c15da38777cd1" visibility="package">
       <stereotypes>
         <stereotype name="extend" />
       </stereotypes>
@@ -738,23 +767,123 @@
       </stereotype-instances>
       <extend extension-point="" condition="" />
     </item>
-    <item id="d3bb1e3d42de4ac686af5a54c1ce4847" cid="EX007" type="extend" creation-date="04/18/2024 11:01:09" from="52ae530c090c451b952315a7e36cdc95" to="0b37684f4d5f46508f21a8675adfa6a9" visibility="package">
+    <item id="2379ff5b98d348f688e1768d2e577e28" cid="EX003" type="extend" creation-date="04/18/2024 10:57:50" from="26ff82b7d1914b528648d7bb07c751d2" to="5bcd2406253c4ac9abd11ae213424ad0" visibility="package">
       <stereotypes>
         <stereotype name="extend" />
       </stereotypes>
       <stereotype-instances>
-        <stereotype id="cc0106997fc742b5bbe350b7f09ebf5f_extend_c" type="extend" creation-date="04/18/2024 11:01:09" ref="" />
+        <stereotype id="bf9281502c2c4c6aaac6097ce2247d7d_extend_c" type="extend" creation-date="04/18/2024 10:57:50" ref="" />
       </stereotype-instances>
       <extend extension-point="" condition="" />
     </item>
-    <item id="cd385ea4457146c2816a95cb6d7e8e40" cid="EX008" type="extend" creation-date="04/18/2024 11:01:18" from="21d67c625a4a419f8481e31873a8eb10" to="9e2e1d2ac31d4d4b89dac45aba67dffc" visibility="package">
+    <item id="079e3e7d1ce34f56b74e1efe2ab48df3" cid="UC009" type="use-case" name="find book unreturned" creation-date="04/18/2024 10:51:09" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="e9355bebd5cd44568ea91ad5f32dba35" cid="PROP089" type="property" owner="3affd2b49a7842eb982cdf27d7dd070a" creator="" creation-date="04/26/2024 14:25:33" visibility="private" />
+    <item id="53913ae492d94e578b7350d8a046b11d" cid="PROP123" type="property" name="publication" owner="5342812df34b4204b4167d257b90c53d" creator="" creation-date="05/13/2024 15:52:13" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+    </item>
+    <item id="06307ac1152b43868e7827043e44a390" cid="UC005" type="use-case" name="edit bookshelf" creation-date="04/18/2024 10:49:03" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="edfae4be2a9f439db85e38e46b54d127" cid="UC003" type="use-case" name="create bookshelft" creation-date="04/18/2024 10:48:31" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="c2238490712d432aa881939e2db66a85" cid="PROP117" type="property" name="description" owner="5342812df34b4204b4167d257b90c53d" creator="" creation-date="05/13/2024 15:51:41" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+    </item>
+    <item id="223db9f2d71e47ee9ab049e46bf8ee2e" cid="UC004" type="use-case" name="delete bookshelf" creation-date="04/18/2024 10:48:53" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="5905374d6066496f8c3b29e4819a241a" cid="UC005" type="use-case" name="edit bookshelf" creation-date="04/18/2024 10:49:03" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="d55500cbe7054d3e97dcebb7b20f9be0" cid="EX009" type="extend" creation-date="04/18/2024 11:08:32" from="52ae530c090c451b952315a7e36cdc95" to="b65031185425481887e884a2caba6ce7" visibility="package">
       <stereotypes>
         <stereotype name="extend" />
       </stereotypes>
       <stereotype-instances>
-        <stereotype id="f66043428431461094fbee96cad28e30_extend_c" type="extend" creation-date="04/18/2024 11:01:18" ref="" />
+        <stereotype id="7c0c27da77ed4ac18cd27a1e301f75bc_extend_c" type="extend" creation-date="04/18/2024 11:08:32" ref="" />
       </stereotype-instances>
       <extend extension-point="" condition="" />
+    </item>
+    <item id="448d8863521a41a48fc8e8c3e78abe00" cid="EX003" type="extend" creation-date="04/18/2024 10:57:50" from="9f0f0867149f427aaf65a6e71176f82f" to="9410bdeecaee4d7f9069afd2a174fe4d" visibility="package">
+      <stereotypes>
+        <stereotype name="extend" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="bf9281502c2c4c6aaac6097ce2247d7d_extend_c" type="extend" creation-date="04/18/2024 10:57:50" ref="" />
+      </stereotype-instances>
+      <extend extension-point="" condition="" />
+    </item>
+    <item id="ff25b63f13f84a1d82d53b65971ae29a" cid="UC003" type="use-case" name="create bookshelft" creation-date="04/18/2024 10:48:31" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
     </item>
     <item id="cb1d410b996b481988aa11ef1139b64e" cid="EX007" type="extend" creation-date="04/18/2024 11:01:09" from="9e2e1d2ac31d4d4b89dac45aba67dffc" to="e63d437c760a4e079f1827d01f34b96c" visibility="package">
       <stereotypes>
@@ -765,7 +894,200 @@
       </stereotype-instances>
       <extend extension-point="" condition="" />
     </item>
-    <item id="b65031185425481887e884a2caba6ce7" cid="UC003" type="use-case" name="Add book to a bookshelft" creation-date="04/18/2024 10:48:31" visibility="undefined">
+    <item id="e9781436419241c8a45508ac370ed36f" cid="UC009" type="use-case" name="find book unreturned" creation-date="04/18/2024 10:51:09" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="1ebfab5bfdd0413e948e16ae9f373128" cid="UC003" type="use-case" name="create bookshelft" creation-date="04/18/2024 10:48:31" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="02c8f53580874004968e1b9bc22c4614" cid="UC008" type="use-case" name="find book returned" creation-date="04/18/2024 10:50:54" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="67f2134b935a4a3e8f65f9075b68c5e3" cid="PROP119" type="property" name="pages" owner="5342812df34b4204b4167d257b90c53d" creator="" creation-date="05/13/2024 15:51:53" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+    </item>
+    <item id="506fd2d0015a468d9f568d7b58764ac8" cid="PROP121" type="property" name="author" owner="5342812df34b4204b4167d257b90c53d" creator="" creation-date="05/13/2024 15:52:04" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+    </item>
+    <item id="67ea8d3328d74d98b0aa9a40ee49928f" cid="EX009" type="extend" creation-date="04/18/2024 11:08:32" from="9e2e1d2ac31d4d4b89dac45aba67dffc" to="1ebfab5bfdd0413e948e16ae9f373128" visibility="package">
+      <stereotypes>
+        <stereotype name="extend" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="7c0c27da77ed4ac18cd27a1e301f75bc_extend_c" type="extend" creation-date="04/18/2024 11:08:32" ref="" />
+      </stereotype-instances>
+      <extend extension-point="" condition="" />
+    </item>
+    <item id="eb095cdbb7af40f2acbee8157e2033d9" cid="UC001" type="use-case" name="Login" creation-date="04/18/2024 10:48:09" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="3f25975554bc4367b71e52dc9c812f7b" cid="PROP120" type="property" name="category" owner="5342812df34b4204b4167d257b90c53d" creator="" creation-date="05/13/2024 15:52:02" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+    </item>
+    <item id="58b64938ade74ac4a4a75e00fbd2c015" cid="UC007" type="use-case" name="create borrowed" creation-date="04/18/2024 10:50:31" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="4709659e0e204d89a4f362ceb5f8aae8" cid="PROP118" type="property" name="isbn" owner="5342812df34b4204b4167d257b90c53d" creator="" creation-date="05/13/2024 15:51:46" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+    </item>
+    <item id="21d67c625a4a419f8481e31873a8eb10" cid="UC002" type="use-case" name="find book" creation-date="04/18/2024 10:48:19" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="5692d69c2a1c426bb1d94692ad67b5d2" cid="REL003" type="relationship" creation-date="04/18/2024 10:53:08" from="de60c82f78544eebb58661c67ef8392c" to="26ff82b7d1914b528648d7bb07c751d2" visibility="package">
+      <owned-items />
+      <relation from="de60c82f78544eebb58661c67ef8392c" to="26ff82b7d1914b528648d7bb07c751d2" derived="false">
+        <start-role id="umlar-4e17dc2e-570f-4af1-b340-5b7472676d0d" name="" navigability="" association-type="association" visibility="private" property-ref="0671dfcd20774ef39c29de985f76e14e" />
+        <end-role id="umlar-b3b2b06a-e7f1-49eb-aae7-b4e6009491d3" name="" navigability="" association-type="association" visibility="private" property-ref="6b1d5df13f0c4714885776382390d777" />
+      </relation>
+    </item>
+    <item id="885a3335345d49ccb534fd2faf2fdb6a" cid="UC009" type="use-case" name="find book unreturned" creation-date="04/18/2024 10:51:09" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="5d30bce138214fbba9f38d6258299397" cid="PROP081" type="property" owner="401a8738e80b4944897d309051e86e3f" creator="" creation-date="04/26/2024 14:23:06" visibility="private" />
+    <item id="d775153cad12459f89c3ea02ff091764" cid="UC011" type="use-case" name="find borrowed" creation-date="04/18/2024 10:58:44" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="dc8044527b094ac19584b4c4688e9f3a" cid="PROP068" type="property" owner="c29589865fd54d3a8f407d9ad0bb301a" creator="" creation-date="04/26/2024 14:13:10" visibility="private" />
+    <item id="8367107bd2a04036a145850107e97244" cid="UC004" type="use-case" name="delete bookshelf" creation-date="04/18/2024 10:48:53" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="8f838904ae9e4e46925b50e46eeceb13" cid="UC006" type="use-case" name="find book in bookshelf" creation-date="04/18/2024 10:49:20" visibility="undefined">
+      <use-case>
+        <stakeholders />
+        <special-requirements />
+        <issues />
+      </use-case>
+    </item>
+    <item id="47e56e9c90ea4c12a48950c93a895c76" cid="EX004" type="extend" creation-date="04/18/2024 10:59:02" from="74eeaf514bcc4cb0aa5b06a038690084" to="fa0e300f71ea44fdbd787a2f457e0736" visibility="package">
+      <stereotypes>
+        <stereotype name="extend" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="a60ba92a6b9c4b2b8516ee7276600e28_extend_c" type="extend" creation-date="04/18/2024 10:59:02" ref="" />
+      </stereotype-instances>
+      <extend extension-point="" condition="" />
+    </item>
+    <item id="faa55b646ebf451bb33c15da38777cd1" cid="UC005" type="use-case" name="Edit bookshelf" creation-date="04/18/2024 10:49:03" visibility="undefined">
       <use-case>
         <stakeholders />
         <special-requirements />
@@ -804,36 +1126,42 @@
           <version />
         </meta>
         <abstract-items>
-          <item id="94c05dcce3de4effaa5fc6b7672f460b" cid="AC002" type="actor" name="User" creator="" creation-date="04/18/2024 11:09:53" visibility="undefined" />
+          <item id="105c3276284140a185efc5c44070fe6a" cid="UC014" type="use-case" name="Login" creator="" creation-date="04/18/2024 11:10:18" visibility="undefined">
+            <use-case>
+              <stakeholders />
+              <special-requirements />
+              <issues />
+            </use-case>
+          </item>
           <item id="3affd2b49a7842eb982cdf27d7dd070a" cid="REL029" type="relationship" creator="" creation-date="04/26/2024 14:25:33" from="94c05dcce3de4effaa5fc6b7672f460b" to="d9919afb4e2e40f9a977689f76ae890d" visibility="package">
             <owned-items />
             <relation from="94c05dcce3de4effaa5fc6b7672f460b" to="d9919afb4e2e40f9a977689f76ae890d" derived="false">
-              <start-role id="umlar-ddbf03b3-999d-4a56-9398-3b9129cdaeb4" name="" navigability="" association-type="association" visibility="private" property-ref="e9355bebd5cd44568ea91ad5f32dba35" />
-              <end-role id="umlar-4d7855e5-6567-41df-b0f9-1a5390967658" name="" navigability="" association-type="association" visibility="private" property-ref="0fd98e4f0b194cf9b9430499a2999699" />
+              <start-role id="umlar-d7ff6561-44cc-4a56-a350-e4be0e9471e1" name="" navigability="" association-type="association" visibility="private" property-ref="e9355bebd5cd44568ea91ad5f32dba35" />
+              <end-role id="umlar-5fe81ded-df46-45fe-a6a2-118db12a9b06" name="" navigability="" association-type="association" visibility="private" property-ref="0fd98e4f0b194cf9b9430499a2999699" />
             </relation>
           </item>
-          <item id="d9919afb4e2e40f9a977689f76ae890d" cid="UC015" type="use-case" name="Book managment" creator="" creation-date="04/18/2024 11:10:28" visibility="undefined">
-            <use-case>
-              <stakeholders />
-              <special-requirements />
-              <issues />
-            </use-case>
+          <item id="7b748fce326f40be8bcbf68141d481e2" cid="REL015" type="relationship" creator="" creation-date="04/26/2024 14:10:41" from="94c05dcce3de4effaa5fc6b7672f460b" to="105c3276284140a185efc5c44070fe6a" visibility="package">
+            <owned-items />
+            <relation from="94c05dcce3de4effaa5fc6b7672f460b" to="105c3276284140a185efc5c44070fe6a" derived="false">
+              <start-role id="umlar-f9b26278-e5b5-4ad4-b490-17b0782582df" name="" navigability="" association-type="association" visibility="private" property-ref="8ddf1176066e4ae593b845deaac4b904" />
+              <end-role id="umlar-3b5730bd-7085-4116-8d94-4c3b9a2c8bff" name="" navigability="" association-type="association" visibility="private" property-ref="d03a1dc786cc45b193aa4bcc867cd261" />
+            </relation>
           </item>
-          <item id="968bccc24f414e11a4eea235d5d1f481" cid="UC016" type="use-case" name="Borrowed managment" creator="" creation-date="04/18/2024 11:10:44" visibility="undefined">
-            <use-case>
-              <stakeholders />
-              <special-requirements />
-              <issues />
-            </use-case>
+          <item id="c29589865fd54d3a8f407d9ad0bb301a" cid="REL018" type="relationship" creator="" creation-date="04/26/2024 14:13:10" from="94c05dcce3de4effaa5fc6b7672f460b" to="b080deaddfd7461382ec62c8ec7ca9ab" visibility="package">
+            <owned-items />
+            <relation from="94c05dcce3de4effaa5fc6b7672f460b" to="b080deaddfd7461382ec62c8ec7ca9ab" derived="false">
+              <start-role id="umlar-c70022bf-4467-471f-9353-88c7f96bc6ea" name="" navigability="" association-type="association" visibility="private" property-ref="7d615c44dc444d25b8313ca5adda5b5c" />
+              <end-role id="umlar-c669cad9-7543-4e01-8ebf-fc100b5ea4a5" name="" navigability="" association-type="association" visibility="private" property-ref="dc8044527b094ac19584b4c4688e9f3a" />
+            </relation>
           </item>
-          <item id="b080deaddfd7461382ec62c8ec7ca9ab" cid="UC018" type="use-case" name="Profile managment" creator="" creation-date="04/18/2024 11:11:10" visibility="undefined">
-            <use-case>
-              <stakeholders />
-              <special-requirements />
-              <issues />
-            </use-case>
+          <item id="74835acebf8343b2871e3cf2c49d889d" cid="REL032" type="relationship" creator="" creation-date="04/28/2024 18:08:01" from="44a39da5a210490fa5629d9e15b8ce8c" to="a555ae0dd913474290c135fcd5d672f7" visibility="package">
+            <owned-items />
+            <relation from="44a39da5a210490fa5629d9e15b8ce8c" to="a555ae0dd913474290c135fcd5d672f7" derived="false">
+              <start-role id="umlar-c2ae0245-13dc-4440-a697-753a95957a5d" name="" navigability="" association-type="association" visibility="private" property-ref="21bd6bbbfcd74b51b890e52010448ebc" />
+              <end-role id="umlar-d5ce510e-dbfb-471e-b076-cc7f269072ca" name="" navigability="" association-type="association" visibility="private" property-ref="396fd49f03bf4bb098d9c5228acc7c1e" />
+            </relation>
           </item>
-          <item id="a5ea7e83cddf4f4f9bdf339ae7fd360e" cid="UC019" type="use-case" name="Register" creator="" creation-date="04/26/2024 14:13:14" visibility="undefined">
+          <item id="a555ae0dd913474290c135fcd5d672f7" cid="UC035" type="use-case" name="Send comment" creator="" creation-date="04/28/2024 18:07:52" visibility="undefined">
             <use-case>
               <stakeholders />
               <special-requirements />
@@ -847,57 +1175,37 @@
               <issues />
             </use-case>
           </item>
-          <item id="3e03f08697fe48a89ed114028e568235" cid="GNR003" type="generalization" creator="" creation-date="04/26/2024 14:10:55" from="44a39da5a210490fa5629d9e15b8ce8c" to="94c05dcce3de4effaa5fc6b7672f460b" visibility="package" />
-          <item id="a555ae0dd913474290c135fcd5d672f7" cid="UC035" type="use-case" name="Send comment" creator="" creation-date="04/28/2024 18:07:52" visibility="undefined">
+          <item id="968bccc24f414e11a4eea235d5d1f481" cid="UC016" type="use-case" name="Borrowed managment" creator="" creation-date="04/18/2024 11:10:44" visibility="undefined">
             <use-case>
               <stakeholders />
               <special-requirements />
               <issues />
             </use-case>
           </item>
-          <item id="74835acebf8343b2871e3cf2c49d889d" cid="REL032" type="relationship" creator="" creation-date="04/28/2024 18:08:01" from="44a39da5a210490fa5629d9e15b8ce8c" to="a555ae0dd913474290c135fcd5d672f7" visibility="package">
-            <owned-items />
-            <relation from="44a39da5a210490fa5629d9e15b8ce8c" to="a555ae0dd913474290c135fcd5d672f7" derived="false">
-              <start-role id="umlar-23ff744e-b5d2-4e6b-a503-35ea68e95169" name="" navigability="" association-type="association" visibility="private" property-ref="21bd6bbbfcd74b51b890e52010448ebc" />
-              <end-role id="umlar-99e475fb-8fef-42b4-9c50-7fc3cd7712a2" name="" navigability="" association-type="association" visibility="private" property-ref="396fd49f03bf4bb098d9c5228acc7c1e" />
-            </relation>
+          <item id="44a39da5a210490fa5629d9e15b8ce8c" cid="AC004" type="actor" name="Sudent" creator="" creation-date="04/26/2024 14:10:01" visibility="undefined" />
+          <item id="94c05dcce3de4effaa5fc6b7672f460b" cid="AC002" type="actor" name="User" creator="" creation-date="04/18/2024 11:09:53" visibility="undefined" />
+          <item id="b080deaddfd7461382ec62c8ec7ca9ab" cid="UC018" type="use-case" name="Profile managment" creator="" creation-date="04/18/2024 11:11:10" visibility="undefined">
+            <use-case>
+              <stakeholders />
+              <special-requirements />
+              <issues />
+            </use-case>
+          </item>
+          <item id="d9919afb4e2e40f9a977689f76ae890d" cid="UC015" type="use-case" name="Book managment" creator="" creation-date="04/18/2024 11:10:28" visibility="undefined">
+            <use-case>
+              <stakeholders />
+              <special-requirements />
+              <issues />
+            </use-case>
           </item>
           <item id="0e3d3dbf18614eff863f7218f23e9e7d" cid="REL013" type="relationship" creator="" creation-date="04/26/2024 14:10:31" from="44a39da5a210490fa5629d9e15b8ce8c" to="3282c2c9da0949c9b865ef8744cb112e" visibility="package">
             <owned-items />
             <relation from="44a39da5a210490fa5629d9e15b8ce8c" to="3282c2c9da0949c9b865ef8744cb112e" derived="false">
-              <start-role id="umlar-9b57cdc4-37cb-4ea4-a7b2-a54f62888303" name="" navigability="" association-type="association" visibility="private" property-ref="ea199ab761c74cbfad3ffaff4640234b" />
-              <end-role id="umlar-a703beb7-5184-48a4-a96d-a7cf8a85af2c" name="" navigability="" association-type="association" visibility="private" property-ref="4b099429ef8342e491f11359822dab3a" />
+              <start-role id="umlar-5540457a-f205-4510-a8fd-db6be0c97735" name="" navigability="" association-type="association" visibility="private" property-ref="ea199ab761c74cbfad3ffaff4640234b" />
+              <end-role id="umlar-5b9e951b-6807-40ff-83bd-b54514b35e1e" name="" navigability="" association-type="association" visibility="private" property-ref="4b099429ef8342e491f11359822dab3a" />
             </relation>
           </item>
-          <item id="06d17b6eef624991bd3a9a741f06645b" cid="REL012" type="relationship" creator="" creation-date="04/26/2024 14:10:26" from="44a39da5a210490fa5629d9e15b8ce8c" to="968bccc24f414e11a4eea235d5d1f481" visibility="package">
-            <owned-items />
-            <relation from="44a39da5a210490fa5629d9e15b8ce8c" to="968bccc24f414e11a4eea235d5d1f481" derived="false">
-              <start-role id="umlar-cf307ccf-1bd3-4b2a-a5da-2b1094ff4f91" name="" navigability="" association-type="association" visibility="private" property-ref="0a4ad63228b44a4288e37a7ebc9df68d" />
-              <end-role id="umlar-b475144b-0f4f-474c-bde5-0fd9d04cd81a" name="" navigability="" association-type="association" visibility="private" property-ref="d8ddb5e6439f48f08edaedcfc429d10b" />
-            </relation>
-          </item>
-          <item id="c29589865fd54d3a8f407d9ad0bb301a" cid="REL018" type="relationship" creator="" creation-date="04/26/2024 14:13:10" from="94c05dcce3de4effaa5fc6b7672f460b" to="b080deaddfd7461382ec62c8ec7ca9ab" visibility="package">
-            <owned-items />
-            <relation from="94c05dcce3de4effaa5fc6b7672f460b" to="b080deaddfd7461382ec62c8ec7ca9ab" derived="false">
-              <start-role id="umlar-3dd55ce4-f75d-4612-8c47-73d6a1586b89" name="" navigability="" association-type="association" visibility="private" property-ref="7d615c44dc444d25b8313ca5adda5b5c" />
-              <end-role id="umlar-a7988c70-7f4a-49db-9bf9-84a422163575" name="" navigability="" association-type="association" visibility="private" property-ref="dc8044527b094ac19584b4c4688e9f3a" />
-            </relation>
-          </item>
-          <item id="bc98fd9b56774f30a70ef76c73fc5099" cid="REL019" type="relationship" creator="" creation-date="04/26/2024 14:13:22" from="44a39da5a210490fa5629d9e15b8ce8c" to="a5ea7e83cddf4f4f9bdf339ae7fd360e" visibility="package">
-            <owned-items />
-            <relation from="44a39da5a210490fa5629d9e15b8ce8c" to="a5ea7e83cddf4f4f9bdf339ae7fd360e" derived="false">
-              <start-role id="umlar-bd906723-b99f-41b2-9579-b2a7d39bf8a4" name="" navigability="" association-type="association" visibility="private" property-ref="2ce6ce26ed034ada8d7e38bdda013658" />
-              <end-role id="umlar-41ee2caf-5f2e-4801-8151-81f74ce67b1f" name="" navigability="" association-type="association" visibility="private" property-ref="6ad2d5b63f334e8fa67a8106a83a5a10" />
-            </relation>
-          </item>
-          <item id="7b748fce326f40be8bcbf68141d481e2" cid="REL015" type="relationship" creator="" creation-date="04/26/2024 14:10:41" from="94c05dcce3de4effaa5fc6b7672f460b" to="105c3276284140a185efc5c44070fe6a" visibility="package">
-            <owned-items />
-            <relation from="94c05dcce3de4effaa5fc6b7672f460b" to="105c3276284140a185efc5c44070fe6a" derived="false">
-              <start-role id="umlar-81efc4d2-6ce2-4f5e-a1ef-72c83b5abddf" name="" navigability="" association-type="association" visibility="private" property-ref="8ddf1176066e4ae593b845deaac4b904" />
-              <end-role id="umlar-a88de8bf-28c3-46ee-b0d9-c2a510161590" name="" navigability="" association-type="association" visibility="private" property-ref="d03a1dc786cc45b193aa4bcc867cd261" />
-            </relation>
-          </item>
-          <item id="105c3276284140a185efc5c44070fe6a" cid="UC014" type="use-case" name="Login" creator="" creation-date="04/18/2024 11:10:18" visibility="undefined">
+          <item id="a5ea7e83cddf4f4f9bdf339ae7fd360e" cid="UC019" type="use-case" name="Register" creator="" creation-date="04/26/2024 14:13:14" visibility="undefined">
             <use-case>
               <stakeholders />
               <special-requirements />
@@ -905,8 +1213,22 @@
             </use-case>
           </item>
           <item id="83590bab9b21413ea4ffd1dea243cd5d" cid="GNR002" type="generalization" creator="" creation-date="04/26/2024 14:10:45" from="6a5b116ee22845a8b232fbd35980f895" to="94c05dcce3de4effaa5fc6b7672f460b" visibility="package" />
+          <item id="3e03f08697fe48a89ed114028e568235" cid="GNR003" type="generalization" creator="" creation-date="04/26/2024 14:10:55" from="44a39da5a210490fa5629d9e15b8ce8c" to="94c05dcce3de4effaa5fc6b7672f460b" visibility="package" />
+          <item id="06d17b6eef624991bd3a9a741f06645b" cid="REL012" type="relationship" creator="" creation-date="04/26/2024 14:10:26" from="44a39da5a210490fa5629d9e15b8ce8c" to="968bccc24f414e11a4eea235d5d1f481" visibility="package">
+            <owned-items />
+            <relation from="44a39da5a210490fa5629d9e15b8ce8c" to="968bccc24f414e11a4eea235d5d1f481" derived="false">
+              <start-role id="umlar-0d30affe-f6fe-4b4a-8c09-b3bf2e8690d4" name="" navigability="" association-type="association" visibility="private" property-ref="0a4ad63228b44a4288e37a7ebc9df68d" />
+              <end-role id="umlar-52986658-f7d6-4578-b8f7-d903e676bb63" name="" navigability="" association-type="association" visibility="private" property-ref="d8ddb5e6439f48f08edaedcfc429d10b" />
+            </relation>
+          </item>
+          <item id="bc98fd9b56774f30a70ef76c73fc5099" cid="REL019" type="relationship" creator="" creation-date="04/26/2024 14:13:22" from="44a39da5a210490fa5629d9e15b8ce8c" to="a5ea7e83cddf4f4f9bdf339ae7fd360e" visibility="package">
+            <owned-items />
+            <relation from="44a39da5a210490fa5629d9e15b8ce8c" to="a5ea7e83cddf4f4f9bdf339ae7fd360e" derived="false">
+              <start-role id="umlar-ab180b90-ef17-4394-a0fb-c58344eb9d51" name="" navigability="" association-type="association" visibility="private" property-ref="2ce6ce26ed034ada8d7e38bdda013658" />
+              <end-role id="umlar-3af75808-cca3-4d6c-8897-aa673c52d554" name="" navigability="" association-type="association" visibility="private" property-ref="6ad2d5b63f334e8fa67a8106a83a5a10" />
+            </relation>
+          </item>
           <item id="6a5b116ee22845a8b232fbd35980f895" cid="AC003" type="actor" name="Admin" creator="" creation-date="04/26/2024 14:09:56" visibility="undefined" />
-          <item id="44a39da5a210490fa5629d9e15b8ce8c" cid="AC004" type="actor" name="Sudent" creator="" creation-date="04/26/2024 14:10:01" visibility="undefined" />
         </abstract-items>
         <layer id="2b2cdf88de6c43c29cd462fd4d963431" name="Default" visible="true" enabled="true" locked="false">
           <item id="94c05dcce3de4effaa5fc6b7672f460b" iid="fdad3ff1a65d4fea96a49a08423271f3" creation-date="04/18/2024 11:09:53" order-index="29" type="entity">
@@ -1050,14 +1372,6 @@
         </meta>
         <abstract-items>
           <item id="b21400d50cc14f0fbd93d0d6f06a93ab" cid="PROP025" type="property" owner="df08f54db5aa4885a56ca6e22db1dd21" creator="" creation-date="04/18/2024 10:53:08" visibility="private" />
-          <item id="f5f7ff3ed09b42a29bba23b008879675" cid="PROP026" type="property" owner="df08f54db5aa4885a56ca6e22db1dd21" creator="" creation-date="04/18/2024 10:53:08" visibility="private" />
-          <item id="56de40e966644879bea6316a14ed4b80" cid="UC020" type="use-case" name="Create bookshelf" creator="" creation-date="04/26/2024 14:17:41" visibility="undefined">
-            <use-case>
-              <stakeholders />
-              <special-requirements />
-              <issues />
-            </use-case>
-          </item>
           <item id="03e76dd463e049e3ad49b94bc1186083" cid="EX010" type="extend" creator="" creation-date="04/26/2024 14:18:22" from="9f0f0867149f427aaf65a6e71176f82f" to="56de40e966644879bea6316a14ed4b80" visibility="package">
             <stereotypes>
               <stereotype name="extend" />
@@ -1066,6 +1380,14 @@
               <stereotype id="03e76dd463e049e3ad49b94bc1186083_extend_c" type="extend" creation-date="04/26/2024 14:18:22" ref="" />
             </stereotype-instances>
             <extend extension-point="" condition="" />
+          </item>
+          <item id="f5f7ff3ed09b42a29bba23b008879675" cid="PROP026" type="property" owner="df08f54db5aa4885a56ca6e22db1dd21" creator="" creation-date="04/18/2024 10:53:08" visibility="private" />
+          <item id="56de40e966644879bea6316a14ed4b80" cid="UC020" type="use-case" name="Create bookshelf" creator="" creation-date="04/26/2024 14:17:41" visibility="undefined">
+            <use-case>
+              <stakeholders />
+              <special-requirements />
+              <issues />
+            </use-case>
           </item>
         </abstract-items>
         <layer id="2d8bd826564c4306afce4e72e2a4fd6d" name="Default" visible="true" enabled="true" locked="false">
@@ -1157,20 +1479,6 @@
           <version />
         </meta>
         <abstract-items>
-          <item id="7e909f4f7ef44f128e058b8cb92fd6c4" cid="UC023" type="use-case" name="Find book" creator="" creation-date="04/26/2024 14:22:41" visibility="undefined">
-            <use-case>
-              <stakeholders />
-              <special-requirements />
-              <issues />
-            </use-case>
-          </item>
-          <item id="401a8738e80b4944897d309051e86e3f" cid="REL025" type="relationship" creator="" creation-date="04/26/2024 14:23:06" from="7e909f4f7ef44f128e058b8cb92fd6c4" to="88a6380ac2d243369f4bbef06a04f09e" visibility="package">
-            <owned-items />
-            <relation from="7e909f4f7ef44f128e058b8cb92fd6c4" to="88a6380ac2d243369f4bbef06a04f09e" derived="false">
-              <start-role id="umlar-c8cb6df5-dd7d-4a5d-b685-a09f2cef0bb4" name="" navigability="" association-type="association" visibility="private" property-ref="5d30bce138214fbba9f38d6258299397" />
-              <end-role id="umlar-69dc44c4-2373-4a0e-87f0-c8266acb62eb" name="" navigability="" association-type="association" visibility="private" property-ref="8e0ad3ba73f44b94a9536e726183f662" />
-            </relation>
-          </item>
           <item id="e326001e026443b3b958b58ae281918d" cid="EX012" type="extend" creator="" creation-date="04/26/2024 14:24:30" from="7e909f4f7ef44f128e058b8cb92fd6c4" to="2f79a54b29f74d1a8974c1dd9fcb6614" visibility="package">
             <stereotypes>
               <stereotype name="extend" />
@@ -1180,9 +1488,8 @@
             </stereotype-instances>
             <extend extension-point="" condition="" />
           </item>
-          <item id="68073b8f27fe493bb996f9e5d9e65e36" cid="PROP035" type="property" owner="a4c4310c0aec496f9b705da348a84883" creator="" creation-date="04/18/2024 10:58:19" visibility="private" />
-          <item id="88a6380ac2d243369f4bbef06a04f09e" cid="AC005" type="actor" name="Admin" creator="" creation-date="04/26/2024 14:20:55" visibility="undefined" />
-          <item id="2f79a54b29f74d1a8974c1dd9fcb6614" cid="UC025" type="use-case" name="Delete book" creator="" creation-date="04/26/2024 14:23:53" visibility="undefined">
+          <item id="43c7acce0da74a9d86a8d7afadaded5c" cid="PROP033" type="property" owner="1bcc112f63bf4847a15fcf74d8df0052" creator="" creation-date="04/18/2024 10:53:08" visibility="private" />
+          <item id="7e909f4f7ef44f128e058b8cb92fd6c4" cid="UC023" type="use-case" name="Find book" creator="" creation-date="04/26/2024 14:22:41" visibility="undefined">
             <use-case>
               <stakeholders />
               <special-requirements />
@@ -1190,6 +1497,44 @@
             </use-case>
           </item>
           <item id="2166e8f1c12046c09475a1fee9622e63" cid="PROP034" type="property" owner="1bcc112f63bf4847a15fcf74d8df0052" creator="" creation-date="04/18/2024 10:53:08" visibility="private" />
+          <item id="47220ece8f47466a9e753c2c3fd48201" cid="PROP036" type="property" owner="a4c4310c0aec496f9b705da348a84883" creator="" creation-date="04/18/2024 10:58:19" visibility="private" />
+          <item id="eed5a01078d148329c66fa12ba7e39d5" cid="REL023" type="relationship" creator="" creation-date="04/26/2024 14:22:28" from="88a6380ac2d243369f4bbef06a04f09e" to="b49fb2b7252a4a89b73708d5825d4b87" visibility="package">
+            <owned-items />
+            <relation from="88a6380ac2d243369f4bbef06a04f09e" to="b49fb2b7252a4a89b73708d5825d4b87" derived="false">
+              <start-role id="umlar-88385a7a-4e92-4348-beb4-631eedf6f178" name="" navigability="" association-type="association" visibility="private" property-ref="0cb80dd64b9f4ae2bf74db424db2d6f4" />
+              <end-role id="umlar-9d7b7735-bed0-4221-a42e-5bcb809121fa" name="" navigability="" association-type="association" visibility="private" property-ref="71c139098f0f42a8b6821e92dce62499" />
+            </relation>
+          </item>
+          <item id="88a6380ac2d243369f4bbef06a04f09e" cid="AC005" type="actor" name="Admin" creator="" creation-date="04/26/2024 14:20:55" visibility="undefined" />
+          <item id="68073b8f27fe493bb996f9e5d9e65e36" cid="PROP035" type="property" owner="a4c4310c0aec496f9b705da348a84883" creator="" creation-date="04/18/2024 10:58:19" visibility="private" />
+          <item id="401a8738e80b4944897d309051e86e3f" cid="REL025" type="relationship" creator="" creation-date="04/26/2024 14:23:06" from="7e909f4f7ef44f128e058b8cb92fd6c4" to="88a6380ac2d243369f4bbef06a04f09e" visibility="package">
+            <owned-items />
+            <relation from="7e909f4f7ef44f128e058b8cb92fd6c4" to="88a6380ac2d243369f4bbef06a04f09e" derived="false">
+              <start-role id="umlar-1c19a63c-d24a-46d9-813b-8e02617b5fb1" name="" navigability="" association-type="association" visibility="private" property-ref="5d30bce138214fbba9f38d6258299397" />
+              <end-role id="umlar-953e9d53-2d47-4288-a60e-007a11f49476" name="" navigability="" association-type="association" visibility="private" property-ref="8e0ad3ba73f44b94a9536e726183f662" />
+            </relation>
+          </item>
+          <item id="dcc86dbf52dc4d1ba2a7b0fc9d637bd8" cid="UC024" type="use-case" name="Edit book" creator="" creation-date="04/26/2024 14:23:14" visibility="undefined">
+            <use-case>
+              <stakeholders />
+              <special-requirements />
+              <issues />
+            </use-case>
+          </item>
+          <item id="2f79a54b29f74d1a8974c1dd9fcb6614" cid="UC025" type="use-case" name="Delete book" creator="" creation-date="04/26/2024 14:23:53" visibility="undefined">
+            <use-case>
+              <stakeholders />
+              <special-requirements />
+              <issues />
+            </use-case>
+          </item>
+          <item id="b49fb2b7252a4a89b73708d5825d4b87" cid="UC022" type="use-case" name="Add book" creator="" creation-date="04/26/2024 14:21:11" visibility="undefined">
+            <use-case>
+              <stakeholders />
+              <special-requirements />
+              <issues />
+            </use-case>
+          </item>
           <item id="60831de2d41545058a8581734de64f26" cid="EX011" type="extend" creator="" creation-date="04/26/2024 14:24:24" from="7e909f4f7ef44f128e058b8cb92fd6c4" to="dcc86dbf52dc4d1ba2a7b0fc9d637bd8" visibility="package">
             <stereotypes>
               <stereotype name="extend" />
@@ -1198,29 +1543,6 @@
               <stereotype id="60831de2d41545058a8581734de64f26_extend_c" type="extend" creation-date="04/26/2024 14:24:24" ref="" />
             </stereotype-instances>
             <extend extension-point="" condition="" />
-          </item>
-          <item id="eed5a01078d148329c66fa12ba7e39d5" cid="REL023" type="relationship" creator="" creation-date="04/26/2024 14:22:28" from="88a6380ac2d243369f4bbef06a04f09e" to="b49fb2b7252a4a89b73708d5825d4b87" visibility="package">
-            <owned-items />
-            <relation from="88a6380ac2d243369f4bbef06a04f09e" to="b49fb2b7252a4a89b73708d5825d4b87" derived="false">
-              <start-role id="umlar-64ed887a-8ecd-4c99-8ca6-5b2121fe0a3c" name="" navigability="" association-type="association" visibility="private" property-ref="0cb80dd64b9f4ae2bf74db424db2d6f4" />
-              <end-role id="umlar-282f034c-b0d3-444a-b1c5-5fab4ec75811" name="" navigability="" association-type="association" visibility="private" property-ref="71c139098f0f42a8b6821e92dce62499" />
-            </relation>
-          </item>
-          <item id="47220ece8f47466a9e753c2c3fd48201" cid="PROP036" type="property" owner="a4c4310c0aec496f9b705da348a84883" creator="" creation-date="04/18/2024 10:58:19" visibility="private" />
-          <item id="dcc86dbf52dc4d1ba2a7b0fc9d637bd8" cid="UC024" type="use-case" name="Edit book" creator="" creation-date="04/26/2024 14:23:14" visibility="undefined">
-            <use-case>
-              <stakeholders />
-              <special-requirements />
-              <issues />
-            </use-case>
-          </item>
-          <item id="43c7acce0da74a9d86a8d7afadaded5c" cid="PROP033" type="property" owner="1bcc112f63bf4847a15fcf74d8df0052" creator="" creation-date="04/18/2024 10:53:08" visibility="private" />
-          <item id="b49fb2b7252a4a89b73708d5825d4b87" cid="UC022" type="use-case" name="Add book" creator="" creation-date="04/26/2024 14:21:11" visibility="undefined">
-            <use-case>
-              <stakeholders />
-              <special-requirements />
-              <issues />
-            </use-case>
           </item>
         </abstract-items>
         <layer id="7a25c28335e840388b4fc5934454eb05" name="Default" visible="true" enabled="true" locked="false">
@@ -1390,13 +1712,6 @@
           <version />
         </meta>
         <abstract-items>
-          <item id="5cc92a49594a42e18afcaacfbcc78377" cid="UC029" type="use-case" name="mark book as returned" creator="" creation-date="04/26/2024 15:20:32" visibility="undefined">
-            <use-case>
-              <stakeholders />
-              <special-requirements />
-              <issues />
-            </use-case>
-          </item>
           <item id="f987860635dc474e82c701b62697f77a" cid="PROP046" type="property" owner="9605d449347f4364aad6c600abbcb1a5" creator="" creation-date="04/18/2024 10:58:53" visibility="private" />
           <item id="fe716763946445b48e049d1e61895ceb" cid="EX015" type="extend" creator="" creation-date="04/26/2024 15:21:13" from="fa0e300f71ea44fdbd787a2f457e0736" to="5cc92a49594a42e18afcaacfbcc78377" visibility="package">
             <stereotypes>
@@ -1406,6 +1721,13 @@
               <stereotype id="fe716763946445b48e049d1e61895ceb_extend_c" type="extend" creation-date="04/26/2024 15:21:13" ref="" />
             </stereotype-instances>
             <extend extension-point="" condition="" />
+          </item>
+          <item id="5cc92a49594a42e18afcaacfbcc78377" cid="UC029" type="use-case" name="mark book as returned" creator="" creation-date="04/26/2024 15:20:32" visibility="undefined">
+            <use-case>
+              <stakeholders />
+              <special-requirements />
+              <issues />
+            </use-case>
           </item>
           <item id="3270b768fc43458f83ae2fb013834c83" cid="PROP045" type="property" owner="9605d449347f4364aad6c600abbcb1a5" creator="" creation-date="04/18/2024 10:58:53" visibility="private" />
         </abstract-items>
@@ -1485,14 +1807,14 @@
           <version />
         </meta>
         <abstract-items>
-          <item id="68ace66489b84482a46e4219df2f682e" cid="PROP052" type="property" owner="21d2ad44ec9f4ceda3c708d5295102a5" creator="" creation-date="04/18/2024 10:58:19" visibility="private" />
           <item id="707de1adecee44bea19561deeec2902b" cid="PROP048" type="property" owner="3d3b0d0bc08340acac2995062ef0591d" creator="" creation-date="04/18/2024 10:52:16" visibility="private" />
-          <item id="a602609e5dc947229a16bce927511184" cid="PROP053" type="property" owner="650448b61dbc4df8b46d3c03e24f29b7" creator="" creation-date="04/18/2024 10:58:53" visibility="private" />
-          <item id="0671dfcd20774ef39c29de985f76e14e" cid="PROP049" type="property" owner="5692d69c2a1c426bb1d94692ad67b5d2" creator="" creation-date="04/18/2024 10:53:08" visibility="private" />
-          <item id="634cb55ebc3f4b1bbbdef60cd72ea707" cid="PROP047" type="property" owner="3d3b0d0bc08340acac2995062ef0591d" creator="" creation-date="04/18/2024 10:52:16" visibility="private" />
-          <item id="6b1d5df13f0c4714885776382390d777" cid="PROP050" type="property" owner="5692d69c2a1c426bb1d94692ad67b5d2" creator="" creation-date="04/18/2024 10:53:08" visibility="private" />
           <item id="e708593d520141dea927388c966ac531" cid="PROP054" type="property" owner="650448b61dbc4df8b46d3c03e24f29b7" creator="" creation-date="04/18/2024 10:58:53" visibility="private" />
+          <item id="0671dfcd20774ef39c29de985f76e14e" cid="PROP049" type="property" owner="5692d69c2a1c426bb1d94692ad67b5d2" creator="" creation-date="04/18/2024 10:53:08" visibility="private" />
+          <item id="a602609e5dc947229a16bce927511184" cid="PROP053" type="property" owner="650448b61dbc4df8b46d3c03e24f29b7" creator="" creation-date="04/18/2024 10:58:53" visibility="private" />
+          <item id="634cb55ebc3f4b1bbbdef60cd72ea707" cid="PROP047" type="property" owner="3d3b0d0bc08340acac2995062ef0591d" creator="" creation-date="04/18/2024 10:52:16" visibility="private" />
+          <item id="68ace66489b84482a46e4219df2f682e" cid="PROP052" type="property" owner="21d2ad44ec9f4ceda3c708d5295102a5" creator="" creation-date="04/18/2024 10:58:19" visibility="private" />
           <item id="6864e595ce314068b08bca22203929a7" cid="PROP051" type="property" owner="21d2ad44ec9f4ceda3c708d5295102a5" creator="" creation-date="04/18/2024 10:58:19" visibility="private" />
+          <item id="6b1d5df13f0c4714885776382390d777" cid="PROP050" type="property" owner="5692d69c2a1c426bb1d94692ad67b5d2" creator="" creation-date="04/18/2024 10:53:08" visibility="private" />
         </abstract-items>
         <layer id="9ff90c939b894f5d91373b1c7ef3f396" name="Default" visible="true" enabled="true" locked="false">
           <item id="de60c82f78544eebb58661c67ef8392c" iid="7b6e4be3e996400482a7c25bf0616365" creation-date="04/18/2024 10:47:53" order-index="0" type="entity">
@@ -1679,7 +2001,7 @@
           </item>
         </layer>
       </diagram>
-      <diagram type="uml-class" id="paa3bf1944166411e9d95f3d50e3f6628_239343745" name="ClassDiagram1" order-index="6" overview-order-index="4" uid="" name-style="" auto-routed-paths="false" default-line-style="default">
+      <diagram type="uml-class" id="paa3bf1944166411e9d95f3d50e3f6628_239343745" name="ClassDiagram1" order-index="6" overview-order-index="4" uid="" name-style="" auto-routed-paths="false" default-line-style="default" view-location="-15,-7">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -1691,16 +2013,132 @@
           </authors>
           <description />
           <creation-date>04/18/2024 11:34:03</creation-date>
-          <change-date>04/18/2024 11:34:27</change-date>
+          <change-date>05/13/2024 15:57:35</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
         <abstract-items>
-          <item id="48d1e6fc87344a55b8911ab0fb79d715" cid="C001" type="class" name="user" creator="" creation-date="04/18/2024 11:34:27" visibility="undefined" />
+          <item id="48d1e6fc87344a55b8911ab0fb79d715" cid="C001" type="class" name="User" creator="" creation-date="04/18/2024 11:34:27" visibility="undefined">
+            <owned-items />
+            <attributes>
+              <attribute id="a9371f9e46a3e4e7f9c13eeb5977fb397578" cid="PROP103" name="name" creation-date="05/13/2024 15:49:36" property-ref="8609dc4790434a859c1c56adc658fc47" />
+              <attribute id="a11316e17a5f1484f8d15b8959de21138466" cid="PROP099" name="email" creation-date="05/13/2024 15:48:58" property-ref="035becc7ef6d403e9941b505e8d2906c" />
+              <attribute id="a4ef08d9c37da409988a2b0ee2f74194c470" cid="PROP100" name="cell_phone" creation-date="05/13/2024 15:49:21" property-ref="3f85e69483ea4228b824e4b1e886e446" />
+              <attribute id="ad6473311fe004109a1cba47ba15c4e95471" cid="PROP102" name="isAdmin" creation-date="05/13/2024 15:49:28" property-ref="2c90d817af844acf94fbec3478cacfff" />
+              <attribute id="a9f488b93f0db4b3daceb4686b53569b4550" cid="PROP101" name="password" creation-date="05/13/2024 15:49:24" property-ref="e0543cda51bc48d898155ee04ba525d4" />
+            </attributes>
+            <source-codes>
+              <source-code language="ActionScript" />
+            </source-codes>
+          </item>
+          <item id="5c475fafedf9450c86d28dcfc6b714e3" cid="PROP128" type="property" name="status" owner="20b553bc8553421699a4fddbf2371070" creator="" creation-date="05/13/2024 15:56:58" visibility="private" />
+          <item id="20b553bc8553421699a4fddbf2371070" cid="C006" type="class" name="Borrowed" creator="" creation-date="05/13/2024 15:56:25" visibility="undefined">
+            <owned-items />
+            <attributes>
+              <attribute id="a89c2a142361746c6ab7dce8d39911ce3150" cid="PROP126" name="borrowed_date" creation-date="05/13/2024 15:56:35" property-ref="9a9926e75f0f458a9b6cf3122ac70745" />
+              <attribute id="a4540232362f449c2ad9a53b25a64ab5e220" cid="PROP127" name="return_date" creation-date="05/13/2024 15:56:42" property-ref="ae2afe4db35043a8a225e485ee455f1c" />
+              <attribute id="a277179c325b24327886f5d45a9331bbc503" cid="PROP128" name="status" creation-date="05/13/2024 15:56:58" property-ref="5c475fafedf9450c86d28dcfc6b714e3" />
+            </attributes>
+            <source-codes>
+              <source-code language="ActionScript" />
+            </source-codes>
+          </item>
+          <item id="9df8488534494115b568a436570a8d0c" cid="C008" type="class" name="Comment" creator="" creation-date="05/13/2024 15:57:35" visibility="undefined">
+            <owned-items />
+            <attributes>
+              <attribute id="a665e63f5a5154e67b00a1edebd4ec83a557" cid="PROP130" name="email" creation-date="05/13/2024 15:57:46" property-ref="5eae4f7426cb41a7a6ee94fc12134a25" />
+              <attribute id="a88a31155d2be492dacd3eb7b730456bc819" cid="PROP131" name="message" creation-date="05/13/2024 15:57:49" property-ref="225ee2a6e65e40e9a2baf148f9183b4a" />
+              <attribute id="a4b15b25a2e6842c69f1fa3112ea123d7433" cid="PROP132" name="date" creation-date="05/13/2024 15:57:51" property-ref="792812f4b402478b9f78d706762ae3f1" />
+            </attributes>
+            <source-codes>
+              <source-code language="ActionScript" />
+            </source-codes>
+          </item>
+          <item id="6f5b9fb52799414fa563988b9a74c3d2" cid="C004" type="class" name="BookInBookshelf" creator="" creation-date="05/13/2024 15:52:35" visibility="undefined">
+            <owned-items />
+            <attributes>
+              <attribute id="a90b516f561a647398f4eec62a18639db965" cid="PROP124" name="data" creation-date="05/13/2024 15:55:55" property-ref="2a90977d87624770a592909289d9d5f1" />
+            </attributes>
+            <source-codes>
+              <source-code language="ActionScript" />
+            </source-codes>
+          </item>
+          <item id="225ee2a6e65e40e9a2baf148f9183b4a" cid="PROP131" type="property" name="message" owner="9df8488534494115b568a436570a8d0c" creator="" creation-date="05/13/2024 15:57:49" visibility="private" />
+          <item id="9a9926e75f0f458a9b6cf3122ac70745" cid="PROP126" type="property" name="borrowed_date" owner="20b553bc8553421699a4fddbf2371070" creator="" creation-date="05/13/2024 15:56:35" visibility="private" />
+          <item id="ae2afe4db35043a8a225e485ee455f1c" cid="PROP127" type="property" name="return_date" owner="20b553bc8553421699a4fddbf2371070" creator="" creation-date="05/13/2024 15:56:42" visibility="private" />
+          <item id="6023d4751b09432a88220000ab1c6c39" cid="PROP125" type="property" name="date_create" owner="a6b90cd967b6480eacaec83079f14f8b" creator="" creation-date="05/13/2024 15:56:20" visibility="private" />
+          <item id="6a71ef2b7389476ea654a76f174e19af" cid="PROP129" type="property" name="name" owner="99da3e3452f34ab6b5b4e07cd66616d4" creator="" creation-date="05/13/2024 15:57:28" visibility="private" />
+          <item id="a6b90cd967b6480eacaec83079f14f8b" cid="C005" type="class" name="Bookshelf" creator="" creation-date="05/13/2024 15:56:00" visibility="undefined">
+            <owned-items />
+            <attributes>
+              <attribute id="ad7f978a807ee42f6b9eff0582b18fc7d910" cid="PROP125" name="date_create" creation-date="05/13/2024 15:56:20" property-ref="6023d4751b09432a88220000ab1c6c39" />
+            </attributes>
+            <source-codes>
+              <source-code language="ActionScript" />
+            </source-codes>
+          </item>
+          <item id="5342812df34b4204b4167d257b90c53d" cid="C003" type="class" name="Book" creator="" creation-date="05/13/2024 15:51:17" visibility="undefined">
+            <owned-items />
+            <attributes>
+              <attribute id="aba6a70657bc24c39800d6497fb284fd8856" cid="PROP116" name="name" creation-date="05/13/2024 15:51:37" property-ref="833ece9953a748c4bbce675478b2134e" />
+              <attribute id="ac31004af47c940f9bf41c05fe31f9711486" cid="PROP117" name="description" creation-date="05/13/2024 15:51:41" property-ref="c2238490712d432aa881939e2db66a85" />
+              <attribute id="afad3ae4482d146c3b162c9a157d60245363" cid="PROP118" name="isbn" creation-date="05/13/2024 15:51:46" property-ref="4709659e0e204d89a4f362ceb5f8aae8" />
+              <attribute id="ad4bec831121e4f1391104e1d790255ac429" cid="PROP119" name="pages" creation-date="05/13/2024 15:51:53" property-ref="67f2134b935a4a3e8f65f9075b68c5e3" />
+              <attribute id="a16c3bdde22514fdd8f139ff1e477eda5177" cid="PROP120" name="category" creation-date="05/13/2024 15:52:02" property-ref="3f25975554bc4367b71e52dc9c812f7b" />
+              <attribute id="a956da75243b34a609254aea8742277e7693" cid="PROP121" name="author" creation-date="05/13/2024 15:52:04" property-ref="506fd2d0015a468d9f568d7b58764ac8" />
+              <attribute id="a4d00fb7f747a40f38094b5ffaca307e5776" cid="PROP122" name="published" creation-date="05/13/2024 15:52:07" property-ref="c0ae01cf3c834a6286eb5ce56bf6d5d6" />
+              <attribute id="a71401e7ddb104bb08f6a05eb7066ceb857" cid="PROP123" name="publication" creation-date="05/13/2024 15:52:13" property-ref="53913ae492d94e578b7350d8a046b11d" />
+            </attributes>
+            <source-codes>
+              <source-code language="ActionScript" />
+            </source-codes>
+          </item>
+          <item id="2a90977d87624770a592909289d9d5f1" cid="PROP124" type="property" name="data" owner="6f5b9fb52799414fa563988b9a74c3d2" creator="" creation-date="05/13/2024 15:55:55" visibility="private" />
+          <item id="5eae4f7426cb41a7a6ee94fc12134a25" cid="PROP130" type="property" name="email" owner="9df8488534494115b568a436570a8d0c" creator="" creation-date="05/13/2024 15:57:46" visibility="private" />
+          <item id="99da3e3452f34ab6b5b4e07cd66616d4" cid="C007" type="class" name="Category" creator="" creation-date="05/13/2024 15:57:19" visibility="undefined">
+            <owned-items />
+            <attributes>
+              <attribute id="a3fc9ff5e6d7d4572950710b9bfc85145369" cid="PROP129" name="name" creation-date="05/13/2024 15:57:28" property-ref="6a71ef2b7389476ea654a76f174e19af" />
+            </attributes>
+            <source-codes>
+              <source-code language="ActionScript" />
+            </source-codes>
+          </item>
+          <item id="792812f4b402478b9f78d706762ae3f1" cid="PROP132" type="property" name="date" owner="9df8488534494115b568a436570a8d0c" creator="" creation-date="05/13/2024 15:57:51" visibility="private" />
         </abstract-items>
         <layer id="1c1107b7e0824e8bb582bf9b6f959f7c" name="Default" visible="true" enabled="true" locked="false">
           <item id="48d1e6fc87344a55b8911ab0fb79d715" iid="47e3da56dede4ddab2b037d229271a06" show-fields="true" creation-date="04/18/2024 11:34:27" order-index="0" type="entity">
-            <layout ax="313" ay="68" awidth="140" aheight="160" x="313" y="68" width="140" height="160" />
+            <layout ax="256" ay="115" awidth="140" aheight="160" x="256" y="115" width="140" height="160" />
+            <classifier />
+            <class />
+          </item>
+          <item id="5342812df34b4204b4167d257b90c53d" iid="b5e48d24a948485b82d1870de0cec635" show-fields="true" creation-date="05/13/2024 15:51:17" order-index="2" type="entity">
+            <layout ax="443" ay="115" awidth="140" aheight="212" x="443" y="115" width="140" height="160" />
+            <classifier />
+            <class />
+          </item>
+          <item id="6f5b9fb52799414fa563988b9a74c3d2" iid="10b2650d8c164329a36db68d84aa913e" show-fields="true" creation-date="05/13/2024 15:52:35" order-index="3" type="entity">
+            <layout ax="615" ay="368" awidth="140" aheight="78" x="615" y="368" width="140" height="78" />
+            <classifier />
+            <class />
+          </item>
+          <item id="a6b90cd967b6480eacaec83079f14f8b" iid="cf68f8d00e0242d2ac8ee319ebc78057" show-fields="true" creation-date="05/13/2024 15:56:00" order-index="4" type="entity">
+            <layout ax="443" ay="368" awidth="140" aheight="78" x="443" y="368" width="140" height="78" />
+            <classifier />
+            <class />
+          </item>
+          <item id="20b553bc8553421699a4fddbf2371070" iid="504e4d8078ff4b39828689d4355bc98b" show-fields="true" creation-date="05/13/2024 15:56:25" order-index="5" type="entity">
+            <layout ax="256" ay="312" awidth="140" aheight="103" x="256" y="312" width="140" height="103" />
+            <classifier />
+            <class />
+          </item>
+          <item id="99da3e3452f34ab6b5b4e07cd66616d4" iid="1cabfb4ea4b1485594ab49e3952515af" show-fields="true" creation-date="05/13/2024 15:57:19" order-index="6" type="entity">
+            <layout ax="615" ay="266" awidth="140" aheight="78" x="615" y="266" width="140" height="78" />
+            <classifier />
+            <class />
+          </item>
+          <item id="9df8488534494115b568a436570a8d0c" iid="9e47f147854c43dcb53d5ccf610e5c92" show-fields="true" creation-date="05/13/2024 15:57:35" order-index="7" type="entity">
+            <layout ax="615" ay="115" awidth="140" aheight="103" x="615" y="115" width="140" height="103" />
             <classifier />
             <class />
           </item>
@@ -1742,14 +2180,12 @@
           <version />
         </meta>
         <abstract-items>
-          <item id="3da81106607e460db3e927d41e2a0d2d" cid="EX014" type="extend" creator="" creation-date="04/26/2024 14:27:47" from="df6db03005644e6697bccd29195f3c01" to="f1d6e45815b04c15a6c930b4ae607746" visibility="package">
-            <stereotypes>
-              <stereotype name="extend" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="3da81106607e460db3e927d41e2a0d2d_extend_c" type="extend" creation-date="04/26/2024 14:27:47" ref="" />
-            </stereotype-instances>
-            <extend extension-point="" condition="" />
+          <item id="1e69f1168984403da5ad080dd36d35f7" cid="UC027" type="use-case" name="Edit profile" creator="" creation-date="04/26/2024 14:27:07" visibility="undefined">
+            <use-case>
+              <stakeholders />
+              <special-requirements />
+              <issues />
+            </use-case>
           </item>
           <item id="2de7ac18e9b34dec9ba741ab280dad10" cid="EX016" type="extend" creator="" creation-date="04/26/2024 15:22:42" from="1e69f1168984403da5ad080dd36d35f7" to="e3245214f3474ebca076e90c06340457" visibility="package">
             <stereotypes>
@@ -1760,16 +2196,7 @@
             </stereotype-instances>
             <extend extension-point="" condition="" />
           </item>
-          <item id="e5ac10f1274d415badeb86d2112663b5" cid="EX013" type="extend" creator="" creation-date="04/26/2024 14:27:41" from="df6db03005644e6697bccd29195f3c01" to="1e69f1168984403da5ad080dd36d35f7" visibility="package">
-            <stereotypes>
-              <stereotype name="extend" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="e5ac10f1274d415badeb86d2112663b5_extend_c" type="extend" creation-date="04/26/2024 14:27:41" ref="" />
-            </stereotype-instances>
-            <extend extension-point="" condition="" />
-          </item>
-          <item id="1e69f1168984403da5ad080dd36d35f7" cid="UC027" type="use-case" name="Edit profile" creator="" creation-date="04/26/2024 14:27:07" visibility="undefined">
+          <item id="e3245214f3474ebca076e90c06340457" cid="UC030" type="use-case" name="Change password" creator="" creation-date="04/26/2024 15:22:24" visibility="undefined">
             <use-case>
               <stakeholders />
               <special-requirements />
@@ -1779,16 +2206,9 @@
           <item id="019a1571428f4f9da372e477f8c4830a" cid="REL030" type="relationship" creator="" creation-date="04/26/2024 14:27:33" from="c41cf652a47a49189f00432a6672c1f1" to="df6db03005644e6697bccd29195f3c01" visibility="package">
             <owned-items />
             <relation from="c41cf652a47a49189f00432a6672c1f1" to="df6db03005644e6697bccd29195f3c01" derived="false">
-              <start-role id="umlar-c38af15e-8180-4dee-9e7d-8ab4864edee7" name="" navigability="" association-type="association" visibility="private" property-ref="ef0f92717b6a4cafa1cbbd0cd4ae8004" />
-              <end-role id="umlar-7e2090a7-d4ff-47a8-9c28-f6d2e7960143" name="" navigability="" association-type="association" visibility="private" property-ref="1aa7f0b1e61643f690b127ac320b7b1a" />
+              <start-role id="umlar-08e44b09-d128-4e10-ba5f-38780743b275" name="" navigability="" association-type="association" visibility="private" property-ref="ef0f92717b6a4cafa1cbbd0cd4ae8004" />
+              <end-role id="umlar-a9b76d17-12ca-4086-8263-904d8ef82135" name="" navigability="" association-type="association" visibility="private" property-ref="1aa7f0b1e61643f690b127ac320b7b1a" />
             </relation>
-          </item>
-          <item id="df6db03005644e6697bccd29195f3c01" cid="UC026" type="use-case" name="Find profile" creator="" creation-date="04/26/2024 14:26:45" visibility="undefined">
-            <use-case>
-              <stakeholders />
-              <special-requirements />
-              <issues />
-            </use-case>
           </item>
           <item id="f1d6e45815b04c15a6c930b4ae607746" cid="UC028" type="use-case" name="Logout" creator="" creation-date="04/26/2024 14:27:13" visibility="undefined">
             <use-case>
@@ -1797,14 +2217,32 @@
               <issues />
             </use-case>
           </item>
-          <item id="e3245214f3474ebca076e90c06340457" cid="UC030" type="use-case" name="Change password" creator="" creation-date="04/26/2024 15:22:24" visibility="undefined">
+          <item id="df6db03005644e6697bccd29195f3c01" cid="UC026" type="use-case" name="Find profile" creator="" creation-date="04/26/2024 14:26:45" visibility="undefined">
             <use-case>
               <stakeholders />
               <special-requirements />
               <issues />
             </use-case>
           </item>
+          <item id="3da81106607e460db3e927d41e2a0d2d" cid="EX014" type="extend" creator="" creation-date="04/26/2024 14:27:47" from="df6db03005644e6697bccd29195f3c01" to="f1d6e45815b04c15a6c930b4ae607746" visibility="package">
+            <stereotypes>
+              <stereotype name="extend" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="3da81106607e460db3e927d41e2a0d2d_extend_c" type="extend" creation-date="04/26/2024 14:27:47" ref="" />
+            </stereotype-instances>
+            <extend extension-point="" condition="" />
+          </item>
           <item id="c41cf652a47a49189f00432a6672c1f1" cid="AC006" type="actor" name="User" creator="" creation-date="04/26/2024 14:26:37" visibility="undefined" />
+          <item id="e5ac10f1274d415badeb86d2112663b5" cid="EX013" type="extend" creator="" creation-date="04/26/2024 14:27:41" from="df6db03005644e6697bccd29195f3c01" to="1e69f1168984403da5ad080dd36d35f7" visibility="package">
+            <stereotypes>
+              <stereotype name="extend" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="e5ac10f1274d415badeb86d2112663b5_extend_c" type="extend" creation-date="04/26/2024 14:27:41" ref="" />
+            </stereotype-instances>
+            <extend extension-point="" condition="" />
+          </item>
         </abstract-items>
         <layer id="69568cf81edd49d28c7149b166d1ecf3" name="Default" visible="true" enabled="true" locked="false">
           <item id="c41cf652a47a49189f00432a6672c1f1" iid="e527618c855e4e0dbf58410bb520b51d" creation-date="04/26/2024 14:26:37" order-index="0" type="entity">
@@ -1882,14 +2320,27 @@
           <version />
         </meta>
         <abstract-items>
-          <item id="3b5c4791927047d39da5268648e9e1ee" cid="EX018" type="extend" creator="" creation-date="04/28/2024 18:07:38" from="5c1b0e02b6224475b90736e3c2075e97" to="ebf158352eed4376ac6fcf2d957b3138" visibility="package">
-            <stereotypes>
-              <stereotype name="extend" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="3b5c4791927047d39da5268648e9e1ee_extend_c" type="extend" creation-date="04/28/2024 18:07:38" ref="" />
-            </stereotype-instances>
-            <extend extension-point="" condition="" />
+          <item id="31d5fafc3962407394a0bc97fd9f5727" cid="UC032" type="use-case" name="Update profile" creator="" creation-date="04/28/2024 18:06:27" visibility="undefined">
+            <use-case>
+              <stakeholders />
+              <special-requirements />
+              <issues />
+            </use-case>
+          </item>
+          <item id="64332a23806c4c22a4ef8bb3ffc0337f" cid="UC034" type="use-case" name="Change password" creator="" creation-date="04/28/2024 18:06:55" visibility="undefined">
+            <use-case>
+              <stakeholders />
+              <special-requirements />
+              <issues />
+            </use-case>
+          </item>
+          <item id="65a6aa548f674f12a7ef1a5b6194ac4e" cid="AC007" type="actor" name="User" creator="" creation-date="04/28/2024 18:05:37" visibility="undefined" />
+          <item id="616b695f931f4280b1a02daf2b332c8a" cid="REL031" type="relationship" creator="" creation-date="04/28/2024 18:07:28" from="65a6aa548f674f12a7ef1a5b6194ac4e" to="5c1b0e02b6224475b90736e3c2075e97" visibility="package">
+            <owned-items />
+            <relation from="65a6aa548f674f12a7ef1a5b6194ac4e" to="5c1b0e02b6224475b90736e3c2075e97" derived="false">
+              <start-role id="umlar-24a1765b-e383-43ed-b394-14afb14ab64a" name="" navigability="" association-type="association" visibility="private" property-ref="423fbdd88b3f471c9a672ec9ee88099e" />
+              <end-role id="umlar-b1b3dfde-ddda-4e9d-834c-d970144209ed" name="" navigability="" association-type="association" visibility="private" property-ref="230f8573e090435a991d9ea4a0c76fc4" />
+            </relation>
           </item>
           <item id="46ee5a14c021400db04a934d9e26a6d3" cid="EX017" type="extend" creator="" creation-date="04/28/2024 18:07:33" from="5c1b0e02b6224475b90736e3c2075e97" to="31d5fafc3962407394a0bc97fd9f5727" visibility="package">
             <stereotypes>
@@ -1909,7 +2360,7 @@
             </stereotype-instances>
             <extend extension-point="" condition="" />
           </item>
-          <item id="64332a23806c4c22a4ef8bb3ffc0337f" cid="UC034" type="use-case" name="Change password" creator="" creation-date="04/28/2024 18:06:55" visibility="undefined">
+          <item id="ebf158352eed4376ac6fcf2d957b3138" cid="UC033" type="use-case" name="Logout" creator="" creation-date="04/28/2024 18:06:48" visibility="undefined">
             <use-case>
               <stakeholders />
               <special-requirements />
@@ -1923,27 +2374,14 @@
               <issues />
             </use-case>
           </item>
-          <item id="65a6aa548f674f12a7ef1a5b6194ac4e" cid="AC007" type="actor" name="User" creator="" creation-date="04/28/2024 18:05:37" visibility="undefined" />
-          <item id="ebf158352eed4376ac6fcf2d957b3138" cid="UC033" type="use-case" name="Logout" creator="" creation-date="04/28/2024 18:06:48" visibility="undefined">
-            <use-case>
-              <stakeholders />
-              <special-requirements />
-              <issues />
-            </use-case>
-          </item>
-          <item id="31d5fafc3962407394a0bc97fd9f5727" cid="UC032" type="use-case" name="Update profile" creator="" creation-date="04/28/2024 18:06:27" visibility="undefined">
-            <use-case>
-              <stakeholders />
-              <special-requirements />
-              <issues />
-            </use-case>
-          </item>
-          <item id="616b695f931f4280b1a02daf2b332c8a" cid="REL031" type="relationship" creator="" creation-date="04/28/2024 18:07:28" from="65a6aa548f674f12a7ef1a5b6194ac4e" to="5c1b0e02b6224475b90736e3c2075e97" visibility="package">
-            <owned-items />
-            <relation from="65a6aa548f674f12a7ef1a5b6194ac4e" to="5c1b0e02b6224475b90736e3c2075e97" derived="false">
-              <start-role id="umlar-18da7870-10c1-4801-93ef-7ebab8fe62e5" name="" navigability="" association-type="association" visibility="private" property-ref="423fbdd88b3f471c9a672ec9ee88099e" />
-              <end-role id="umlar-3fb1484f-32db-4297-b83d-c3f1460e93ca" name="" navigability="" association-type="association" visibility="private" property-ref="230f8573e090435a991d9ea4a0c76fc4" />
-            </relation>
+          <item id="3b5c4791927047d39da5268648e9e1ee" cid="EX018" type="extend" creator="" creation-date="04/28/2024 18:07:38" from="5c1b0e02b6224475b90736e3c2075e97" to="ebf158352eed4376ac6fcf2d957b3138" visibility="package">
+            <stereotypes>
+              <stereotype name="extend" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="3b5c4791927047d39da5268648e9e1ee_extend_c" type="extend" creation-date="04/28/2024 18:07:38" ref="" />
+            </stereotype-instances>
+            <extend extension-point="" condition="" />
           </item>
         </abstract-items>
         <layer id="8e6a94f2ff264f2e8755f98fc30a4c07" name="Default" visible="true" enabled="true" locked="false">

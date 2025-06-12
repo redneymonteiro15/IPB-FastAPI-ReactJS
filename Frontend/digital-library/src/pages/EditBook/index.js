@@ -4,18 +4,22 @@ import Footer from "../../components/footer";
 import './styles.css'
 import * as Icon from 'react-bootstrap-icons'
 import { navigationTo } from "../../action/constant/function";
-import HeaderAdmin from "../../components/headerAdmin";
+import { getBookById, updateBook } from "../../action/API/book";
+import { useLocation } from "react-router-dom";
 
 function EditBook(){
+    const { search } = useLocation();
 
-    const [name, setName] = useState('The C++ Programming Language')
-    const [description, setDescription] = useState('The definitive reference to C++ by the creator of C++, The C++ Programming Language teaches one of the most widely-used, general-purpose programming languages. At an advanced pace this book teaches how to work with compilers updated for the new standard. Students with experience with C++ heading toward domains where mid-size to large applications are being developed - networking, finance, graphics, and games - will find this book an excellent learning tool.')
-    const [isbn, setISBN] = useState('4325513251')
-    const [pages, setPages] = useState('416')
-    const [category, setCategory] = useState('Programmer')
-    const [published, setPublished] = useState('TAG Livros - Paralela')
-    const [publicationDate, setPublicationDate] = useState('2019')
-    const [image, setImage] = useState('https://static.fnac-static.com/multimedia/Images/PT/NR/99/2b/16/1452953/1540-1.jpg')
+    const [id, setId] = useState('')
+    const [name, setName] = useState('')
+    const [description, setDescription] = useState('')
+    const [isbn, setISBN] = useState('')
+    const [pages, setPages] = useState('')
+    const [category, setCategory] = useState('')
+    const [published, setPublished] = useState('')
+    const [publicationDate, setPublicationDate] = useState("")
+    const [author, setAuthor] = useState('');
+    const [image, setImage] = useState("")
 
     const [validName, setValidName] = useState(null)
     const [validDescription, setValidDescription] = useState(null)
@@ -24,21 +28,88 @@ function EditBook(){
     const [validCategory, setValidCategory] = useState(null)
     const [validPublished, setValidPublished] = useState(null)
     const [validPublicationDate, setValidPublicationDate] = useState(null)
+    const [validAuthor, setValidAuthor] = useState(null)
     const [validImage, setValidImage] = useState(null)
+
+    const [res, setRes] = useState(null)
+
+    useEffect(() => {
+
+        const searchParams = new URLSearchParams(search);
+        const data = searchParams.get('id');
+        setId(data);
+
+        if (data == null) {
+            window.location.href = '/book';
+        }
+
+        getBookById(data).then((data) => {
+            setName(data.name);
+            setDescription(data.description);
+            setISBN(data.isbn);
+            setPages(data.pages);
+            setCategory(data.category);
+            setPublished(data.published);
+            setPublicationDate(data.publication_date);
+            setAuthor(data.author);
+            setImage(data.image_url);
+        })
+    }, [])
 
     const errors = useState({})
 
-    const addBook = () => {
-
+    const editBook = () => {
+        const book = {
+            id: id,
+            name: name,
+            description: description,
+            pages: parseInt(pages),
+            publication_date: publicationDate,
+            published: published,
+            isbn: isbn,
+            category: category,
+            author: author,
+            image_url: image
+        };
+        updateBook(book).then(res => {
+            console.log("Atualizado com sucesso")
+            setRes(res);
+        }).catch((error) => {
+            console.error("Erro ao atualizar o book");
+            setRes(res);
+        })
     }
+
+    useEffect(() => {
+        let timer;
+        if (res !== null) {
+            window.scrollTo(0, 0);  // Adicione esta linha para rolar ao topo
+            timer = setTimeout(() => {
+                setRes(null);
+            }, 5000);  //wait 5s
+        }
+
+        return () => clearTimeout(timer);
+    }, [res]);
 
     return(
         <div>
-            <HeaderAdmin pageName={'Edit book'} />
+            <Header pageName={'Edit book'} />
 
             <section className="add-book-details">
                 <div>
                     <h3><Icon.ArrowLeft className="iconBack" onClick={() => navigationTo('book')}/> Edit book</h3>
+                    <div className="card-result">
+                        {res !== null && (
+                            res === true 
+                            ?   <div className="card-successfull">
+                                    <p><Icon.CheckCircle /> successfully</p>
+                                </div>
+                            :   <div className="card-danger">
+                                    <p><Icon.XCircle /> Danger</p>
+                                </div>
+                        ) }
+                    </div>
                     <label>Name</label>
                     <input type="text" placeholder='name' value={name} onChange={(event) => setName(event.target.value)} className={validName === false ? 'inputError' : 'input'}/>
                     <p>{errors.name}</p>
@@ -70,12 +141,13 @@ function EditBook(){
                     <label>Publication date</label>
                     <input type="number" placeholder='2000' value={publicationDate} onChange={(event) => setPublicationDate(event.target.value)} className={validPublicationDate === false ? 'inputError' : 'input'} min={1700}/>
                     <p>{errors.publicationDate}</p>
-
+                    <label>Author</label>
+                    <input type="text" placeholder='Author name' value={author} onChange={(event) => setAuthor(event.target.value)} className={errors.author ? 'inputError' : 'input'} />
                     <label>Link image</label>
                     <input type="url" placeholder='www.image.com' value={image} onChange={(event) => setImage(event.target.value)} className={validImage === false ? 'inputError' : 'input'} min={1700}/>
                     <p>{errors.image}</p>
                     <p>{errors.res}</p>
-                    <button className="btUpdate" onClick={() => addBook()}>
+                    <button className="btUpdate" onClick={() => editBook()}>
                         edit book
                     </button>
                 </div>

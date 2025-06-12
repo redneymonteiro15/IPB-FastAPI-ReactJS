@@ -11,23 +11,22 @@ import { getUserData } from "../action/API/setup";
 import './styles.css'
 
 function Header(props) {
-
-    const {pageName} = props
+    const { pageName } = props;
 
     const [userData, setUserData] = useState('');
+    const [user, setUser] = useState({});
 
-    /* useEffect(() => {
-
-        const res = getUserData()
-        console.log(JSON.stringify(res))
-        if(res !== null){
-            setUserData("Hello " + res.name)
-            
+    useEffect(() => {
+        const res = getUserData();
+        console.log(JSON.stringify(res));
+        if (res !== null) {
+            setUserData("Hello " + res.name);
+            setUser(res);
         } else {
-            window.location.href = '/'
+            window.location.href = '/';
         }
-        configPage()
-    }, []) */
+        configPage();
+    }, []);
 
     const configPage = () => {
         const favicon = document.querySelector('link[rel="icon"]');
@@ -35,13 +34,13 @@ function Header(props) {
 
         // Altera o título da página
         document.title = pageName + ' - IPB Library Digital';
-    }
+    };
 
     return (
         <div>
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="home"><img src={logo} /></a>
+                    <a className="navbar-brand" href="home"><img src={logo} alt="Logo" /></a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -50,18 +49,31 @@ function Header(props) {
                             <li className="nav-item">
                                 <a className={pageName === 'Home' ? 'nav-link link-active' : 'nav-link'} href="home">Home</a>
                             </li>
-                            <li className="nav-item">
-                                <a className={pageName === 'Book' ? 'nav-link link-active' : 'nav-link'} href="book">Book</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className={pageName === 'Bookshelf' ? 'nav-link link-active' : 'nav-link'} href="bookshelf">Bookshelf</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className={pageName === 'Borrowed' ? 'nav-link link-active' : 'nav-link'} href="borrowed">Borrowed</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className={pageName === 'Contact' ? 'nav-link link-active' : 'nav-link'} href="contact">Contact</a>
-                            </li>
+                            {user.is_admin === true ? (
+                                <>
+                                    <li className="nav-item">
+                                        <a className={pageName === 'Add book' ? 'nav-link link-active' : 'nav-link'} href="add-book">Add book</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className={pageName === 'Book' ? 'nav-link link-active' : 'nav-link'} href="book">Books</a>
+                                    </li>
+                                </>
+                            ) : (
+                                <>
+                                    <li className="nav-item">
+                                        <a className={pageName === 'Book' ? 'nav-link link-active' : 'nav-link'} href="book">Book</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className={pageName === 'Bookshelf' ? 'nav-link link-active' : 'nav-link'} href="bookshelf">Bookshelf</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className={pageName === 'Borrowed' ? 'nav-link link-active' : 'nav-link'} href="borrowed">Borrowed</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className={pageName === 'Contact' ? 'nav-link link-active' : 'nav-link'} href="contact">Contact</a>
+                                    </li>
+                                </>
+                            )}
                             <li className="nav-item">
                                 <a className="nav-link" href="account"><Icon.Person className="icon-profile" />{userData}</a>
                             </li>

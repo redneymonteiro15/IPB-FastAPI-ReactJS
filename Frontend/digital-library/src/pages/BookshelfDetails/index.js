@@ -69,7 +69,7 @@ function BookshelfDetails() {
           }
         setBookshelf(bo)
 
-        /* const searchParams = new URLSearchParams(search);
+        const searchParams = new URLSearchParams(search);
         const data = searchParams.get('id');
         setId(data)
 
@@ -90,7 +90,7 @@ function BookshelfDetails() {
             .then(data => {
                 setBooks(data)
             })
-            .catch(error => console.error('Error fetching books:', error)); */
+            .catch(error => console.error('Error fetching books:', error));
         
     }, [search])
 

@@ -10,7 +10,7 @@ import { addBookshelf, deleteBookshelf, getAllBookshelfByIdUser } from "../../ac
 import { getUserData } from "../../action/API/setup";
 
 function Bookshelf(){
-    const [user, setser] = useState(null)
+    const [user, setUser] = useState(null)
 
     const navigate = useNavigate();
 
@@ -20,19 +20,11 @@ function Bookshelf(){
     const [idBookshelf, setIdBookshelf] = useState('')
 
     useEffect(() => {
-        const b = [
-            {
-            "_id": "6627f46bfc997a65a9818252",
-            "name": "Database",
-            "date_create": "2024-04-23T18:48:27.300Z",
-            "id_user": "66251e4eede07cfa79f98bf9"
-          }
-        ]
-        setBookshelf(b)
-        /* const u = getUserData()
+        const u = getUserData()
+        setUser(u)
         getAllBookshelfByIdUser(u.id)
             .then(data => setBookshelf(data))
-            .catch(error => console.error('Error fetching books:', error)); */
+            .catch(error => console.error('Error fetching books:', error));
     }, [])
 
     const goBookshelfDetails = (id) => {
@@ -61,7 +53,8 @@ function Bookshelf(){
     const [res, setRes] = useState(null)
     
     const handleAdd = () => {
-        /* addBookshelf(nameBookshelf, user.id)
+        console.log("User: " + JSON.stringify(user))
+        addBookshelf(nameBookshelf, user.id)
         .then(response => {
             console.log('Bookshelf inserted successfully:', response);
             setRes(true)
@@ -71,19 +64,19 @@ function Bookshelf(){
         })
         .catch((error) => setRes(error) )
 
-        setShowModalDelte(false) */
+        handleClose()
         
     }
 
     const handleDelete = () => {
-        /* deleteBookshelf(idBookshelf)
+        deleteBookshelf(idBookshelf)
         .then((data)=> {
             setRes(data)
             getAllBookshelfByIdUser(user.id)
                 .then(data => setBookshelf(data))
                 .catch(error => console.error('Error fetching books:', error));
         })
-        handleModalDeleteClose() */
+        handleModalDeleteClose()
     }
 
     useEffect(() => {
