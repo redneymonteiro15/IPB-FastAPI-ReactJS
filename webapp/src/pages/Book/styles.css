@@ -1,0 +1,93 @@
+
+
+.book{
+    width: 80%;
+    margin: auto;
+}
+
+.book .aside-search{
+    width: 60%;
+    display: flex;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.book .aside-search input,
+.book .aside-search select{
+    border: 1px solid #808080;
+    margin: 10px;
+    width: 40%;
+    border-radius: 10px;
+    color: #808080;
+}
+.book .aside-search select{
+    padding: 10px;
+}
+.book .aside-search button{
+    width: 20%;
+    background-color: #93278F;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+}
+.book .row{
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 0px var(--secondary);
+}
+
+.row .col-md-8{
+    padding: 20px;
+}
+.row .col-md-8 .card-category{
+    font-size: 14px;
+    color: #808080;
+    margin: 0 5px 0;
+}
+.row .col-md-8 .card-title{
+    color: #808080;
+    font-size: 25px;
+}
+.row .col-md-8 .card-author{
+    font-size: 18px;
+    color: #93278F;
+}
+.row .col-md-8 .card-button{
+    width: 100%;
+    background-color: #93278F;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #fff;
+    padding: 5px;
+}
+.cardNoFound{
+    background-color: #93278F;
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+}
+.cardNoFound .infoIcon{
+    font-size: 50px;
+    margin: 10px;
+}
+.cardNoFound p{
+    font-size: 16pt;
+}
+@media screen and (max-width: 800px) {
+    .book .aside-search{
+        display: block;
+    }
+    .book .aside-search input,
+    .book .aside-search select,
+    .book .aside-search button{
+        width: 100%;
+        margin: 5px 0;
+        height: 40px;
+    }
+        
+}

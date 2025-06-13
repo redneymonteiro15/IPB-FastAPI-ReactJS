@@ -1,0 +1,46 @@
+
+.card-not-found{
+    width: 50%;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    
+}
+
+.card-not-found h3{
+    color: var(--primary);
+    font-size: 25px;
+}
+.card-not-found p{
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.card-not-found button{
+    width: 60%;
+    height: 40px;
+    margin: auto;
+    border: none;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 20px;
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.card-not-found img{
+    display: block;
+    width: 512px;
+    margin: auto;
+}
+@media screen and (max-width: 1023px) {
+    .card-not-found{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 640px) {
+    .card-not-found img{
+        width: 100%;
+    }
+}

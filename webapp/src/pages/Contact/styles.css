@@ -1,0 +1,102 @@
+.contact{
+    margin: 50px auto 50px auto;
+
+}
+.contact h2 {
+    color: var(--primary);
+    text-align: center;
+}
+
+.row{
+    margin-top: 50px;
+}
+
+.aside-comment{
+    border-radius: 10px;
+    box-shadow: 1px 3px 5px var(--secondary);
+    height: 440px;
+    padding: 20px;
+    margin-right: 10px;
+}
+.aside-comment h3{
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 30px;
+}
+.aside-comment p{
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+.aside-comment .txError{
+    color: var(--error);
+}
+.aside-comment .txtSuccessfully{
+    color: var(--primary);
+}
+.aside-comment .errorBorder{
+    border: 2px solid var(--error);
+}
+.aside-comment .normalBorder{
+    border: 1px solid var(--secondary);
+}
+.aside-comment
+.aside-comment label,
+.aside-comment input,
+.aside-comment textarea,
+.aside-comment button{
+    width: 100%;
+    border-radius: 10px;
+    color: var(--secondary);
+}
+.aside-comment label{
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 18px;
+}
+.aside-comment textarea{
+    padding: 5px;
+}
+.aside-comment button{
+    background-color: var(--primary);
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 10px;
+    height: 40px;
+}
+
+.aside-contact li a{
+    color: var(--primary);
+}
+.aside-contact li a:hover{
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.aside-contact .scroll{
+    max-width: 100%;
+    overflow-y: auto;
+    height: 300px
+}
+.aside-contact li a:focus {
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 10px;
+}
+@media screen and (max-width: 1000px) {
+    .row{
+        display: block;
+    }
+    .row .col{
+        width: 100%;
+    }
+    .aside-contact{
+        margin-top: 50px;
+    }
+    .aside-contact .nav li{
+        width: 10%;
+        display: flex;
+        margin: auto;
+    }
+}
