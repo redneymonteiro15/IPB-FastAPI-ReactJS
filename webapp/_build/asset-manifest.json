@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/ipb-fastapi-reactjs/static/css/main.626c506d.css",
+    "main.js": "/ipb-fastapi-reactjs/static/js/main.fbe3f77b.js",
+    "static/js/453.4fdd40b1.chunk.js": "/ipb-fastapi-reactjs/static/js/453.4fdd40b1.chunk.js",
+    "static/media/book.jpg": "/ipb-fastapi-reactjs/static/media/book.069f2399a9067ccf3b24.jpg",
+    "static/media/404-error.png": "/ipb-fastapi-reactjs/static/media/404-error.ad2e268ee5cc9ccaa5cd.png",
+    "static/media/logo.png": "/ipb-fastapi-reactjs/static/media/logo.3ac9ccbd68cd149dab35.png",
+    "index.html": "/ipb-fastapi-reactjs/index.html",
+    "main.626c506d.css.map": "/ipb-fastapi-reactjs/static/css/main.626c506d.css.map",
+    "main.fbe3f77b.js.map": "/ipb-fastapi-reactjs/static/js/main.fbe3f77b.js.map",
+    "453.4fdd40b1.chunk.js.map": "/ipb-fastapi-reactjs/static/js/453.4fdd40b1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.626c506d.css",
+    "static/js/main.fbe3f77b.js"
+  ]
+}
