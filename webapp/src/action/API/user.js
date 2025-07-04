@@ -1,4 +1,4 @@
-const URL_API = 'http://127.0.0.1:8000/user/';
+const URL_API = 'https://api-redneymonteiro15-3880-redney-monteiros-projects.vercel.app/user/';
 
 export const insertUser = (user) => {
   return new Promise((resolve, reject) => {
